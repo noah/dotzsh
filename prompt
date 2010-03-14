@@ -1,0 +1,41 @@
+# set some global colors
+for COLOR in CYAN MAGENTA BLUE RED GREEN YELLOW WHITE BLACK; do
+    eval PR_BRIGHT_$COLOR='%{$fg[${(L)COLOR}]%}'
+    eval PR_BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+done
+PR_RESET="%{$reset_color%}"
+SEP="  "
+
+## A custom prompt that looks like this:
+#
+# !4386  +0  *noah  @downbe  .20100313 16:24:44 CST  ^0
+# %/# 
+#
+# The value prefixes are quasi-mnemonic.  E.g.,
+#   !n runs the command with history number n
+#   + is displayed in output of jobs command e.g., 
+#       $ jobs
+#       [1]  + suspended  vim
+#   * of course, the user is represented by a star
+#   @ hostname 
+#   . dot for where we are right now (in terms of time)
+#   ^ for last job
+#
+# history num
+# num jobs
+# user
+# host
+# timestamp
+# exit status of last command
+
+export PROMPT='\
+!${PR_BOLD_CYAN}%!${PR_RESET}$SEP\
++${PR_BOLD_YELLOW}%j${PR_RESET}$SEP\
+*${PR_BOLD_GREEN}%n${PR_RESET}$SEP\
+@${PR_BOLD_MAGENTA}%m${PR_RESET}$SEP\
+.${PR_BOLD_BLUE}%D{%Y%m%d %T %Z}${PR_RESET}$SEP\
+^${PR_BOLD_RED}%?${PR_RESET}
+%/
+%# '
+
+# vim: set ft=zsh

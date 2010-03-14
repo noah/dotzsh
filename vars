@@ -1,0 +1,14 @@
+export EDITOR="vim"
+export VISUAL="vim"
+export GPGKEY=DAFA7071
+export GPG_TTY=`tty`
+export OOO_FORCE_DESKTOP=gnome
+export SCAN=/drum/misc/backup/ns_cache
+export IPOD_MOUNTPOINT=/mnt/ipod
+
+# kent 
+export CK=/www/kent/2010/spring
+export G=/home/noah/gits
+export PATH=/usr/local/bin:/home/noah/bin:$PATH
+
+# vim: set ft=zsh

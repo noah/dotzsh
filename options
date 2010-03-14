@@ -1,0 +1,217 @@
+# zsh options
+#       
+#
+#       The structure of this file tracks man zshoptions
+#
+#
+#   ================================================ Changing Directories 
+
+# typing directory changes to it if not a command with same name
+setopt AUTO_CD
+
+# push directories onto stack automatically
+setopt AUTO_PUSHD
+ 
+# Resolve symbolic links to their true values when changing
+# directory.
+setopt CHASE_LINKS
+
+# ignore duplicates for purposes of pushd
+setopt PUSHD_IGNORE_DUPS
+
+#   ================================================ Completion
+
+# cursor is moved to the end of the word if either a single 
+# match is inserted or menu completion is performed
+setopt ALWAYS_TO_END
+
+# automatically list choices on ambiguous completion
+setopt AUTO_LIST
+
+# Automatically use menu completion after the second consecutive
+# request for completion.  Overridden by MENU_COMPLETE
+setopt AUTO_MENU
+
+# If a parameter name was completed and a following character
+# (normally a space) automatically inserted, and the next character
+# typed is one of those that have to come directly after the name (like
+# `}', `:', etc.), the automatically added character is deleted, so that
+# the character typed comes immediately after the parameter name.
+# Completion  in a brace expansion is affected similarly: the added
+# character is a `,', which will be removed if `}' is typed next.
+setopt AUTO_PARAM_KEYS
+
+# If a parameter is completed whose content is the name of a
+# directory, then add a trailing slash instead of a space.
+setopt AUTO_PARAM_SLASH
+
+#  When the last character resulting from a completion is a slash and
+#  the next character typed is a word delimiter, a slash, or a
+#  character that ends a command (such as a semicolon or an
+#  ampersand), remove the slash.
+setopt AUTO_REMOVE_SLASH
+
+# If unset, the cursor is set to the end of the word if
+# completion is started. Otherwise it stays there and
+# completion is done from both ends.
+setopt COMPLETE_IN_WORD
+
+# When the current word has a glob pattern, do not insert all the words
+# resulting from the expansion but  generate  matches  as  for
+# completion  and  cycle through  them  like MENU_COMPLETE. The matches
+# are generated as if a `*' was added to the end of the word, or
+# inserted at the cursor when COMPLETE_IN_WORD is set.  This actually
+# uses pattern matching, not globbing, so it works not only for files
+# but for any completion, such as options, user names, etc.
+# 
+# Note that when the pattern matcher is used, matching control (for
+# example, case-insensitive or anchored matching) cannot be used.   This
+# limitation  only applies when the current word contains a pattern;
+# simply turning on the GLOB_COMPLETE option does not have this effect.
+setopt GLOB_COMPLETE
+
+# Whenever a command completion is attempted, make sure the entire
+# command path is hashed first.  This makes the first completion slower.
+setopt HASH_LIST_ALL
+
+# Try to make the completion list smaller (occupying less lines) by
+# printing the matches in columns with different widths.
+setopt LIST_PACKED
+
+# On an ambiguous completion, instead of listing possibilities or
+# beeping, insert the first match immediately.  Then when  completion
+# is  requested  again, remove  the  first  match and insert the
+# second match, etc.  When there are no more matches, go back to the
+# first one again.  reverse-menu-complete may be used to loop through
+# the list in the other direction. This option overrides AUTO_MENU.
+unsetopt MENU_COMPLETE
+
+#   ================================================ Expansion and Globbing
+# Perform filename generation (globbing).  (See the section `Filename
+# Generation'.)
+setopt GLOB 
+
+# Append a trailing `/' to all directory names resulting from filename
+# generation (globbing).
+setopt MARK_DIRS
+   
+#   ================================================ History
+# If this is set, zsh sessions will append their history list to the
+# history file, rather than replace it. Thus, multiple parallel  zsh
+# sessions  will  all have  the  new entries from their history lists
+# added to the history file, in the order that they exit.  The file
+# will still be periodically re-written to trim it when the number of
+# lines grows 20% beyond the value specified by $SAVEHIST (see also
+# the HIST_SAVE_BY_COPY option).
+# setopt APPEND_HISTORY
+
+# When  writing  out  the  history  file, by default zsh uses ad-hoc
+# file locking to avoid known problems with locking on some operating
+# systems.  With this option locking is done by means of the system's
+# fcntl call, where this method is available.  On recent operating
+# systems this may provide  better  perfor‐ mance, in particular
+# avoiding history corruption when files are stored on NFS.
+setopt HIST_FCNTL_LOCK
+
+# When searching for history entries in the line editor, do not
+# display duplicates of a line previously found, even if the
+# duplicates are not contiguous.
+setopt HIST_FIND_NO_DUPS 
+
+# If a new command line being added to the history list duplicates an
+# older one, the older command is removed from the list (even if it is
+# not the previous event).
+setopt HIST_IGNORE_ALL_DUPS
+
+# This  options  works like APPEND_HISTORY except that new history
+# lines are added to the $HISTFILE incrementally (as soon as they are
+# entered), rather than waiting until the shell exits.  The file will
+# still be periodically re-written to trim it when the number of lines
+# grows 20% beyond the value specified by $SAVEHIST (see also the
+# HIST_SAVE_BY_COPY option).
+setopt INC_APPEND_HISTORY
+
+#   ================================================ Initialisation
+#
+#   Expand aliases.
+setopt ALIASES
+
+# Do  not  exit on end-of-file.  Require the use of exit or logout
+# instead.  However, ten consecutive EOFs will cause the shell to exit
+# anyway, to avoid the shell hanging if its tty goes away.  Also, if
+# this option is set and the Zsh Line Editor is used, widgets
+# implemented by shell functions can be  bound  to  EOF  (normally
+# Control-D)  without printing the normal warning message.  This works
+# only for normal widgets, not for completion widgets.
+unsetopt IGNORE_EOF
+
+# Allow comments even in interactive shells.
+setopt INTERACTIVE_COMMENTS
+
+# Note  the location of each command the first time it is executed.
+# Subsequent invocations of the same command will use the saved
+# location, avoiding a path search.  If this option is unset, no path
+# hashing is done at all.  However, when CORRECT is set, commands
+# whose names do not appear in  the  functions  or aliases hash tables
+# are hashed in order to avoid reporting them as spelling errors.
+setopt HASH_CMDS
+
+# Whenever  a command name is hashed, hash the directory containing
+# it, as well as all directories that occur earlier in the path.  Has
+# no effect if neither HASH_CMDS nor CORRECT is set.
+setopt HASH_DIRS 
+
+# If  querying  the  user before executing `rm *' or `rm path/*',
+# first wait ten seconds and ignore anything typed in that time.  This
+# avoids the problem of reflexively answering `yes' to the query when
+# one didn't really mean it.  The wait and query can always be avoided
+# by expanding the `*' in ZLE (with tab).
+setopt RM_STAR_WAIT
+
+
+#   ================================================ Job Control
+# With  this  option set, stopped jobs that are removed from the job
+# table with the disown builtin command are automatically sent a CONT
+# signal to make them running.
+setopt AUTO_CONTINUE
+
+# Report the status of background and suspended jobs before exiting  a
+# shell  with  job  control;  a  second  attempt  to  exit  the  shell
+# will  succeed.  NO_CHECK_JOBS is best used only in combination with
+# NO_HUP, else such jobs will be killed automatically.
+setopt CHECK_JOBS
+
+# List jobs in the long format by default.
+setopt LONG_LIST_JOBS
+
+# Allow job control.  Set by default in interactive shells.  The
+# check  is  omitted if the commands run from the previous command
+# line included a `jobs' command, since it is assumed the user is
+# aware that there are background or suspended jobs.  A `jobs' command
+# run from one of the hook functions defined in the section SPECIAL
+# FUNCTIONS in zshmisc(1) is  not  counted for this purpose.
+setopt MONITOR
+
+# Report the status of background jobs immediately, rather than waiting 
+# until just before printing a prompt.
+setopt NOTIFY
+
+#   ================================================ Prompting
+# If set, parameter expansion, command substitution and arithmetic expansion 
+# are performed in prompts.  Substitutions within prompts do not affect the 
+# command status.
+setopt PROMPT_SUBST
+
+#   ================================================ Zle
+# If  ZLE  is  loaded,  turning  on  this  option has the equivalent
+# effect of `bindkey -v'.  In addition, the EMACS option is unset.
+# Turning it off has no effect.  The option setting is not guaranteed
+# to reflect the current keymap.  This option is provided for
+# compatibility; bindkey is the recommended inter‐face.
+setopt VI
+
+# Use the zsh line editor.  Set by default in interactive shells
+# connected to a terminal.
+setopt ZLE
+
+# vim: set ft=zsh : */ ~

@@ -1,0 +1,84 @@
+# coreutils
+# ls
+alias la="ls -alhF --classify --color=auto"
+alias ll="ls -lhF --color=auto --classify"
+alias ls="ls --color=auto"
+alias lc="ls -halt"
+alias lcl="lc|less"
+alias lsgrep="ls -al|grep -i"
+alias hgrep="cat ~/.histfile| grep"
+#
+alias cp="cp -i"
+alias df="df -kTh"
+alias rm="rm -i"
+alias ..="cd .."
+alias mv="mv -i"
+alias mkdir="mkdir -p"
+alias su-="su -"
+
+# ssh
+alias downbe="ssh -Y $(whoami)@downbe"
+alias downbe.at="ssh -Y $(whoami)@downbe.at"
+alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 noah@127.0.0.1"
+
+# cmus
+alias cr="cmus-remote"
+alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
+alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
+alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
+
+# user
+alias bhttpd="/etc/rc.d/httpd restart"
+alias brew="sleep 4m; notify-send -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -u critical -t 0 \"Coffee's done!\""
+alias egrep="egrep --colour=auto"
+alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
+alias fm=fetchmail
+alias h="history"
+alias info="pinfo"
+alias ip="elinks --dump checkip.dyndns.org"
+alias irssi="irssi -n print -c irc.freenode.net"
+alias kX="killall X"
+alias lclbt="cd /drum/dl/bt/ && lcl"
+alias lock="xscreensaver-command -activate"
+alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
+alias tree="tree -Csu"
+
+
+# pacman
+alias pacman="pacman-color"
+
+# ipod
+alias mountpod="mount -o check=relaxed /mnt/ipod"
+alias umountpod="umount /mnt/ipod"
+alias podspace="df -h /mnt/ipod"
+alias ejectpod="eject /mnt/ipod"
+alias mktunes.pl="mktunes.pl --fwguid=000A27001ACA02E7"
+
+# mplayer
+alias mplayerns="mplayer -nosound"
+alias gmplayerns="gmplayer -nosound"
+alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
+alias stream="nc downbe 6969 | mplayer -"
+
+# bttorrent
+alias scptorsdownbe="scp /Desktop/*.torrent noah@downbe:~/ff_dl && rm -Rvf /Desktop/*.torrent"
+alias scptorsdownbe="scp /home/noah/gc_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
+alias scptorsdownbe.at="scp /Desktop/*.torrent noah@downbe.at:~/ff_dl && rm -Rvf /Desktop/*.torrent"
+
+# gnu screen
+alias sS="screen -S"
+alias sls="screen -ls"
+
+# vim
+alias letter="cp /home/noah/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
+alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)'"
+alias vimo="vim -o"
+alias vimO="vim -O"
+alias gvimo="gvim -o"
+alias gvimO="gvim -O"
+alias vless="vim -u /usr/share/vim/macros/less.vim"
+alias vimpass="vim /home/noah/gits/checkouts/mpass/mpass.gpg"
+# self-referential
+alias va="vim /home/noah/.zsh/aliases; source /home/noah/.zsh/aliases; tail -n 1 /home/noah/.zsh/aliases"
+
+# vim: set ft=zsh
