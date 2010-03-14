@@ -1,0 +1,1 @@
+.zshrc is a link to ../.zshrc, which should resolve to $HOME/.zshrc
