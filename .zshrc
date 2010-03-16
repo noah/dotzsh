@@ -18,5 +18,7 @@ source ~/.zsh/aliases
 source ~/.zsh/prompt
 source ~/.zsh/keychain
 source ~/.zsh/xorg
+source ~/.zsh/ec2
+source ~/.zsh/path
 
 # vim: set ft=zsh
