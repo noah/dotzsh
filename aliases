@@ -29,7 +29,7 @@ alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
 # user
 alias bhttpd="/etc/rc.d/httpd restart"
-alias brew="sleep 4m; notify-send -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -u critical -t 0 \"Coffee's done!\""
+alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
 alias fm=fetchmail
@@ -42,7 +42,6 @@ alias lclbt="cd /drum/dl/bt/ && lcl"
 alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
-
 
 # pacman
 alias pacman="pacman-color"
@@ -77,7 +76,7 @@ alias vimO="vim -O"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
-alias vimpass="vim /home/noah/gits/checkouts/mpass/mpass.gpg"
+alias vimpass="pushd /home/noah/gits/checkouts/mpass; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
 # self-referential
 alias va="vim /home/noah/.zsh/aliases; source /home/noah/.zsh/aliases; tail -n 1 /home/noah/.zsh/aliases"
 
