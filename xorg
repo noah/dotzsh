@@ -4,4 +4,4 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec startx # ~/.xinitrc decides which wm to use
 fi
 
-# vim: set ft=zsh
+# vim: ft=zsh

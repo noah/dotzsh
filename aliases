@@ -81,4 +81,4 @@ alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias xpdf="apvlv"
 
-# vim: set ft=zsh
+# vim: ft=zsh

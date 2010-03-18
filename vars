@@ -11,4 +11,4 @@ export CK=/www/kent/2010/spring
 export G=/home/noah/gits
 export PATH=/usr/local/bin:/home/noah/bin:$PATH
 
-# vim: set ft=zsh
+# vim: ft=zsh

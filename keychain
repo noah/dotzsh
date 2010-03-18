@@ -3,4 +3,4 @@
 source ~/.keychain/$HOST-sh
 source ~/.keychain/$HOST-sh-gpg
 
-# vim: set ft=zsh
+# vim: ft=zsh

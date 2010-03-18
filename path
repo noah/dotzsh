@@ -1,3 +1,3 @@
 export PATH=$PATH:/home/noah/bin
 
-# vim: set ft=zsh
+# vim: ft=zsh

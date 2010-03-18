@@ -214,4 +214,4 @@ setopt VI
 # connected to a terminal.
 setopt ZLE
 
-# vim: set ft=zsh : */ ~
+# vim: ft=zsh
