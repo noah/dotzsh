@@ -166,7 +166,7 @@ setopt HASH_DIRS
 # avoids the problem of reflexively answering `yes' to the query when
 # one didn't really mean it.  The wait and query can always be avoided
 # by expanding the `*' in ZLE (with tab).
-setopt RM_STAR_WAIT
+unsetopt RM_STAR_WAIT
 
 
 #   ================================================ Job Control
