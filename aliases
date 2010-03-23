@@ -8,12 +8,13 @@ alias lcl="lc|less"
 alias lsgrep="ls -al|grep -i"
 alias hgrep="cat ~/.histfile| grep"
 #
+alias ..="cd .."
 alias cp="cp -i"
 alias df="df -kTh"
-alias rm="rm -i"
-alias ..="cd .."
-alias mv="mv -i"
+alias dtop='watch -n2 df -h'
 alias mkdir="mkdir -p"
+alias mv="mv -i"
+alias rm="rm -i"
 alias su-="su -"
 
 # ssh
@@ -29,6 +30,8 @@ alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
 # pacman
 alias pacman="pacman-color"
+alias p="pacman"
+alias y="yaourt"
 
 # ipod
 alias mountpod="mount -o check=relaxed /mnt/ipod"
@@ -80,5 +83,7 @@ alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias xpdf="apvlv"
+alias fstab="vim /etc/fstab"
+alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
 
 # vim: ft=zsh

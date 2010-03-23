@@ -20,5 +20,6 @@ source ~/.zsh/keychain
 source ~/.zsh/xorg
 source ~/.zsh/ec2
 source ~/.zsh/path
+source ~/.zsh/functions
 
 # vim: set ft=zsh
