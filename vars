@@ -7,9 +7,11 @@ export SCAN=/drum/misc/backup/ns_cache
 export IPOD_MOUNTPOINT=/mnt/ipod
 export PYTHONSTARTUP=$HOME/.pythonrc
 
-# kent 
 export CK=/www/kent/2010/spring
 export G=/home/noah/gits
 export PATH=/usr/local/bin:/home/noah/bin:$PATH
+
+# mutt needs this
+export MAIL=/home/noah/Maildir
 
 # vim: ft=zsh
