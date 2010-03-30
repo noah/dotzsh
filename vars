@@ -6,9 +6,10 @@ export OOO_FORCE_DESKTOP=gnome
 export SCAN=/drum/misc/backup/ns_cache
 export IPOD_MOUNTPOINT=/mnt/ipod
 export PYTHONSTARTUP=$HOME/.pythonrc
+export AC=/home/noah/gits/github/attach-cache
 
 # kent 
-export CK=/www/kent/2010/spring
+export CK=/home/noah/gits/checkouts/kent/2010
 export G=/home/noah/gits
 export PATH=/usr/local/bin:/home/noah/bin:$PATH
 
