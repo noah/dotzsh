@@ -9,8 +9,11 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 export AC=/home/noah/gits/github/attach-cache
 
 # kent 
-export CK=/home/noah/gits/checkouts/kent/2010
+export CK_BASE=/home/noah/gits/checkouts/kent
+export CK=$CK_BASE/2010/spring
 export G=/home/noah/gits
 export PATH=/usr/local/bin:/home/noah/bin:$PATH
+
+export JAVA_HOME=/opt/java
 
 # vim: ft=zsh
