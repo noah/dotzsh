@@ -44,9 +44,8 @@ alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc downbe 6969 | mplayer -"
 
 # bttorrent
-alias scptorsdownbe="scp /Desktop/*.torrent noah@downbe:~/ff_dl && rm -Rvf /Desktop/*.torrent"
-alias scptorsdownbe="scp /home/noah/gc_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
-alias scptorsdownbe.at="scp /Desktop/*.torrent noah@downbe.at:~/ff_dl && rm -Rvf /Desktop/*.torrent"
+#alias scptorsdownbe="scp /home/noah/gc_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
+alias scptorsdownbe="scp ~/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf ~/ff_dl/*.torrent"
 
 # gnu screen
 alias sS="screen -S"
@@ -54,13 +53,13 @@ alias sls="screen -ls"
 
 # vim
 alias letter="cp /home/noah/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
-alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)'"
+alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
-alias vimpass="pushd /home/noah/gits/checkouts/mpass; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
+alias vimpass="pushd /home/noah/gits/checkouts/mpass; git pull; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
 # self-referential
 alias va="vim /home/noah/.zsh/aliases; source /home/noah/.zsh/aliases; tail -n 1 /home/noah/.zsh/aliases"
 
