@@ -1,6 +1,6 @@
 # coreutils
 # ls
-alias ls="ls --color=always"
+alias ls="ls"
 alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
 alias lc="ls -halt"
@@ -17,6 +17,8 @@ alias mkdir="mkdir -p"
 alias mv="mv -i"
 alias rm="rm -i"
 alias su-="su -"
+alias chown="chown -v"
+alias rmRf="rm -Rf"
 
 # ssh
 alias downbe="ssh -Y $(whoami)@downbe"
@@ -49,6 +51,7 @@ alias stream="nc downbe 6969 | mplayer -"
 
 # bttorrent
 alias scptorsdownbe="scp /home/noah/gc_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
+alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
 #alias scptorsdownbe="scp -P 22222 ~/gc_dl/*.torrent noah@downbe:~/gc_dl && rm -Rvf ~/gc_dl/*.torrent"
 
 # gnu screen
