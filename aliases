@@ -1,6 +1,6 @@
 # coreutils
 # ls
-alias ls="ls"
+alias ls="ls --color=auto"
 alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
 alias lc="ls -halt"
