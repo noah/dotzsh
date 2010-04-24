@@ -51,7 +51,7 @@ alias stream="nc downbe 6969 | mplayer -"
 
 # bttorrent
 alias scptorsdownbe="scp /home/noah/gc_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
-alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
+#alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
 #alias scptorsdownbe="scp -P 22222 ~/gc_dl/*.torrent noah@downbe:~/gc_dl && rm -Rvf ~/gc_dl/*.torrent"
 
 # gnu screen
@@ -84,7 +84,6 @@ alias lclbt="cd /drum/dl/bt/ && lcl"
 alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
-alias xpdf="apvlv"
 alias fstab="vim /etc/fstab"
 alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
 alias ta="tmux attach"
