@@ -1,6 +1,6 @@
 # coreutils
 # ls
-alias ls="ls"
+alias ls="ls --color=auto"
 alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
 alias lc="ls -halt"
@@ -86,6 +86,6 @@ alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias fstab="vim /etc/fstab"
 alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
-alias ta="tmux attach"
+alias ta="tmux attach || tmux"
 
 # vim: ft=zsh
