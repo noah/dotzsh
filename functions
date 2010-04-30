@@ -12,3 +12,16 @@ function mandelbrot {
         echo
     done
 }
+
+function figlets {
+  if [[ "$1" != "" ]]; then
+    for x in $(locate \*.flf); do 
+      figlet -f `basename $x .flf` "$1"
+    done | less # yeah, this probably won't work in bash <-
+  else
+    echo "Usage: ./figlets <string>"
+    return 1
+  fi
+}
+
+# vim: ft=zsh

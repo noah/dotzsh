@@ -88,5 +88,6 @@ alias xpdf="apvlv"
 alias fstab="vim /etc/fstab"
 alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
 alias ta="tmux attach || tmux"
+alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 
 # vim: ft=zsh
