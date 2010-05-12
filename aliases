@@ -1,20 +1,24 @@
 # coreutils
 # ls
-alias la="ls -alhF --classify --color=auto"
-alias ll="ls -lhF --color=auto --classify"
 alias ls="ls --color=auto"
+alias la="ls -alhF --classify"
+alias ll="ls -lhF --classify"
 alias lc="ls -halt"
+alias lsl="ls|less"
 alias lcl="lc|less"
 alias lsgrep="ls -al|grep -i"
 alias hgrep="cat ~/.histfile| grep"
 #
+alias ..="cd .."
 alias cp="cp -i"
 alias df="df -kTh"
-alias rm="rm -i"
-alias ..="cd .."
-alias mv="mv -i"
+alias dtop='watch -n2 df -h'
 alias mkdir="mkdir -p"
+alias mv="mv -i"
+alias rm="rm -i"
 alias su-="su -"
+alias chown="chown -v"
+alias rmRf="rm -Rf"
 
 # ssh
 alias downbe="ssh -Y $(whoami)@downbe"
@@ -29,6 +33,8 @@ alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
 # pacman
 alias pacman="pacman-color"
+alias p="pacman"
+alias y="yaourt"
 
 # ipod
 alias mountpod="mount -o check=relaxed /mnt/ipod"
@@ -44,9 +50,9 @@ alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc downbe 6969 | mplayer -"
 
 # bttorrent
-alias scptorsdownbe="scp /Desktop/*.torrent noah@downbe:~/ff_dl && rm -Rvf /Desktop/*.torrent"
 alias scptorsdownbe="scp /home/noah/gc_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
-alias scptorsdownbe.at="scp /Desktop/*.torrent noah@downbe.at:~/ff_dl && rm -Rvf /Desktop/*.torrent"
+alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
+#alias scptorsdownbe="scp -P 22222 ~/gc_dl/*.torrent noah@downbe:~/gc_dl && rm -Rvf ~/gc_dl/*.torrent"
 
 # gnu screen
 alias sS="screen -S"
@@ -54,13 +60,13 @@ alias sls="screen -ls"
 
 # vim
 alias letter="cp /home/noah/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
-alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)'"
+alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
-alias vimpass="pushd /home/noah/gits/checkouts/mpass; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
+alias vimpass="pushd /home/noah/gits/checkouts/mpass; git pull; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
 # self-referential
 alias va="vim /home/noah/.zsh/aliases; source /home/noah/.zsh/aliases; tail -n 1 /home/noah/.zsh/aliases"
 
@@ -71,7 +77,6 @@ alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav
 alias fm=fetchmail
 alias h="history"
 alias info="pinfo"
-alias ip="elinks --dump checkip.dyndns.org"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
 alias lclbt="cd /drum/dl/bt/ && lcl"
@@ -80,6 +85,10 @@ alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias xpdf="apvlv"
 alias rmpyc="find . -name '*.pyc' -exec rm {} \;"
+alias fstab="vim /etc/fstab"
+alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
+alias ta="tmux attach || tmux"
+alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 
 
 alias bhttpd="sudo /etc/rc.d/httpd restart"
