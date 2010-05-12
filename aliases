@@ -65,7 +65,6 @@ alias vimpass="pushd /home/noah/gits/checkouts/mpass; vim /home/noah/gits/checko
 alias va="vim /home/noah/.zsh/aliases; source /home/noah/.zsh/aliases; tail -n 1 /home/noah/.zsh/aliases"
 
 # user
-alias bhttpd="/etc/rc.d/httpd restart"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
@@ -80,5 +79,10 @@ alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias xpdf="apvlv"
+alias rmpyc="find . -name '*.pyc' -exec rm {} \;"
 
+
+alias bhttpd="sudo /etc/rc.d/httpd restart"
+alias access_logs="multitail /var/log/httpd/attachcache.access.log /var/log/nginx/attachcache.access.log"
+alias error_logs="multitail /var/log/httpd/attachcache.error.log /var/log/nginx/attachcache.error.log"
 # vim: ft=zsh

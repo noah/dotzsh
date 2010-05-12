@@ -1,3 +1,5 @@
+autoload -Uz vcs_info
+
 # Global colors
 for COLOR in CYAN MAGENTA BLUE RED GREEN YELLOW WHITE BLACK; do
     eval PR_BRIGHT_$COLOR='%{$fg[${(L)COLOR}]%}'

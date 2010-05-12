@@ -14,4 +14,6 @@ export PATH=/usr/local/bin:/home/noah/bin:$PATH
 # mutt needs this
 export MAIL=/home/noah/Maildir
 
+export DJANGO_SETTINGS_MODULE='attachcache.settings'
+
 # vim: ft=zsh
