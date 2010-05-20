@@ -111,7 +111,7 @@ setopt MARK_DIRS
 # fcntl call, where this method is available.  On recent operating
 # systems this may provide  better  perfor‐ mance, in particular
 # avoiding history corruption when files are stored on NFS.
-setopt HIST_FCNTL_LOCK
+#setopt HIST_FCNTL_LOCK
 
 # When searching for history entries in the line editor, do not
 # display duplicates of a line previously found, even if the
