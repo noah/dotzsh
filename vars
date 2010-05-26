@@ -10,7 +10,7 @@ export AC=/home/noah/gits/github/attach-cache
 
 # kent 
 export CK_BASE=/home/noah/gits/checkouts/kent
-export CK=$CK_BASE/2010/spring
+export CK=$CK_BASE/2010/summer
 export G=/home/noah/gits
 export PATH=/usr/local/bin:/home/noah/bin:$PATH
 

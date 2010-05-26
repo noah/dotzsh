@@ -50,9 +50,8 @@ alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc downbe 6969 | mplayer -"
 
 # bttorrent
-alias scptorsdownbe="scp /home/noah/gc_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
-#alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
-#alias scptorsdownbe="scp -P 22222 ~/gc_dl/*.torrent noah@downbe:~/gc_dl && rm -Rvf ~/gc_dl/*.torrent"
+alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
+alias scptorsdownbe.at="scp -P 22222 ~/ff_dl/*.torrent noah@downbe.at:~/ff_dl && rm -Rvf ~/ff_dl/*.torrent"
 
 # gnu screen
 alias sS="screen -S"
@@ -80,12 +79,13 @@ alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
-alias lclbt="cd /drum/dl/bt/ && lcl"
+alias lclbt="cd /drum/dl/bt/ || cd /mnt/drum/dl/bt && lcl"
 alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias fstab="vim /etc/fstab"
 alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
 alias ta="tmux attach || tmux"
+alias pkill9="pkill -9"
 
 # vim: ft=zsh
