@@ -90,4 +90,8 @@ alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah
 alias ta="tmux attach || tmux"
 alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 
+
+# wine
+alias ie6kill="pkill IEXPLORE; pkill wineserver;"
+
 # vim: ft=zsh
