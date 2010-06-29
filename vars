@@ -7,6 +7,7 @@ export SCAN=/drum/misc/backup/ns_cache
 export IPOD_MOUNTPOINT=/mnt/ipod
 export PYTHONSTARTUP=$HOME/.pythonrc
 export AC=/home/noah/gits/github/attach-cache
+export PRINT_QUEUE=/cygdrive/c/cygwin/home/noah/gits/github/print-watch.py/queue
 
 # kent 
 export CK_BASE=/home/noah/gits/checkouts/kent

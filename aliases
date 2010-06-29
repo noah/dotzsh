@@ -20,6 +20,8 @@ alias su-="su -"
 alias chown="chown -v"
 alias rmRf="rm -Rf"
 
+alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
+
 # ssh
 alias downbe="ssh -Y $(whoami)@downbe"
 alias downbe.at="ssh -Y $(whoami)@downbe.at"
@@ -28,11 +30,11 @@ alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 noah@
 # cmus
 alias cr="cmus-remote"
 alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
+alias riddim="cmus-remote http://127.0.0.1:18944"
 alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
 # pacman
-alias pacman="pacman-color"
 alias p="pacman"
 alias y="yaourt"
 
@@ -90,7 +92,7 @@ alias pkill9="pkill -9"
 alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 
 
-# wine
+# wine/windows
 alias ie6kill="pkill IEXPLORE; pkill wineserver;"
 
 # vim: ft=zsh
