@@ -20,6 +20,9 @@ alias su-="su -"
 alias chown="chown -v"
 alias rmRf="rm -Rf"
 
+# python
+alias rmpyc='find . -iname "*.pyc" -print | xargs rm -fv'
+
 # ssh
 alias downbe="ssh -Y $(whoami)@downbe"
 alias downbe.at="ssh -Y $(whoami)@downbe.at"
@@ -58,7 +61,7 @@ alias sS="screen -S"
 alias sls="screen -ls"
 
 # vim
-alias letter="cp /home/noah/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
+alias letter="cp /home/noah/gits/checkouts/letters/_templates/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
 alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
