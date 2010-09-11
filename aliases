@@ -6,7 +6,7 @@ alias ll="ls -lhF --classify"
 alias lc="ls -halt"
 alias lsl="ls|less"
 alias lcl="lc|less"
-alias lsgrep="ls -al|grep -i"
+alias lsgrep="ls -a|grep -i"
 alias hgrep="cat ~/.histfile| grep"
 #
 alias ..="cd .."

@@ -20,4 +20,6 @@ export JAVA_HOME=/opt/java
 # uc
 export UC=/home/noah/gits/checkouts/uchicago
 
+export TERM=rxvt-256color
+
 # vim: ft=zsh
