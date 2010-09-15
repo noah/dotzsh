@@ -21,4 +21,6 @@ export PATH=/usr/local/bin:/home/noah/bin:$PATH
 
 export JAVA_HOME=/opt/java
 
+export PYTHONPATH=$PYTHONPATH:/home/attachcache/gits/attachcache
+
 # vim: ft=zsh

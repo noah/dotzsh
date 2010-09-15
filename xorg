@@ -1,8 +1,8 @@
 # poor man's display manager
 #
-if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+#if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   # ~/.xinitrc decides which wm to use
-  exec startx > ~/startx.log 2>&1
-fi
+#  exec startx > ~/startx.log 2>&1
+#fi
 
 # vim: ft=zsh
