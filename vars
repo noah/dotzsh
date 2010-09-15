@@ -11,7 +11,7 @@ export PRINT_QUEUE=/cygdrive/c/cygwin/home/noah/gits/github/print-watch.py/queue
 
 # kent 
 export CK_BASE=/home/noah/gits/checkouts/kent
-export CK=$CK_BASE/2010/summer
+export CK=$CK_BASE/2010/fall
 export G=/home/noah/gits
 export PATH=/usr/local/bin:/home/noah/bin:$PATH
 

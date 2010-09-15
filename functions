@@ -24,4 +24,11 @@ function figlets {
   fi
 }
 
+
+function ac {
+  if [[ "$1" != "" ]]; then
+    $(echo|mutt -s '' -a $argv -- $(cat ~/.zsh/hidden_email))
+  fi
+}
+
 # vim: ft=zsh

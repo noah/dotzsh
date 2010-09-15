@@ -90,7 +90,7 @@ alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah
 alias ta="tmux attach || tmux"
 alias pkill9="pkill -9"
 alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
-
+alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
 
 # wine/windows
 alias ie6kill="pkill IEXPLORE; pkill wineserver;"
