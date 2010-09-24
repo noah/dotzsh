@@ -6,7 +6,7 @@ alias ll="ls -lhF --classify"
 alias lc="ls -halt"
 alias lsl="ls|less"
 alias lcl="lc|less"
-alias lsgrep="ls -al|grep -i"
+alias lsgrep="ls -a|grep -i"
 alias hgrep="cat ~/.histfile| grep"
 #
 alias ..="cd .."
@@ -31,11 +31,11 @@ alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 noah@
 # cmus
 alias cr="cmus-remote"
 alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
+alias riddim="cmus-remote http://127.0.0.1:18944"
 alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
 # pacman
-alias pacman="pacman-color"
 alias p="pacman"
 alias y="yaourt"
 
@@ -91,9 +91,9 @@ alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah
 alias ta="tmux attach || tmux"
 alias pkill9="pkill -9"
 alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
+alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
 
-
-# wine
+# wine/windows
 alias ie6kill="pkill IEXPLORE; pkill wineserver;"
 
 # vim: ft=zsh
