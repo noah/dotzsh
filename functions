@@ -37,4 +37,13 @@ git_diff (){
     git diff --no-ext-diff $@
 }
 
+pf(){
+  print_queue=~/print_queue
+  if [[ $argv[1] == "" ]]; then
+    echo "Usage:  $0 <files>"
+    return -1
+  fi
+  cp -v $@ $print_queue
+}
+
 # vim: ft=zsh
