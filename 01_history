@@ -3,3 +3,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=999999
 SAVEHIST=999999
+SHARE_HISTORY=1
+
+# Grep the history with 'h'
+# h () { history 0 | grep $1 }
