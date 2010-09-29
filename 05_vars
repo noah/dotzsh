@@ -18,7 +18,7 @@ export PATH=/usr/local/bin:/home/noah/bin:$PATH
 export JAVA_HOME=/opt/java
 
 # uc
-export UC=/home/noah/gits/checkouts/uchicago/2010/autumn
+export UC=/home/noah/gits/checkouts/uchicago/cspp/2010/autumn
 
 export TERM=rxvt-256color
 
