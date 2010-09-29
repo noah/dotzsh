@@ -22,4 +22,5 @@ source ~/.zsh/xorg
 source ~/.zsh/path
 source ~/.zsh/functions
 
+umask 077
 # vim: set ft=zsh
