@@ -46,13 +46,4 @@ pf(){
   cp -v $@ $print_queue
 }
 
-gcam(){
-  if [[ ! -n $1 ]]; then
-    echo "gcam <msg>"
-    return -1
-  fi
-  echo "'$@'"
-  git commit -a -m"'$@'"
-}
-
 # vim: ft=zsh

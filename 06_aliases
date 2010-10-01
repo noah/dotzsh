@@ -68,6 +68,7 @@ alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
 alias vimpass="pushd /home/noah/gits/checkouts/mpass; git pull; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
+
 # self-referential
 alias va="vim /home/noah/.zsh/06_aliases; source /home/noah/.zsh/06_aliases"
 alias vf="vim /home/noah/.zsh/11_functions; source /home/noah/.zsh/11_functions"
@@ -90,6 +91,10 @@ alias fstab="vim /etc/fstab"
 alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
 alias tmux="tmux -2"
 alias ta="tmux attach || tmux"
+alias tat='tmux attach -t'
+alias tls='tmux ls'
+alias tns='tmux new -s'
+
 alias pkill9="pkill -9"
 alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
