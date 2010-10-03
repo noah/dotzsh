@@ -17,6 +17,6 @@ export PATH=/usr/local/bin:/home/noah/bin:$PATH
 export JAVA_HOME=/opt/java
 
 # uc
-export UC=/home/noah/gits/checkouts/uchicago
+export UC=/home/tilton/gits/checkouts/uchicago/cspp/2010/autumn
 
 # vim: ft=zsh
