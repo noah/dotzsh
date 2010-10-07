@@ -19,4 +19,7 @@ export JAVA_HOME=/opt/java
 # uc
 export UC=/home/tilton/gits/checkouts/uchicago/cspp/2010/autumn
 
+export LOCALE="en_us.UTF-8"
+export LANG="en_us.UTF-8"
+
 # vim: ft=zsh
