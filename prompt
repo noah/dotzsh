@@ -1,3 +1,5 @@
+autoload -Uz vcs_info
+
 # Global colors
 for COLOR in CYAN MAGENTA BLUE RED GREEN YELLOW WHITE BLACK; do
     eval PR_BRIGHT_$COLOR='%{$fg[${(L)COLOR}]%}'
@@ -42,7 +44,7 @@ PROMPT='\
 !${PR_BOLD_CYAN}%!${PR_RESET}$SEP\
 +${PR_BOLD_YELLOW}%j${PR_RESET}$SEP\
 *${PR_BOLD_GREEN}%n${PR_RESET}$SEP\
-@${PR_BOLD_MAGENTA}%m${PR_RESET}$SEP\
+@${PR_BOLD_MAGENTA}%M${PR_RESET}$SEP\
 .${PR_BOLD_BLUE}%D{%Y%m%d %T %Z}${PR_RESET}$SEP\
 ^${PR_BOLD_RED}%?${PR_RESET}$SEP\
 ${VI_MODE}${PR_RESET}

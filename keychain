@@ -1,5 +1,5 @@
 # keychain
-/usr/bin/keychain --quiet ~/.ssh/id_dsa
+/usr/bin/keychain --quiet ~/.ssh/id_rsa
 source ~/.keychain/$HOST-sh
 source ~/.keychain/$HOST-sh-gpg
 

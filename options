@@ -56,6 +56,9 @@ setopt AUTO_REMOVE_SLASH
 # completion is done from both ends.
 setopt COMPLETE_IN_WORD
 
+# spell check commands
+setopt CORRECT
+
 # When the current word has a glob pattern, do not insert all the words
 # resulting from the expansion but  generate  matches  as  for
 # completion  and  cycle through  them  like MENU_COMPLETE. The matches
@@ -195,6 +198,10 @@ setopt MONITOR
 # Report the status of background jobs immediately, rather than waiting 
 # until just before printing a prompt.
 setopt NOTIFY
+
+
+# ?
+setopt NUMERIC_GLOB_SORT
 
 #   ================================================ Prompting
 # If set, parameter expansion, command substitution and arithmetic expansion 

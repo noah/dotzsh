@@ -16,9 +16,9 @@ source ~/.zsh/bindkeys
 source ~/.zsh/vars
 source ~/.zsh/aliases
 source ~/.zsh/prompt
-source ~/.zsh/keychain
+#source ~/.zsh/keychain
 source ~/.zsh/xorg
-source ~/.zsh/ec2
+#source ~/.zsh/ec2
 source ~/.zsh/path
 source ~/.zsh/functions
 
