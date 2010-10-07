@@ -19,80 +19,26 @@ alias rm="rm -i"
 alias su-="su -"
 alias chown="chown -v"
 alias rmRf="rm -Rf"
+alias egrep="egrep --colour=auto"
 
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
 
 # ssh
 alias downbe="ssh -Y $(whoami)@downbe"
 alias downbe.at="ssh -Y $(whoami)@downbe.at"
-alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 noah@127.0.0.1"
-
-# cmus
-alias cr="cmus-remote"
-alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
-alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
-alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
-
-# pacman
-alias p="pacman"
-alias y="yaourt"
-
-# ipod
-alias mountpod="mount -o check=relaxed /mnt/ipod"
-alias umountpod="umount /mnt/ipod"
-alias podspace="df -h /mnt/ipod"
-alias ejectpod="eject /mnt/ipod"
-alias mktunes.pl="mktunes.pl --fwguid=000A27001ACA02E7"
-
-# mplayer
-alias mplayerns="mplayer -nosound"
-alias gmplayerns="gmplayer -nosound"
-alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
-alias stream="nc downbe 6969 | mplayer -"
-
-# riddim
-alias rq='riddim -q'
-alias re='riddim -e'
-alias rc='riddim -c'
-
-# bttorrent
-alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
-alias scptorsdownbe.at="scp -P 22222 ~/ff_dl/*.torrent noah@downbe.at:~/ff_dl && rm -Rvf ~/ff_dl/*.torrent"
-
-# gnu screen
-alias sS="screen -S"
-alias sls="screen -ls"
-
+alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 $(whoami)@127.0.0.1"
 # vim
-alias letter="cp /home/noah/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
-alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
-alias vless="vim -u /usr/share/vim/macros/less.vim"
-alias vimpass="pushd /home/noah/gits/checkouts/mpass; git pull; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
-
-# self-referential
-alias va="vim /home/noah/.zsh/06_aliases; source /home/noah/.zsh/06_aliases"
-alias vf="vim /home/noah/.zsh/11_functions; source /home/noah/.zsh/11_functions"
-
-# user
-alias bhttpd="/etc/rc.d/httpd restart"
-alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
-alias egrep="egrep --colour=auto"
-alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
-alias fm=fetchmail
-alias h="history"
-alias info="pinfo"
-alias irssi="irssi -n print -c irc.freenode.net"
-alias kX="killall X"
-alias lclbt="cd /drum/dl/bt/ || cd /mnt/drum/dl/bt && lcl"
+alias vimpass="pushd ~/gits/checkouts/mpass; git pull; vim ~/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
+alias va="vim ~/.zsh/06_aliases; source ~/.zsh/06_aliases"
+alias vf="vim ~/.zsh/11_functions; source ~/.zsh/11_functions"
 alias lock="xscreensaver-command -activate"
-alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
-alias fstab="vim /etc/fstab"
-alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
+
+# tmux
 alias tmux="tmux -2"
 alias ta="tmux attach || tmux"
 alias tat='tmux attach -t'
@@ -100,10 +46,6 @@ alias tls='tmux ls'
 alias tns='tmux new -s'
 
 alias pkill9="pkill -9"
-alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
-
-# wine/windows
-alias ie6kill="pkill IEXPLORE; pkill wineserver;"
 
 # vim: ft=zsh
