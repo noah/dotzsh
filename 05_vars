@@ -1,0 +1,23 @@
+export EDITOR="vim"
+export VISUAL="vim"
+export GPGKEY=DAFA7071
+export GPG_TTY=`tty`
+export OOO_FORCE_DESKTOP=gnome
+export SCAN=/drum/misc/backup/ns_cache
+export IPOD_MOUNTPOINT=/mnt/ipod
+export PYTHONSTARTUP=$HOME/.pythonrc
+export AC=/home/noah/gits/github/attach-cache
+export PRINT_QUEUE=/cygdrive/c/cygwin/home/noah/gits/github/print-watch.py/queue
+
+# kent 
+export CK_BASE=/home/noah/gits/checkouts/kent
+export CK=$CK_BASE/2010/fall
+export G=/home/noah/gits
+export JAVA_HOME=/opt/java
+
+# uc
+export UC=/home/noah/gits/checkouts/uchicago/cspp/2010/autumn
+
+export TERM=rxvt-256color
+
+# vim: ft=zsh

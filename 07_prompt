@@ -1,0 +1,78 @@
+# git prompt stuff
+# See:  http://github.com/bryanl/zshkit/blob/master/06_git
+#
+# could also use vcs_info
+function git-need-to-push() {
+  if pushtime=$(echo $1 | grep 'Your branch is ahead' 2> /dev/null); then
+    # ^K !-
+    echo "↑"
+  fi
+}
+function git-prompt() {
+  gstatus=$(git status 2> /dev/null)
+  branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
+  dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
+  if [[ x$branch != x ]]; then
+    dirty_color=$fg[green]
+    push_status=$(git-need-to-push $gstatus 2> /dev/null)
+    if [[ $dirty = 1 ]] { dirty_color=$fg[red] }
+      [ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} $push_status"
+    fi
+}
+
+
+# Global colors
+for COLOR in CYAN MAGENTA BLUE RED GREEN YELLOW WHITE BLACK; do
+    eval PR_BRIGHT_$COLOR='%{$fg[${(L)COLOR}]%}'
+    eval PR_BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+done
+PR_RESET="%{$reset_color%}"
+SEP="  "
+
+# Display vi mode in prompt
+#       See: http://zshwiki.org/home/examples/zlewidgets
+
+function zle-line-init zle-keymap-select {
+    VI_MODE="${${KEYMAP/vicmd/${PR_BOLD_RED}-- NORMAL --${PR_RESET}}/(main|viins)/${PR_BOLD_GREEN}-- INSERT --${PR_RESET}}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~
+# A custom prompt:
+#
+# !4386  +0  *noah  @downbe  .20100313 16:24:44 CST  ?0
+# %/# 
+#
+# The value prefixes are semi-mnemonic.  E.g.,
+#   !n runs the command with history number n
+#   + is displayed in output of jobs command e.g., 
+#       $ jobs
+#       [1]  + suspended  vim
+#   * of course, the logged-in user is represented by a star
+#   @ at hostname 
+#   . dot for where we are right now (in terms of time)
+#   $? for exit status of last job (as in $?)
+#
+# history num
+# num jobs
+# user
+# host
+# timestamp
+# exit status of last command
+
+PROMPT='\
+!${PR_BOLD_CYAN}%!${PR_RESET}$SEP\
++${PR_BOLD_YELLOW}%j${PR_RESET}$SEP\
+*${PR_BOLD_GREEN}%n${PR_RESET}$SEP\
+@${PR_BOLD_MAGENTA}%m${PR_RESET}$SEP\
+.${PR_BOLD_BLUE}%D{%Y%m%d %T %Z}${PR_RESET}$SEP\
+?${PR_BOLD_RED}%?${PR_RESET}$SEP\
+${VI_MODE}${PR_RESET}
+%/
+%# '
+
+RPROMPT='`git-prompt`'
+
+# vim: ft=zsh

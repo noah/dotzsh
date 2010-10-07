@@ -24,4 +24,26 @@ function figlets {
   fi
 }
 
+expand-or-complete-with-dots() {
+  echo -n "\e[31m......\e[0m"
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
+
+
+git_diff (){
+    git diff --no-ext-diff $@
+}
+
+pf(){
+  print_queue=~/print_queue
+  if [[ $argv[1] == "" ]]; then
+    echo "Usage:  $0 <files>"
+    return -1
+  fi
+  cp -v $@ $print_queue
+}
+
 # vim: ft=zsh

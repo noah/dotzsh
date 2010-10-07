@@ -8,19 +8,8 @@ zstyle :compinstall filename '/home/noah/.zshrc'
 
 autoload -Uz compinit && compinit
 
-# order-sensitive
-source ~/.zsh/history
-source ~/.zsh/colors
-source ~/.zsh/options
-source ~/.zsh/bindkeys
-source ~/.zsh/vars
-source ~/.zsh/aliases
-source ~/.zsh/prompt
-source ~/.zsh/keychain
-source ~/.zsh/xorg
-#source ~/.zsh/ec2
-source ~/.zsh/path
-source ~/.zsh/functions
+for file in ~/.zsh/??_*; do
+  source $file
+done
 
-umask 077
 # vim: set ft=zsh
