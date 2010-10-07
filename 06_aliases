@@ -30,7 +30,6 @@ alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 noah@
 # cmus
 alias cr="cmus-remote"
 alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
-alias riddim="cmus-remote http://127.0.0.1:18944"
 alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
@@ -50,6 +49,11 @@ alias mplayerns="mplayer -nosound"
 alias gmplayerns="gmplayer -nosound"
 alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc downbe 6969 | mplayer -"
+
+# riddim
+alias rq='riddim -q'
+alias re='riddim -e'
+alias rc='riddim -c'
 
 # bttorrent
 alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
