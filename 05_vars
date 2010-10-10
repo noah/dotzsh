@@ -18,6 +18,8 @@ export JAVA_HOME=/opt/java
 # uc
 export UC=/home/noah/gits/checkouts/uchicago/cspp/2010/autumn
 
-export TERM=rxvt-256color
+# even though tmux, this must say screen
+# otherwise vim colors break :)
+export TERM=screen-256color
 
 # vim: ft=zsh
