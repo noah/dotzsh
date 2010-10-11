@@ -1,3 +1,0 @@
-export PATH=$PATH:/home/noah/bin:$JAVA_HOME/bin
-
-# vim: ft=zsh
