@@ -22,4 +22,6 @@ export UC=/home/noah/gits/checkouts/uchicago/cspp/2010/autumn
 # otherwise vim colors break :)
 export TERM=screen-256color
 
+export LD_LIBRARY_PATH=.
+
 # vim: ft=zsh

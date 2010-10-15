@@ -76,8 +76,10 @@ alias vimpass="pushd /home/noah/gits/checkouts/mpass; git pull; vim /home/noah/g
 # self-referential
 alias va="vim /home/noah/.zsh/06_aliases; source /home/noah/.zsh/06_aliases"
 alias vf="vim /home/noah/.zsh/11_functions; source /home/noah/.zsh/11_functions"
+alias reread="xrdb -all ~/.Xdefaults"
 
 # user
+alias ev="evince"
 alias bhttpd="/etc/rc.d/httpd restart"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
