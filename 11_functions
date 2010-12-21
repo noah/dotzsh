@@ -46,4 +46,49 @@ pf(){
   cp -v $@ $print_queue
 }
 
+# pmv:
+#       pattern match mv(1)
+#
+#       move files matching /pattern/ to <destination>
+#       pmv /pattern/ <destination>
+#
+#       create destination if doesn't exist
+pmv()
+{
+  if [ $# -ne 2 ]; then
+    echo "Usage: $0 /pattern/ <destination>"; return -1
+  fi
+  [ -d "$2" ] || mkdir -vp "$2"
+  ls -A | grep -i "$1" | while read line; do mv -v "$line" "$2"; done;
+}
+
+# prm:
+#      pattern rm(1)
+#
+#       remove files matching /pattern/
+#       prm /pattern/
+#
+prm()
+{
+  if [ $# -ne 1 ]; then
+    echo "Usage: $0 /pattern/"; return -1
+  fi
+  targets=$(ls -A | grep -i "$1")
+  echo "Removing '$1' recursively:"; echo
+  echo $targets
+  for second in {3..0}; do
+    echo -n " $second"
+    sleep 0.5
+  done
+  echo; echo $targets | while read line; do rm -rfv "$line"; done;
+}
+
+grepvim()
+{
+  if [ $# -ne 2 ]; then
+    echo "Usage: $0 /pattern/"; return -1
+  fi
+  ls -A | grep -i "$1" | while read line; do vim "$line"; done;
+}
+
 # vim: ft=zsh
