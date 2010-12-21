@@ -85,10 +85,12 @@ prm()
 
 grepvim()
 {
-  if [ $# -ne 2 ]; then
+  if [ $# -ne 1 ]; then
     echo "Usage: $0 /pattern/"; return -1
   fi
-  ls -A | grep -i "$1" | while read line; do vim "$line"; done;
+  grep -s -l -r "$1" * | while read line; do 
+    vim "$line" < /dev/pts/0 > /dev/pts/0
+  done;
 }
 
 # vim: ft=zsh
