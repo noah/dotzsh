@@ -46,6 +46,7 @@ alias ejectpod="eject /mnt/ipod"
 alias mktunes.pl="mktunes.pl --fwguid=000A27001ACA02E7"
 
 # mplayer
+alias m="mplayer"
 alias mplayerns="mplayer -nosound"
 alias gmplayerns="gmplayer -nosound"
 alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
@@ -66,7 +67,7 @@ alias sls="screen -ls"
 
 # vim
 alias letter="cp /home/noah/gits/checkouts/letters/_templates/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
-alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
+alias todo="pushd ~/gits/checkouts/todo; git pull; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
 alias gvimo="gvim -o"
@@ -78,6 +79,8 @@ alias vimpass="pushd /home/noah/gits/checkouts/mpass; git pull; vim /home/noah/g
 alias va="vim /home/noah/.zsh/06_aliases; source /home/noah/.zsh/06_aliases"
 alias vf="vim /home/noah/.zsh/11_functions; source /home/noah/.zsh/11_functions"
 
+alias myip="elinks -dump http://checkip.dyndns.org"
+
 # user
 alias bhttpd="/etc/rc.d/httpd restart"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
@@ -88,7 +91,7 @@ alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
-alias lclbt="cd /drum/dl/bt/ || cd /mnt/drum/dl/bt && lcl"
+alias lclbt="cd /drum/dl/bt/ 2>/dev/null || cd /mnt/drum/dl/bt && lcl"
 alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"

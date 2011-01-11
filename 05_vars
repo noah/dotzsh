@@ -16,10 +16,12 @@ export G=/home/noah/gits
 export JAVA_HOME=/opt/java
 
 # uc
-export UC=/home/noah/gits/checkouts/uchicago/cspp/2010/autumn
+export UC=/home/noah/gits/checkouts/uchicago/cspp/2011/winter
 
 # even though tmux, this must say screen
 # otherwise vim colors break :)
 export TERM=screen-256color
+
+export MOZ_DISABLE_PANGO=1
 
 # vim: ft=zsh
