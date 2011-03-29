@@ -32,12 +32,12 @@ SEP="  "
 # Display vi mode in prompt
 #       See: http://zshwiki.org/home/examples/zlewidgets
 
-function zle-line-init zle-keymap-select {
-    VI_MODE="${${KEYMAP/vicmd/${PR_BOLD_RED}-- NORMAL --${PR_RESET}}/(main|viins)/${PR_BOLD_GREEN}-- INSERT --${PR_RESET}}"
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+#     VI_MODE="${${KEYMAP/vicmd/${PR_BOLD_RED}-- NORMAL --${PR_RESET}}/(main|viins)/${PR_BOLD_GREEN}-- INSERT --${PR_RESET}}"
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 # ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~
 # A custom prompt:
@@ -69,7 +69,7 @@ PROMPT='\
 @${PR_BOLD_MAGENTA}%m${PR_RESET}$SEP\
 .${PR_BOLD_BLUE}%D{%Y%m%d %T %Z}${PR_RESET}$SEP\
 ?${PR_BOLD_RED}%?${PR_RESET}$SEP\
-${VI_MODE}${PR_RESET}
+${PR_RESET}
 %/
 %# '
 

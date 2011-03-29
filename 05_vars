@@ -16,11 +16,9 @@ export G=/home/noah/gits
 export JAVA_HOME=/opt/java
 
 # uc
-export UC=/home/noah/gits/checkouts/uchicago/cspp/2010/autumn
+export UC=/home/noah/gits/checkouts/uchicago/cspp/2011/spring
 
-# even though tmux, this must say screen
-# otherwise vim colors break :)
-export TERM=screen-256color
+[[ $TERM == "screen" ]] && export TERM="screen-256color"
 
 export LD_LIBRARY_PATH=.
 

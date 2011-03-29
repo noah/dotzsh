@@ -1,15 +1,9 @@
-# The following lines were added by compinstall
-
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[]=* r:|=* l:|=*'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-zstyle :compinstall filename '/home/noah/.zshrc'
-
-autoload -Uz compinit && compinit
 
 for file in ~/.zsh/??_*; do
   source $file
 done
+
+# sync tmpfs firefox
+#~/bin/firefox-sync > /dev/null
 
 # vim: set ft=zsh

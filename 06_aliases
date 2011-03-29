@@ -15,6 +15,7 @@ alias df="df -kTh"
 alias dtop='watch -n2 df -h'
 alias mkdir="mkdir -p"
 alias mv="mv -i"
+alias mvv="mv -v"
 alias rm="rm -i"
 alias su-="su -"
 alias chown="chown -v"
@@ -107,5 +108,13 @@ alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
 
 # wine/windows
 alias ie6kill="pkill IEXPLORE; pkill wineserver;"
+
+#
+alias makei='make -i'
+alias maken='make -n'
+alias makec='make clean'
+alias makea='make all'
+alias maket='make tests'
+
 
 # vim: ft=zsh
