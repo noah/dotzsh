@@ -83,4 +83,13 @@ prm()
   echo; echo $targets | while read line; do rm -rfv "$line"; done;
 }
 
+grepvim()
+{
+  if [ $# -ne 1 ]; then
+    echo "Usage: $0 /pattern/"; return -1
+  fi
+  grep -s -l -r "$1" * | while read line; do 
+    vim "$line" < /dev/pts/0 > /dev/pts/0
+  done;
+}
 # vim: ft=zsh
