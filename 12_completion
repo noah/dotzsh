@@ -9,6 +9,6 @@ zstyle :compinstall filename '/home/noah/.zshrc'
 autoload -Uz compinit && compinit
 
 # complete only pdf for evince
-compctl -g '*.pdf' evince
+#compctl -g '*.pdf' evince
 
 # vim: set ft=zsh

@@ -24,12 +24,12 @@ alias rmRf="rm -Rf"
 alias rmpyc='find . -iname "*.pyc" -print | xargs rm -fv'
 
 # ssh
-alias downbe="ssh -Y $(whoami)@downbe"
-alias downbe.at="ssh -Y $(whoami)@downbe.at"
+alias 7be="ssh -Y $(whoami)@7be"
+alias 7be.org="ssh -Y $(whoami)@0x7be.org"
 alias startsocks="ssh -f -c blowfish -C -D 11033 noah@127.0.0.1 sleep 30"
 
 # cmus
-alias cr="cmus-remote"
+alias cr="cmus-remote -P"
 alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
 alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
@@ -49,17 +49,13 @@ alias mktunes.pl="mktunes.pl --fwguid=000A27001ACA02E7"
 alias m="mplayer"
 alias mplayerns="mplayer -nosound"
 alias gmplayerns="gmplayer -nosound"
-alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
-alias stream="nc downbe 6969 | mplayer -"
-
-# riddim
-alias rq='riddim -q'
-alias re='riddim -e'
-alias rc='riddim -c'
+alias streamproj="nc 7be 6969 | mplayer -vf scale=1280:800 -"
+alias stream="nc 7be 6969 | mplayer -"
+alias mplayervdpau="mplayer -nocache -vo vdpau -vc ffh264vdpau"
 
 # bttorrent
-alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
-alias scptorsdownbe.at="scp -P 22222 ~/ff_dl/*.torrent noah@downbe.at:~/ff_dl && rm -Rvf ~/ff_dl/*.torrent"
+alias scptors7be="scp /home/noah/ff_dl/*.torrent noah@7be:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
+alias scptors7be.org="scp -P 22222 ~/ff_dl/*.torrent noah@0x7be.org:~/ff_dl && rm -Rvf ~/ff_dl/*.torrent"
 
 # gnu screen
 alias sS="screen -S"
@@ -109,5 +105,10 @@ alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
 
 # wine/windows
 alias ie6kill="pkill IEXPLORE; pkill wineserver;"
+
+#cpp
+alias s=scons
+alias sc="scons -c"
+
 
 # vim: ft=zsh
