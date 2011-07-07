@@ -22,22 +22,22 @@ function git-prompt() {
 
 
 # Global colors
-for COLOR in CYAN MAGENTA BLUE RED GREEN YELLOW WHITE BLACK; do
-    eval PR_BRIGHT_$COLOR='%{$fg[${(L)COLOR}]%}'
-    eval PR_BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
-done
+# for COLOR in CYAN MAGENTA BLUE RED GREEN YELLOW WHITE BLACK; do
+#     eval PR_BRIGHT_$COLOR='%{$fg[${(L)COLOR}]%}'
+#     eval PR_BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+# done
 PR_RESET="%{$reset_color%}"
 SEP="  "
 
 # Display vi mode in prompt
 #       See: http://zshwiki.org/home/examples/zlewidgets
 
-function zle-line-init zle-keymap-select {
-    VI_MODE="${${KEYMAP/vicmd/${PR_BOLD_RED}-- NORMAL --${PR_RESET}}/(main|viins)/${PR_BOLD_GREEN}-- INSERT --${PR_RESET}}"
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+#function zle-line-init zle-keymap-select {
+#    VI_MODE="${${KEYMAP/vicmd/${PR_BOLD_RED}-- NORMAL --${PR_RESET}}/(main|viins)/${PR_BOLD_GREEN}-- INSERT --${PR_RESET}}"
+#    zle reset-prompt
+#}
+#zle -N zle-line-init
+#zle -N zle-keymap-select
 
 # ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~
 # A custom prompt:
@@ -61,15 +61,17 @@ zle -N zle-keymap-select
 # host
 # timestamp
 # exit status of last command
+#
+# %F{color} gets color %f is escape
 
 PROMPT='\
-!${PR_BOLD_CYAN}%!${PR_RESET}$SEP\
-+${PR_BOLD_YELLOW}%j${PR_RESET}$SEP\
-*${PR_BOLD_GREEN}%n${PR_RESET}$SEP\
-@${PR_BOLD_MAGENTA}%m${PR_RESET}$SEP\
-.${PR_BOLD_BLUE}%D{%Y%m%d %T %Z}${PR_RESET}$SEP\
-?${PR_BOLD_RED}%?${PR_RESET}$SEP\
-%/
+!%F{green}%!%f$SEP \
++%F{magenta}%j%f$SEP\
+*%F{blue}%n%f$SEP\
+@%F{yellow}%m%f$SEP\
+.%F{cyan}%D{%Y%m%d %T %Z}%f$SEP\
+?%F{red}%?%f$SEP\
+$(pwd|grep --color=always /)
 %# '
 
 RPROMPT='`git-prompt`'
