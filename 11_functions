@@ -100,7 +100,7 @@ dirsize()
     echo "usage: dirsize <dir(s)>"
   fi
   for i; do 
-    echo "$i: $(ls $i | wc -l)"
+    echo "$(basename $i): $(ls $i | wc -l)"
   done
 }
 
