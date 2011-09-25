@@ -16,7 +16,7 @@ export G=/home/noah/gits
 export JAVA_HOME=/opt/java
 
 # uc
-export UC=/home/noah/gits/checkouts/uchicago/cspp/2011/spring
+export UC=/home/noah/gits/checkouts/uchicago/cspp/2011/autumn
 
 [[ $TERM == "screen" ]] && export TERM="screen-256color"
 

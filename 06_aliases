@@ -8,6 +8,7 @@ alias lsl="ls|less"
 alias lcl="lc|less"
 alias lsgrep="ls -a|grep -i"
 alias hgrep="cat ~/.histfile| grep"
+alias dush="du -sh"
 #
 alias ..="cd .."
 alias cp="cp -i"
@@ -55,6 +56,7 @@ alias stream="nc downbe 6969 | mplayer -"
 alias rq='riddim -q'
 alias re='riddim -e'
 alias rc='riddim -c'
+alias rs="watch -n 3 \"riddim -q |grep -A1000000 '\* '\""
 
 # bttorrent
 alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
@@ -90,7 +92,7 @@ alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
-alias lclbt="cd /drum/dl/bt/ || cd /mnt/drum/dl/bt && lcl"
+alias lclbt="cd /drum/bt/ || cd /mnt/drum/bt && lcl"
 alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
@@ -115,6 +117,13 @@ alias maken='make -n'
 alias makec='make clean'
 alias makea='make all'
 alias maket='make tests'
+
+alias s=scons
+alias sc="s -c"
+
+alias lsofiP="lsof -i -P"
+alias k1="kill %1"
+alias k2="kill %2"
 
 
 # vim: ft=zsh
