@@ -46,4 +46,17 @@ pf(){
   cp -v $@ $print_queue
 }
 
+
+
+dirsize()
+{
+  if (( $# == 0 )); then 
+    echo "usage: dirsize <dir(s)>"
+  fi
+  for i; do 
+    echo "$(basename $i): $(ls $i | wc -l)"
+  done
+}
+
+
 # vim: ft=zsh
