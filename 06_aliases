@@ -18,7 +18,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias su-="su -"
 alias chown="chown -v"
-alias rmRf="rm -Rf"
+alias rmRf="rm -Rfv"
 
 # python
 alias rmpyc='find . -iname "*.pyc" -print | xargs rm -fv'
@@ -52,6 +52,7 @@ alias gmplayerns="gmplayer -nosound"
 alias streamproj="nc 7be 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc 7be 6969 | mplayer -"
 alias mplayervdpau="mplayer -nocache -vo vdpau -vc ffh264vdpau"
+alias mplayerwmv="mplayer -vc ffwmv3 -nocache"
 
 # bttorrent
 alias scptors7be="scp /home/noah/ff_dl/*.torrent noah@7be:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
@@ -87,7 +88,7 @@ alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
-alias lclbt="cd /drum/dl/bt/ 2>/dev/null || cd /mnt/drum/dl/bt && lcl"
+alias lclbt="cd /drum/7be/bt/ 2>/dev/null || cd /mnt/7be/bt && lcl"
 alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
@@ -109,6 +110,9 @@ alias ie6kill="pkill IEXPLORE; pkill wineserver;"
 #cpp
 alias s=scons
 alias sc="scons -c"
+
+alias digshort="dig +short"
+alias bd="bg; disown; exit"
 
 
 # vim: ft=zsh
