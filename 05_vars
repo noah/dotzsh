@@ -16,9 +16,15 @@ export G=/home/noah/gits
 export JAVA_HOME=/opt/java
 
 # uc
-export UC=/home/noah/gits/checkouts/uchicago/cspp/2011/autumn
+export UC=/home/noah/gits/checkouts/uchicago/cspp/2012/winter
 
-[[ $TERM == "screen" ]] && export TERM="screen-256color"
+#[[ $TERM == "screen" ]] && export TERM="screen-256color"
+
+if [[ $(tput colors) == 256 ]]; then
+  export TERM="screen-256color"
+else
+  export TERM="linux"
+fi
 
 export LD_LIBRARY_PATH=.
 

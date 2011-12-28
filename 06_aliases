@@ -30,7 +30,7 @@ alias downbe.at="ssh -Y $(whoami)@downbe.at"
 alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 noah@127.0.0.1"
 
 # cmus
-alias cr="cmus-remote"
+alias cr="cmus-remote -P"
 alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
 alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
@@ -84,6 +84,7 @@ alias reread="xrdb -all ~/.Xdefaults"
 # user
 alias ev="evince"
 alias bhttpd="/etc/rc.d/httpd restart"
+alias bnginx="killall nginx && /etc/rc.d/nginx start"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
@@ -124,6 +125,11 @@ alias sc="s -c"
 alias lsofiP="lsof -i -P"
 alias k1="kill %1"
 alias k2="kill %2"
+
+alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
+
+alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
+alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 
 
 # vim: ft=zsh
