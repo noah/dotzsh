@@ -84,7 +84,7 @@ alias reread="xrdb -all ~/.Xdefaults"
 # user
 alias ev="evince"
 alias bhttpd="/etc/rc.d/httpd restart"
-alias bnginx="killall nginx && /etc/rc.d/nginx start"
+alias bnginx="killall nginx; /etc/rc.d/nginx start"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
