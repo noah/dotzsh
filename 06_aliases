@@ -131,5 +131,7 @@ alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
 alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 
+alias rid="bg; disown; exit"
+
 
 # vim: ft=zsh
