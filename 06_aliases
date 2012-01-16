@@ -133,5 +133,7 @@ alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 
 alias rid="bg; disown; exit"
 
+alias 7be="ssh 7be"
+
 
 # vim: ft=zsh

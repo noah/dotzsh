@@ -116,4 +116,9 @@ any() {
   fi
 }
 
+perm()
+{
+  stat -c '%a (%A) u: %U (%u) g: %G (%g)' $1
+}
+
 # vim: ft=zsh
