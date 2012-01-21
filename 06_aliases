@@ -71,6 +71,7 @@ alias letter="cp /home/noah/gits/checkouts/business/letters/_business_letter_tem
 alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
+alias vimp="vim -p"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
