@@ -50,7 +50,7 @@ alias mktunes.pl="mktunes.pl --fwguid=000A27001ACA02E7"
 alias mplayerns="mplayer -nosound"
 alias gmplayerns="gmplayer -nosound"
 alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
-alias stream="nc downbe 6969 | mplayer -"
+alias stream="nc 7be 6969 | mplayer -"
 
 # riddim
 alias rq='riddim -q'
@@ -135,6 +135,10 @@ alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 alias rid="bg; disown; exit"
 
 alias 7be="ssh 7be"
+
+alias xboard="xboard -ics -icshost freechess.org"
+
+alias cdm="/mnt/drum/music"
 
 
 # vim: ft=zsh
