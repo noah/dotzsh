@@ -131,4 +131,9 @@ zman() {
   PAGER="less -g -s '+/^       "$1"'" man zshall
 }
 
+perm()
+{
+  stat -c '%a (%A) u: %U (%u) g: %G (%g)' $1
+}
+
 # vim: ft=zsh
