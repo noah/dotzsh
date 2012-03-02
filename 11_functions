@@ -116,4 +116,19 @@ any() {
   fi
 }
 
+run() {
+  exec $@ &!
+  exit
+}
+
+foreground-vi() {
+  fg %vi
+}
+zle -N foreground-vi
+bindkey '^Z' foreground-vi
+
+zman() {
+  PAGER="less -g -s '+/^       "$1"'" man zshall
+}
+
 # vim: ft=zsh
