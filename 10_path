@@ -1,4 +1,4 @@
-export PATH=/home/noah/bin:$PATH:/usr/local/bin:$JAVA_HOME/bin:$UC/../../bin
+export PATH=/home/noah/bin:$PATH:/usr/local/bin:$JAVA_HOME/bin:$UC/../../bin:/home/noah/opt/notmuch-git/bin
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:
 
