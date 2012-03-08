@@ -138,4 +138,6 @@ alias 7be="ssh 7be"
 alias xboard="xboard -ics -icshost freechess.org"
 alias cdm="/mnt/drum/music"
 
+alias vimrc="vim ~/.vimrc"
+
 # vim: ft=zsh
