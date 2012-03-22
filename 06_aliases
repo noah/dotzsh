@@ -140,5 +140,6 @@ alias xboard="xboard -ics -icshost freechess.org"
 alias cdm="/mnt/drum/music"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
+alias vimrc="vim ~/.vimrc"
 
 # vim: ft=zsh
