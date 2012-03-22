@@ -5,7 +5,7 @@ export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
 export SCAN=/drum/misc/backup/ns_cache
 export IPOD_MOUNTPOINT=/mnt/ipod
-export PYTHONSTARTUP=$HOME/.pythonrc
+#export PYTHONSTARTUP=$HOME/.pythonrc
 export PRINT_QUEUE=/cygdrive/c/cygwin/home/noah/gits/github/print-watch.py/queue
 
 export LANG=en_US.UTF-8
