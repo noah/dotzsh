@@ -59,7 +59,6 @@ alias re='riddim -e'
 alias rc='riddim -c'
 alias rn='riddim -n'
 alias rs="watch -n 3 \"riddim -q |grep -A1000000 '\* '\""
-alias riddim="cvlc -I ncurses http://7be:18944"
 
 # bttorrent
 alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
