@@ -140,5 +140,6 @@ alias cdm="/mnt/drum/music"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
+alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
 # vim: ft=zsh
