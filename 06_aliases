@@ -3,6 +3,7 @@
 alias ls="ls --color=auto"
 alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
+alias l=ll
 alias lc="ls -halt"
 alias lsl="ls|less"
 alias lcl="lc|less"
@@ -53,9 +54,10 @@ alias streamproj="nc downbe 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc 7be 6969 | mplayer -"
 
 # riddim
-alias rq='riddim -q'
+alias rq='riddim -q | less'
 alias re='riddim -e'
 alias rc='riddim -c'
+alias rn='riddim -n'
 alias rs="watch -n 3 \"riddim -q |grep -A1000000 '\* '\""
 
 # bttorrent
@@ -85,7 +87,7 @@ alias reread="xrdb -all ~/.Xdefaults"
 # user
 alias ev="evince"
 alias bhttpd="/etc/rc.d/httpd restart"
-alias bnginx="killall nginx; /etc/rc.d/nginx start"
+alias bnginx="killall -s 9 nginx; /etc/rc.d/nginx start"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
@@ -95,7 +97,7 @@ alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
 alias lclbt="cd /drum/bt/ || cd /mnt/drum/bt && lcl"
-alias lock="xscreensaver-command -activate"
+alias lock="vlock"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias fstab="vim /etc/fstab"
@@ -132,15 +134,15 @@ alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
-
 alias rid="bg; disown; exit"
-
 alias 7be="ssh 7be"
-
 alias xboard="xboard -ics -icshost freechess.org"
-
 alias cdm="/mnt/drum/music"
 alias esq="ssh esq"
 
+alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
+alias vimrc="vim ~/.vimrc"
+alias rem="aephiechoo"
+alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
 # vim: ft=zsh

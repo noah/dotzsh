@@ -116,6 +116,21 @@ any() {
   fi
 }
 
+run() {
+  exec $@ &!
+  exit
+}
+
+foreground-vi() {
+  fg %vi
+}
+zle -N foreground-vi
+bindkey '^Z' foreground-vi
+
+zman() {
+  PAGER="less -g -s '+/^       "$1"'" man zshall
+}
+
 perm()
 {
   stat -c '%a (%A) u: %U (%u) g: %G (%g)' $1

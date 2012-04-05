@@ -1,9 +1,7 @@
+#!/bin/zsh 
 
 for file in ~/.zsh/??_*; do
   source $file
 done
-
-# sync tmpfs firefox
-#~/bin/firefox-sync > /dev/null
 
 # vim: set ft=zsh
