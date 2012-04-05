@@ -4,16 +4,3 @@ HISTFILE=~/.histfile
 HISTSIZE=999999
 SAVEHIST=999999
 SHARE_HISTORY=1
-
-# Grep the history with 'h'
-# h () { history 0 | grep $1 }
-#
-DIRSTACKSIZE=9
-DIRSTACKFILE=~/.zdirs
-if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-[[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
-fi
-chpwd() {
-  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
-}
