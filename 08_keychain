@@ -1,6 +1,0 @@
-# keychain
-/usr/bin/keychain --quiet ~/.ssh/id_dsa
-source ~/.keychain/$HOST-sh
-source ~/.keychain/$HOST-sh-gpg
-
-# vim: ft=zsh

@@ -64,12 +64,12 @@ SEP="  "
 #
 # %F{color} gets color %f is escape
 
-local histno="%{$fg[green]%}%!%{$reset_color%}"
-local jobnos="%{$fg[magenta]%}%j%{$reset_color%}"
-local usernm="%{$fg[blue]%}%n%{$reset_color%}"
-local hostnm="%{$fg[yellow]%}%m%{$reset_color%}"
-local timenm="%{$fg[cyan]%}%D{%Y%m%d %T %Z}%{$reset_color%}"
-local jobret="%{$fg[red]%}%?%{$reset_color%}"
+local histno="%{%{$fg[green]%}%}%!%{$reset_color%}"
+local jobnos="%{%{$fg[magenta]%}%}%j%{$reset_color%}"
+local usernm="%{%{$fg[blue]%}%}%n%{$reset_color%}"
+local hostnm="%{%{$fg[yellow]%}%}%m%{$reset_color%}"
+local timenm="%{%{$fg[cyan]%}%}%D{%Y%m%d %T %Z}%{$reset_color%}"
+local jobret="%{%{$fg[red]%}%}%?%{$reset_color%}"
 
 PROMPT='\
 !${histno}$SEP\
@@ -78,9 +78,9 @@ PROMPT='\
 @${hostnm}$SEP\
 .${timenm}$SEP\
 ?${jobret}$SEP\
-$(pwd|grep --color=always /)
+%{$(pwd|grep --color=always /)%}
 %# '
 
-RPROMPT='`git-prompt`'
+RPROMPT='$(git-prompt)'
 
 # vim: ft=zsh

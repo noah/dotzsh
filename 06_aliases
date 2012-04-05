@@ -138,7 +138,9 @@ alias 7be="ssh 7be"
 alias xboard="xboard -ics -icshost freechess.org"
 alias cdm="/mnt/drum/music"
 
+alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
 alias rem="aephiechoo"
+alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
 # vim: ft=zsh
