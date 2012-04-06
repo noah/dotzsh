@@ -157,7 +157,7 @@ git-create-linked()
 
   if [[ ! ($# -eq 1) ]]; then
     echo "Usage: $0 <identifier>"
-    exit -1
+    return -1
   fi
 
   remote_bare_repo="$remote_bare_basepath/$1"
