@@ -138,8 +138,8 @@ perm()
 
 git-create-linked()
 {
-  set -u
-  set -e
+  setopt NO_UNSET
+  setopt ERR_RETURN
 
   # git-create-linked
   #
