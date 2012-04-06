@@ -42,7 +42,7 @@ SEP="  "
 # ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~
 # A custom prompt:
 #
-# !4386  +0  *noah  @downbe  .20100313 16:24:44 CST  ?0
+# !4386  +0  *noah  @7be  .20100313 16:24:44 CST  ?0
 # %/# 
 #
 # The value prefixes are semi-mnemonic.  E.g.,
@@ -70,6 +70,7 @@ local usernm="%{%{$fg[blue]%}%}%n%{$reset_color%}"
 local hostnm="%{%{$fg[yellow]%}%}%m%{$reset_color%}"
 local timenm="%{%{$fg[cyan]%}%}%D{%Y%m%d %T %Z}%{$reset_color%}"
 local jobret="%{%{$fg[red]%}%}%?%{$reset_color%}"
+local wd="$(pwd|grep --color=always /)"
 
 PROMPT='\
 !%B${histno}%b$SEP\
@@ -77,8 +78,8 @@ PROMPT='\
 *%B${usernm}%b$SEP\
 @%B${hostnm}%b$SEP\
 .%B${timenm}%b$SEP\
-?%B${jobret}%b$SEP\
-%B%{$(pwd|grep --color=always /)%}%b
+?%B${jobret}%b$SEP
+%{${wd}%}
 %# '
 
 RPROMPT='$(git-prompt)'
