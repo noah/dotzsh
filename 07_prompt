@@ -72,13 +72,13 @@ local timenm="%{%{$fg[cyan]%}%}%D{%Y%m%d %T %Z}%{$reset_color%}"
 local jobret="%{%{$fg[red]%}%}%?%{$reset_color%}"
 
 PROMPT='\
-!${histno}$SEP\
-+${jobnos}$SEP\
-*${usernm}$SEP\
-@${hostnm}$SEP\
-.${timenm}$SEP\
-?${jobret}$SEP\
-%{$(pwd|grep --color=always /)%}
+!%B${histno}%b$SEP\
++%B${jobnos}%b$SEP\
+*%B${usernm}%b$SEP\
+@%B${hostnm}%b$SEP\
+.%B${timenm}%b$SEP\
+?%B${jobret}%b$SEP\
+%B%{$(pwd|grep --color=always /)%}%b
 %# '
 
 RPROMPT='$(git-prompt)'
