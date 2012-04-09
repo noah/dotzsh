@@ -28,7 +28,7 @@ alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
 # ssh
 alias downbe="ssh -Y $(whoami)@downbe"
 alias downbe.at="ssh -Y $(whoami)@downbe.at"
-alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 11033 noah@127.0.0.1"
+alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 8080 noah@127.0.0.1"
 
 # cmus
 alias cr="cmus-remote -P"
@@ -132,11 +132,13 @@ alias k2="kill %2"
 alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 
 alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
+alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 alias rid="bg; disown; exit"
 alias 7be="ssh 7be"
 alias xboard="xboard -ics -icshost freechess.org"
 alias cdm="/mnt/drum/music"
+alias esq="ssh esq"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
