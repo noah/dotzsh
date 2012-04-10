@@ -28,7 +28,7 @@ alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
 # ssh
 alias downbe="ssh -Y $(whoami)@downbe"
 alias downbe.at="ssh -Y $(whoami)@downbe.at"
-alias startsocks="sudo /etc/rc.d/sshd restart; ssh -c blowfish -C -D 8080 noah@127.0.0.1"
+alias startsocks="ssh -c blowfish -C -D 8080 127.0.0.1"
 
 # cmus
 alias cr="cmus-remote -P"
