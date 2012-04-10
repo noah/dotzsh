@@ -142,7 +142,9 @@ alias esq="ssh esq"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
-alias rem="aephiechoo"
+alias vimup="vim +BundleInstall!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
+
+alias esq="ssh esq"
 
 # vim: ft=zsh
