@@ -1,43 +1,45 @@
-# git prompt stuff
-# See:  http://github.com/bryanl/zshkit/blob/master/06_git
+# Git state in prompt
 #
-# could also use vcs_info
 function git-need-to-push() {
-  if pushtime=$(echo $1 | grep 'Your branch is ahead' 2> /dev/null); then
-    # ^K !-
-    echo "↑"
+  if pushtime=$(echo $(git status 2> /dev/null) | grep 'Your branch is ahead' 2> /dev/null); then
+    echo "↑ " # ^K !-
   fi
 }
-function git-prompt() {
-  gstatus=$(git status 2> /dev/null)
-  branch=$(echo $gstatus | head -1 | sed 's/^# On branch //')
-  dirty=$(echo $gstatus | sed 's/^#.*$//' | tail -2 | grep 'nothing to commit (working directory clean)'; echo $?)
-  if [[ x$branch != x ]]; then
-    dirty_color=$fg[green]
-    push_status=$(git-need-to-push $gstatus 2> /dev/null)
-    if [[ $dirty = 1 ]] { dirty_color=$fg[red] }
-      [ x$branch != x ] && echo " %{$dirty_color%}$branch%{$reset_color%} $push_status"
-    fi
+
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+
+# unstaged changes to repo
+zstyle ':vcs_info:*' unstagedstr '%F{red}✗'
+
+# staged (committed) changes to repo
+zstyle ':vcs_info:*' stagedstr '%F{yellow}+'
+
+zstyle ':vcs_info:*' actionformats \
+  '%F{blue}%s%F{yellow}-%F{blue}[%F{green}%b%F{yellow}..%F{red}%a%F{blue}]%f '
+#zstyle ':vcs_info:*' formats       \
+#    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+precmd () {
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+        # repo is clean
+        myfmt=("✓" "%F{cyan}$(git-need-to-push)")
+        zstyle ':vcs_info:*' formats "%u%c%F{blue} %s%F{yellow}-%F{green}%b%f"
+    } else {
+        # print ${(j.**.)foo}
+        # new untracked (un git-add'ed) file
+        myfmt=("%F{magenta}¿" "%u" "%c" "%F{cyan}$(git-need-to-push)")
+        zstyle ':vcs_info:*' formats "${(j. .)myfmt}%F{blue} %s%F{yellow}-%F{green}%b%f" 
+    }
+    vcs_info
 }
-
-
-# Global colors
-# for COLOR in CYAN MAGENTA BLUE RED GREEN YELLOW WHITE BLACK; do
-#     eval PR_BRIGHT_$COLOR='%{$fg[${(L)COLOR}]%}'
-#     eval PR_BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
-# done
+ 
 PR_RESET="%{$reset_color%}"
 SEP="  "
 
-# Display vi mode in prompt
-#       See: http://zshwiki.org/home/examples/zlewidgets
-
-#function zle-line-init zle-keymap-select {
-#    VI_MODE="${${KEYMAP/vicmd/${PR_BOLD_RED}-- NORMAL --${PR_RESET}}/(main|viins)/${PR_BOLD_GREEN}-- INSERT --${PR_RESET}}"
-#    zle reset-prompt
-#}
-#zle -N zle-line-init
-#zle -N zle-keymap-select
 
 # ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~ ~~~~
 # A custom prompt:
@@ -54,6 +56,7 @@ SEP="  "
 #   @ at hostname 
 #   . dot for where we are right now (in terms of time)
 #   $? for exit status of last job (as in $?)
+#   # for the size of the current font in pixels
 #
 # history num
 # num jobs
@@ -64,24 +67,29 @@ SEP="  "
 #
 # %F{color} gets color %f is escape
 
+function fontsz()
+{
+  echo -n "%{%{$fg[cyan]%}%}$(grep -oP "(?<=^urxvt\*font:[[:space:]]xft:Monaco:pixelsize=)\d*" ~/.config/xresources/fonts)%{$reset_color%}"
+}
+
 local histno="%{%{$fg[green]%}%}%!%{$reset_color%}"
 local jobnos="%{%{$fg[magenta]%}%}%j%{$reset_color%}"
 local usernm="%{%{$fg[blue]%}%}%n%{$reset_color%}"
 local hostnm="%{%{$fg[yellow]%}%}%m%{$reset_color%}"
-local timenm="%{%{$fg[cyan]%}%}%D{%Y%m%d %T %Z}%{$reset_color%}"
+#local timenm="%{%{$fg[cyan]%}%}%D{%Y%m%d %T %Z}%{$reset_color%}"
 local jobret="%{%{$fg[red]%}%}%?%{$reset_color%}"
-local wd="$(pwd|grep --color=always /)"
+
 
 PROMPT='\
 !%B${histno}%b$SEP\
 +%B${jobnos}%b$SEP\
 *%B${usernm}%b$SEP\
 @%B${hostnm}%b$SEP\
-.%B${timenm}%b$SEP\
-?%B${jobret}%b$SEP
-%{${wd}%}
+?%B${jobret}%b$SEP\
+%B${$(fontsz)}px%b$SEP
+%{${$(pwd|grep --color=always /)}%}
 %# '
 
-RPROMPT='$(git-prompt)'
+RPROMPT='${vcs_info_msg_0_}'
 
 # vim: ft=zsh
