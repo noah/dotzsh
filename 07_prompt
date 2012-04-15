@@ -88,6 +88,8 @@ local hostnm="%{%{$fg[yellow]%}%}%m%{$reset_color%}"
 local jobret="%{%{$fg[red]%}%}%?%{$reset_color%}"
 local thetty="%F{202}%y%f"
 
+# See: zshmisc(1)
+
 PROMPT='\
 !%B${histno}%b$SEP\
 +%B${jobnos}%b$SEP\
@@ -98,7 +100,7 @@ PROMPT='\
 %B${$(fontsz)}%b$SEP\
 %B${$(fstype)}%b$SEP
 %{${$(pwd|grep --color=always /)}%}
-%# '
+%(!.☠.⚡) '
 
 RPROMPT='%B${vcs_info_msg_0_}%b'
 
