@@ -71,7 +71,7 @@ function fontsz()
 {
   # null op if we're logged in over ssh
   if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
-    echo -n "%{%{$fg[cyan]%}%}$(grep -oP "(?<=^urxvt\*font:[[:space:]]xft:Monaco:pixelsize=)\d*" ~/.config/xresources/fonts)%{$reset_color%}px"
+    echo -n "%{%{$fg[cyan]%}%}$(grep -oP "(?<=^urxvt\*font:[[:space:]]xft:Monaco:pixelsize=)\d*" ~/.config/xresources/fonts)%{$reset_color%}"
   fi
 }
 
@@ -86,6 +86,7 @@ local usernm="%{%{$fg[blue]%}%}%n%{$reset_color%}"
 local hostnm="%{%{$fg[yellow]%}%}%m%{$reset_color%}"
 #local timenm="%{%{$fg[cyan]%}%}%D{%Y%m%d %T %Z}%{$reset_color%}"
 local jobret="%{%{$fg[red]%}%}%?%{$reset_color%}"
+local thetty="%F{202}%y%f"
 
 PROMPT='\
 !%B${histno}%b$SEP\
@@ -93,8 +94,9 @@ PROMPT='\
 *%B${usernm}%b$SEP\
 @%B${hostnm}%b$SEP\
 ?%B${jobret}%b$SEP\
-%B${$(fontsz)}px%b$SEP\
-%B${$(fstype)}%b$SEP\
+%B${${thetty}}%b$SEP\
+%B${$(fontsz)}%b$SEP\
+%B${$(fstype)}%b$SEP
 %{${$(pwd|grep --color=always /)}%}
 %# '
 
