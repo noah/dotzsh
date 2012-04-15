@@ -72,6 +72,11 @@ function fontsz()
   echo -n "%{%{$fg[cyan]%}%}$(grep -oP "(?<=^urxvt\*font:[[:space:]]xft:Monaco:pixelsize=)\d*" ~/.config/xresources/fonts)%{$reset_color%}"
 }
 
+function fstype
+{
+  echo -n "%{%{%F{201}%}%}$(stat -f -L -c %T .)%f"
+}
+
 local histno="%{%{$fg[green]%}%}%!%{$reset_color%}"
 local jobnos="%{%{$fg[magenta]%}%}%j%{$reset_color%}"
 local usernm="%{%{$fg[blue]%}%}%n%{$reset_color%}"
@@ -85,10 +90,11 @@ PROMPT='\
 *%B${usernm}%b$SEP\
 @%B${hostnm}%b$SEP\
 ?%B${jobret}%b$SEP\
-%B${$(fontsz)}px%b$SEP
+%B${$(fontsz)}px%b$SEP\
+%B${$(fstype)}%b$SEP\
 %{${$(pwd|grep --color=always /)}%}
 %# '
 
-RPROMPT='${vcs_info_msg_0_}'
+RPROMPT='%B${vcs_info_msg_0_}%b'
 
 # vim: ft=zsh
