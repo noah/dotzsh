@@ -20,7 +20,6 @@ alias mv="mv -i"
 alias mvv="mv -v"
 alias rm="rm -i"
 alias su-="su -"
-alias chown="chown -v"
 alias rmRf="rm -Rf"
 
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
@@ -87,7 +86,7 @@ alias reread="xrdb -all ~/.Xdefaults"
 # user
 alias ev="evince"
 alias bhttpd="/etc/rc.d/httpd restart"
-alias bnginx="killall -s 9 nginx; /etc/rc.d/nginx start"
+alias bnginx="killall -s 9 nginx; /etc/rc.d/nginx start; /etc/rc.d/php-fpm restart"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
