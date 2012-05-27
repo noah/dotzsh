@@ -7,7 +7,7 @@ alias l=ll
 alias lc="ls -halt"
 alias lsl="ls|less"
 alias lcl="lc|less"
-alias lsgrep="ls -a|grep -i"
+alias lsgrep="ls -a|egrep -i"
 alias hgrep="cat ~/.histfile| grep"
 alias dush="du -sh"
 #
@@ -57,7 +57,7 @@ alias rq='riddim -q | less'
 alias re='riddim -e'
 alias rc='riddim -c'
 alias rn='riddim -n'
-alias rs="watch -n 3 \"riddim -q |grep -A1000000 '\* '\""
+alias rs='watch -n 3 riddim_status'
 
 # bttorrent
 alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
