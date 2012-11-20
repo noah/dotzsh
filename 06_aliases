@@ -57,7 +57,7 @@ alias rq='riddim -q | less'
 alias re='riddim -e'
 alias rc='riddim -c'
 alias rn='riddim -n'
-alias rs='watch -n 3 riddim_status'
+alias rs='watch -n 3 riddim -q'
 
 # bttorrent
 alias scptorsdownbe="scp /home/noah/ff_dl/*.torrent noah@downbe:~/ff_dl && rm -Rvf /home/noah/gc_dl/*.torrent"
@@ -85,7 +85,7 @@ alias reread="xrdb -all ~/.Xdefaults"
 
 # user
 alias ev="evince"
-alias bhttpd="/etc/rc.d/httpd restart"
+alias bhttpd="sudo systemctl restart httpd.service"
 alias bnginx="killall -s 9 nginx; /etc/rc.d/nginx start; /etc/rc.d/php-fpm restart"
 alias brew="sleep 4m; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i /home/noah/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
@@ -127,8 +127,6 @@ alias sc="s -c"
 alias lsofiP="lsof -i -P"
 alias k1="kill %1"
 alias k2="kill %2"
-
-alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 
 alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
