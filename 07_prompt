@@ -22,20 +22,20 @@ zstyle ':vcs_info:*' actionformats \
 #zstyle ':vcs_info:*' formats       \
 #    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-
-precmd () {
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        # repo is clean
-        myfmt=("✓" "%F{cyan}$(git-need-to-push)")
-        zstyle ':vcs_info:*' formats "%u%c%F{blue} %s%F{yellow}-%F{green}%b%f"
-    } else {
-        # print ${(j.**.)foo}
-        # new untracked (un git-add'ed) file
-        myfmt=("%F{magenta}¿" "%u" "%c" "%F{cyan}$(git-need-to-push)")
-        zstyle ':vcs_info:*' formats "${(j. .)myfmt}%F{blue} %s%F{yellow}-%F{green}%b%f" 
-    }
-    vcs_info
-}
+# precmd () {
+#     gls=$(git ls-files --other --exclude-standard)
+#     if [[ -z "$gls" ]] {
+#         # repo is clean
+#         myfmt=("✓" "%F{cyan}$(git-need-to-push)")
+#         zstyle ':vcs_info:*' formats "%u%c%F{blue} %s%F{yellow}-%F{green}%b%f"
+#     } else {
+#         # print ${(j.**.)foo}
+#         # new untracked (un git-add'ed) file
+#         myfmt=("%F{magenta}¿" "%u" "%c" "%F{cyan}$(git-need-to-push)")
+#         zstyle ':vcs_info:*' formats "${(j. .)myfmt}%F{blue} %s%F{yellow}-%F{green}%b%f" 
+#     }
+#     vcs_info
+# }
  
 PR_RESET="%{$reset_color%}"
 SEP="  "
@@ -80,12 +80,18 @@ function fstype
   echo -n "%{%{%F{201}%}%}$(stat -f -L -c %T .)%f"
 }
 
+function pixels
+{
+  grep urxvt.font ~/.config/xresources/fonts | sed -r -e 's/.*pixelsize=([[:digit:]]+).*/\1/'
+}
+
 local histno="%{%{$fg[green]%}%}%!%{$reset_color%}"
 local jobnos="%{%{$fg[magenta]%}%}%j%{$reset_color%}"
 local usernm="%{%{$fg[blue]%}%}%n%{$reset_color%}"
 local hostnm="%{%{$fg[yellow]%}%}%m%{$reset_color%}"
 #local timenm="%{%{$fg[cyan]%}%}%D{%Y%m%d %T %Z}%{$reset_color%}"
 local jobret="%{%{$fg[red]%}%}%?%{$reset_color%}"
+local pixels="%{%{$fg[gray]%}%}%?%{$reset_color%}"
 local thetty="%F{202}%y%f"
 
 # See: zshmisc(1)
@@ -96,6 +102,7 @@ PROMPT='\
 *%B${usernm}%b$SEP\
 @%B${hostnm}%b$SEP\
 ?%B${jobret}%b$SEP\
+%B${$(pixels)}%bpx$SEP\
 %B${${thetty}}%b$SEP\
 %B${$(fontsz)}%b$SEP\
 %B${$(fstype)}%b$SEP
