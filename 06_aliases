@@ -6,7 +6,6 @@ alias ll="ls -lhF --classify"
 alias l=ll
 alias lc="ls -halt"
 alias lsl="ls|less"
-alias lcl="lc|less"
 alias lsgrep="ls -a|egrep -i"
 alias hgrep="cat ~/.histfile| grep"
 alias dush="du -sh"
@@ -76,7 +75,7 @@ alias vimp="vim -p"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
-alias vimpass="pushd /home/noah/gits/checkouts/mpass; git pull; vim /home/noah/gits/checkouts/mpass/mpass.gpg; git commit -a; git push; popd"
+alias vimpass="pushd /home/noaht/wolfram; vim pw; popd"
 
 # self-referential
 alias va="vimp ~/.zsh/{06_aliases,12_suffix_aliases}; source ~/.zsh/06_aliases; source ~/.zsh/12_suffix_aliases;"
@@ -95,8 +94,7 @@ alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
-alias lclbt="cd /drum/bt/ || cd /mnt/drum/bt && lcl"
-alias lock="vlock"
+alias lock="xscreensaver-command -activate"
 alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias fstab="vim /etc/fstab"
@@ -134,10 +132,7 @@ alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 alias rid="bg; disown; exit"
-alias 7be="ssh 7be"
 alias xboard="xboard -ics -icshost freechess.org"
-alias cdm="/mnt/drum/music"
-alias esq="ssh esq"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
@@ -145,5 +140,15 @@ alias vimup="vim +BundleInstall!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
 alias esq="ssh esq"
+alias expl="nautilus ."
+
+alias sheet="libreoffice ~/wolfram/patents/wri-patents.ods"
+alias gsi="gnome-screenshot -i"
+
+alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
+alias mutt-wri="MUTT_ACCOUNT=wri mutt"
+alias mutt-wa="MUTT_ACCOUNT=wa mutt"
+
+alias scan-cartoon="pushd ~/wolfram/caption-contest; scan $(date +'%Y-%m-%d'); popd"
 
 # vim: ft=zsh

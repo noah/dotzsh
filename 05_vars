@@ -1,6 +1,6 @@
 export EDITOR="vim"
 export VISUAL="vim"
-export GPGKEY=DAFA7071
+export GPGKEY=0x7E489514
 export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
 export SCAN=/drum/misc/backup/ns_cache
@@ -27,5 +27,7 @@ else
 fi
 
 export LD_LIBRARY_PATH=.
+
+export PRINTER="HP_Officejet_6300_series"
 
 # vim: ft=zsh

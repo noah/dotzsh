@@ -2,10 +2,15 @@
 #
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   # ~/.xinitrc decides which wm to use
-  exec startx > ~/startx.log 2>&1
+  exec startx > ~/logs/startx.log 2>&1
 else
   # don't start keychain if logging in from tty
-  /usr/bin/keychain --quiet --nogui ~/.ssh/id_dsa
+  if [[ -f ~/.ssh/id_dsa ]]; then
+    /usr/bin/keychain --quiet --nogui ~/.ssh/id_dsa
+  fi
+  if [[ -f ~/.ssh/id_rsa ]]; then
+    /usr/bin/keychain --quiet --nogui ~/.ssh/id_rsa
+  fi
   . ~/.keychain/$HOST-sh
   . ~/.keychain/$HOST-sh-gpg
 fi

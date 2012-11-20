@@ -1,5 +1,6 @@
 #!/bin/zsh 
 
+# 		FIXME
 for file in ~/.zsh/??_*; do
   source $file
 done
