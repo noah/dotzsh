@@ -144,4 +144,6 @@ alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
 alias esq="ssh esq"
 
+alias jin="wmname LG3D; jin"
+
 # vim: ft=zsh
