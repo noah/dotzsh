@@ -5,18 +5,12 @@ export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
 export SCAN=/drum/misc/backup/ns_cache
 export IPOD_MOUNTPOINT=/mnt/ipod
-#export PYTHONSTARTUP=$HOME/.pythonrc
-export PRINT_QUEUE=/cygdrive/c/cygwin/home/noah/gits/github/print-watch.py/queue
 
 export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
 
-export G=/home/noah/gits
 export JAVA_HOME=/usr
-export CLASSPATH=./jars/xml-apis.jar:./jars/odfdom-java.jar:./jars/simple-odf.jar:./jars/xercesImpl.jar
-
-# uc
-export UC=/home/noah/gits/checkouts/uchicago/cspp/2012/spring
+export CLASSPATH=
 
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
 

@@ -151,7 +151,7 @@ git-create-linked()
   #       cd to the directory
 
   remote_user="noah"
-  remote_host="0x7be.org"
+  remote_host="tilton.co"
   remote_bare_basepath="/home/noah/gits/bare"
   local_checkout_basepath="/home/noah/gits/checkouts"
 
@@ -177,5 +177,37 @@ git-create-linked()
   git push origin master
   echo "Done"
 }
+
+# queue paths for later deletion
+zap()
+{
+  local pwd="$(pwd)"
+  local zapfile="$HOME/.zapfile"
+
+  if [[ ! -f "$zapfile" ]]; then
+    touch "$zapfile"
+    echo "created $zapfile"
+  elif [[ "$1" == "-c" ]]; then
+    : > "$zapfile"
+  elif [[ "$1" == "-d" ]]; then
+    while read zap; do 
+      rm -Rfv "$zap"
+    done < "$zapfile"
+    : > "$zapfile"
+  elif [[ "$1" == "-q" ]]; then
+    while read zap; do 
+      echo "$zap"
+    done < "$zapfile"
+  else
+    zapped="$(readlink -f "$1")"
+    if [[ -n "$zapped" ]]; then
+      if [[ -e "$zapped" ]]; then
+        echo "$zapped" >> "$zapfile"
+        echo "z -> \`$zapped'"
+      fi
+    fi
+  fi
+}
+
 
 # vim: ft=zsh

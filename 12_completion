@@ -1,8 +1,29 @@
 # The following lines were added by compinstall
 zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[]=* r:|=* l:|=*'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# fsck rehash
+_force_rehash() {
+  (( CURRENT == 1 )) && rehash
+    return 1
+}
+zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete
+
+
+# complete process names
+zstyle ':completion:*:processes-names' command  'ps c -u ${USER} -o command | uniq'
+
+# complete killing
+zstyle ':completion:*:*:*:*:processes' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+
+# ignore line contents for some commands
+zstyle ':completion:*:(rm|kill|diff):*' ignore-line yes
+
+
 zstyle :compinstall filename '/home/noah/.zshrc'
 
 autoload -Uz compinit && compinit
