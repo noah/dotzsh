@@ -210,4 +210,10 @@ zap()
 }
 
 
+tat ()
+{
+  # attach to tmux session, creating session if it doesn't exist
+  tmux attach -t "$1" || tmux new -s "$1"
+}
+
 # vim: ft=zsh

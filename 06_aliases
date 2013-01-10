@@ -36,8 +36,10 @@ alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/s
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
 # pacman
+alias pacman="sudo pacman"
 alias p="pacman"
 alias y="yaourt"
+alias pip2="sudo pip2"
 
 # ipod
 alias mountpod="mount -o check=relaxed /mnt/ipod"
@@ -79,9 +81,8 @@ alias vless="vim -u /usr/share/vim/macros/less.vim"
 alias vimpass="pushd ~/gits/checkouts/mpass; vim ~/gits/checkouts/mpass/mpass.gpg; git commit -a; popd"
 
 # self-referential
-alias va="vimp ~/.zsh/{06_aliases,12_suffix_aliases}; source ~/.zsh/06_aliases; source ~/.zsh/12_suffix_aliases;"
-alias vf="vim ~/.zsh/11_functions; source ~/.zshrc"
-alias reread="xrdb -all ~/.Xdefaults"
+alias va="vimp ~/.zsh/{??_aliases,*_suffix_aliases}; source ~/.zsh/??_aliases; source ~/.zsh/*_suffix_aliases;"
+alias vf="vim ~/.zsh/??_functions; source ~/.zshrc"
 
 # user
 alias ev="evince"
@@ -90,25 +91,20 @@ alias bnginx="killall -s 9 nginx; /etc/rc.d/nginx start; /etc/rc.d/php-fpm resta
 alias brew="sleep 4m; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias findvideo="find -type f |egrep -vi mp3\|flac\|ogg\|jpg\|cue\|txt\|m3u\|wav\|sfv\|torrent\|nfo\|log\|rar\|ape\|png\|bmp\|pdf\|gif\|mpeg\|wv\|m4a\|html\|sh\|jpeg\|mpc\|pls\|db\|zip\|md5\|diz"
-alias fm=fetchmail
 alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
-alias lclbt="cd /drum/bt/ || cd /mnt/drum/bt && lcl"
+alias lclbt="cd /drum/bt && lcl"
 alias lock="vlock"
-alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
+alias rotate='renrot --no-rename *.JPG'
 alias tree="tree -Csu"
-alias fstab="vim /etc/fstab"
-alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config ~/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
 alias tmux="tmux -2"
 alias ta="tmux attach || tmux"
-alias tat='tmux attach -t'
 alias tls='tmux ls'
 alias tns='tmux new -s'
 
 alias pkill9="pkill -9"
-alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
 
 # wine/windows
@@ -125,8 +121,6 @@ alias s=scons
 alias sc="s -c"
 
 alias lsofiP="lsof -i -P"
-alias k1="kill %1"
-alias k2="kill %2"
 
 alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
@@ -141,11 +135,16 @@ alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
 alias vimup="vim +BundleInstall!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
-
-alias esq="ssh esq"
+alias expl="nautilus ."
 
 alias jin="wmname LG3D; jin"
 alias zshrc="vimp ~/.zsh/*; . ~/.zshrc"
 alias rc.lua="vim ~/.config/awesome/rc.lua"
+
+
+
+# alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
+# alias mutt-a="MUTT_ACCOUNT=a mutt"
+# alias mutt-b="MUTT_ACCOUNT=b mutt"
 
 # vim: ft=zsh
