@@ -1,0 +1,6 @@
+jump_path=~/src/z/z.sh
+
+[ -f $jump_path ] && . $jump_path || echo "No jump.\ngit clone https://github.com/rupa/z.git $(dirname $jump_path) && . $jump_path"
+
+
+# vim:ft=zsh
