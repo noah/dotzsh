@@ -51,6 +51,7 @@ alias mktunes.pl="mktunes.pl --fwguid=000A27001ACA02E7"
 
 # mplayer
 alias mplayerns="mplayer -nosound"
+alias m=mplayer
 alias gmplayerns="gmplayer -nosound"
 alias streamproj="nc ark 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc 7be 6969 | mplayer -"
@@ -103,7 +104,7 @@ alias tree="tree -Csu"
 alias tmux="tmux -2"
 alias ta="tmux attach || tmux"
 alias tls='tmux ls'
-alias tns='tmux new -s'
+alias tsw="tmux switchc -t"
 
 alias pkill9="pkill -9"
 alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
@@ -141,7 +142,7 @@ alias expl="nautilus ."
 alias jin="wmname LG3D; jin"
 alias zshrc="vimp ~/.zsh/*; . ~/.zshrc"
 alias rc.lua="vim ~/.config/awesome/rc.lua"
-
+alias urxvtdqof="urxvtd -q -o -f"
 
 
 # alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
