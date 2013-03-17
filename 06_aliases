@@ -20,6 +20,7 @@ alias mv="mv -i"
 alias mvv="mv -v"
 alias rm="rm -i"
 alias su-="su -"
+alias s="sudo"
 alias rmRf="rm -Rf"
 
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
@@ -119,12 +120,8 @@ alias makec='make clean'
 alias makea='make all'
 alias maket='make tests'
 
-alias s=scons
-alias sc="s -c"
-
 alias lsofiP="lsof -i -P"
 
-alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 alias rid="bg; disown; exit"
@@ -144,9 +141,16 @@ alias zshrc="vimp ~/.zsh/*; . ~/.zshrc"
 alias rc.lua="vim ~/.config/awesome/rc.lua"
 alias urxvtdqof="urxvtd -q -o -f"
 
+alias pkill="pkill -fe"
 
-# alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
-# alias mutt-a="MUTT_ACCOUNT=a mutt"
-# alias mutt-b="MUTT_ACCOUNT=b mutt"
+alias termd="urxvtd -q -o -f"
+alias t="task"
+
+alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
+
+alias burxvtd="killall urxvtd; termd;"
+
+
+source ~/.mutt/mutt-aliases
 
 # vim: ft=zsh

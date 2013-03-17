@@ -181,34 +181,82 @@ git-create-linked()
 # queue paths for later deletion
 zap()
 {
-  local pwd="$(pwd)"
   local zapfile="$HOME/.zapfile"
 
+  if (( $# == 0 )); then
+    echo "usage: zap file ..."
+  fi
+
   if [[ ! -f "$zapfile" ]]; then
-    touch "$zapfile"
-    echo "created $zapfile"
-  elif [[ "$1" == "-c" ]]; then
-    : > "$zapfile"
-  elif [[ "$1" == "-d" ]]; then
-    while read zap; do 
-      rm -Rfv "$zap"
-    done < "$zapfile"
-    : > "$zapfile"
-  elif [[ "$1" == "-q" ]]; then
-    while read zap; do 
-      echo "$zap"
-    done < "$zapfile"
-  else
-    zapped="$(readlink -f "$1")"
-    if [[ -n "$zapped" ]]; then
-      if [[ -e "$zapped" ]]; then
-        echo "$zapped" >> "$zapfile"
-        echo "z -> \`$zapped'"
+    touch "$zapfile" && echo "created $zapfile"
+  fi
+
+  for i; do
+    if [[ "$i" == "-c" ]]; then
+      : > "$zapfile"
+    elif [[ "$i" == "-d" ]]; then
+      while read zap; do 
+        rm -Rfv "$zap"
+      done < "$zapfile"
+      : > "$zapfile"
+    elif [[ "$i" == "-q" ]]; then
+      while read zap; do 
+        echo "$zap"
+      done < "$zapfile"
+    else
+      zapped="$(readlink -f "$i")"
+      if [[ -n "$zapped" ]]; then
+        if [[ -e "$zapped" ]]; then
+          echo "$zapped" >> "$zapfile"
+          echo "✗ \`$zapped'"
+        fi
       fi
     fi
-  fi
+  done
 }
 
+
+# # queue paths for later keeping
+# keep()
+# {
+#   local keepfile="$HOME/.keepfile"
+# 
+#   if (( $# == 0 )); then
+#     echo "usage: keep file ..."
+#   fi
+# 
+#   if [[ ! -f "$keepfile" ]]; then
+#     touch "$keepfile" && echo "created $keepfile"
+#   fi
+# 
+#   for i; do
+#     if [[ "$i" == "-c" ]]; then
+#       : > "$keepfile"
+#     elif [[ "$i" == "-m" ]]; then
+#       if [[ -n "${argv[$i+1]}" ]]; then
+#         while read keep; do 
+#           mv -v "$keep" "$(readlink -f "${argv[$i+1}")"
+#         done < "$keepfile"
+#         : > "$keepfile"
+#       else
+#         echo "missing destination file operand"
+#         return 1
+#       fi
+#     elif [[ "$i" == "-q" ]]; then
+#       while read keep; do 
+#         echo "$keep"
+#       done < "$keepfile"
+#     else
+#       kept="$(readlink -f "$i")"
+#       if [[ -n "$kept" ]]; then
+#         if [[ -e "$kept" ]]; then
+#           echo "$kept" >> "$keepfile"
+#           echo "✓ \`$kept'"
+#         fi
+#       fi
+#     fi
+#   done
+# }
 
 tat ()
 {
@@ -221,4 +269,10 @@ tns ()
   # create tmux session, attaching to session if it exists
   tmux new -s "$1" || tmux attach -t "$1"
 }
+
+awesomereset()
+{
+  kill -s SIGHUP $(pgrep awesome)
+}
+
 # vim: ft=zsh
