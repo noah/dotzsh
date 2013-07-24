@@ -151,6 +151,6 @@ alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
 alias burxvtd="killall urxvtd; termd;"
 
 
-source ~/.mutt/mutt-aliases
+#source ~/.mutt/mutt-aliases
 
 # vim: ft=zsh
