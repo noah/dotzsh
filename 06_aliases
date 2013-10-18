@@ -159,7 +159,7 @@ alias chrome="google-chrome"
 
 alias ka="killall"
 
-source ~/.mutt/mutt-aliases
+#source ~/.mutt/mutt-aliases
 
 alias todo=todo.sh
 
