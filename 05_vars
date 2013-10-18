@@ -3,7 +3,6 @@ export VISUAL="vim"
 export GPGKEY=DAFA7071
 export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
-export SCAN=/drum/misc/backup/ns_cache
 export IPOD_MOUNTPOINT=/mnt/ipod
 
 export LANG=en_US.UTF-8
@@ -14,11 +13,16 @@ export CLASSPATH=
 
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
 
-if [[ $(tput colors) == 256 ]]; then
-  export TERM="screen-256color"
-else
-  export TERM="linux"
-fi
+# rxvt-unicode
+# ...
+# if [[ $(tput colors) == 256 ]]; then
+#   export TERM="screen-256color"
+# else
+#   export TERM="linux"
+# fi
+
+# xfce4-terminal
+export TERM="screen-256color"
 
 export LD_LIBRARY_PATH=.
 

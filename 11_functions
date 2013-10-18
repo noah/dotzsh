@@ -275,4 +275,27 @@ awesomereset()
   kill -s SIGHUP $(pgrep awesome)
 }
 
+vw()
+{
+  local WIKIDIR=~/gits/checkouts/vimwiki
+  pushd $WIKIDIR || return -1
+  vim index.wiki
+  git add *.wiki
+  git commit -a && git push
+  popd
+}
+
+# colorized (vim) man pages
+man() {
+  /usr/bin/man $@ | \
+  col -b | \
+  vim -R -c 'set ft=man nomod nolist' -
+}
+
+
+cb() {
+  cat $1 | xclip
+}
+
+
 # vim: ft=zsh

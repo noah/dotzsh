@@ -5,6 +5,7 @@ alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
 alias l=ll
 alias lc="ls -halt"
+alias less="ls -X"
 alias lsl="ls|less"
 alias lcl="lc|less"
 alias lsgrep="ls -a|egrep -i"
@@ -21,9 +22,10 @@ alias mvv="mv -v"
 alias rm="rm -i"
 alias su-="su -"
 alias s="sudo"
-alias rmRf="rm -Rf"
+alias rmrfv="rm -rfv"
 
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
+
 
 # ssh
 alias ark="ssh -Y $(whoami)@ark"
@@ -51,9 +53,9 @@ alias ejectpod="eject /mnt/ipod"
 alias mktunes.pl="mktunes.pl --fwguid=000A27001ACA02E7"
 
 # mplayer
-alias mplayerns="mplayer -nosound"
+alias mns="mplayer -nosound"
 alias m=mplayer
-alias gmplayerns="gmplayer -nosound"
+alias gmns="gmplayer -nosound"
 alias streamproj="nc ark 6969 | mplayer -vf scale=1280:800 -"
 alias stream="nc 7be 6969 | mplayer -"
 
@@ -62,6 +64,8 @@ alias rq='riddim -q | less'
 alias re='riddim -e'
 alias rc='riddim -c'
 alias rn='riddim -n'
+alias rN='riddim -N'
+alias rA='riddim -A'
 alias rs='watch -n 3 riddim -q'
 
 # bttorrent
@@ -74,10 +78,10 @@ alias sls="screen -ls"
 
 # vim
 alias letter="cp ~/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
-alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
 alias vimp="vim -p"
+alias vimx="vim -x"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
@@ -132,7 +136,7 @@ alias esq="ssh esq"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
-alias vimup="vim +BundleInstall!"
+alias vimup="vim +BundleInstall! && vim +BundleClean!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
 alias expl="nautilus ."
 
@@ -144,13 +148,28 @@ alias urxvtdqof="urxvtd -q -o -f"
 alias pkill="pkill -fe"
 
 alias termd="urxvtd -q -o -f"
-alias t="task"
+alias bterm="killall urxvtd && termd" # FIXME
+alias t="todo.sh"
 
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
-
 alias burxvtd="killall urxvtd; termd;"
 
+alias open="xdg-open"
+alias chrome="google-chrome"
+
+alias ka="killall"
 
 source ~/.mutt/mutt-aliases
+
+alias todo=todo.sh
+
+alias rexima="aoss rexima"
+
+alias cb=xclip
+
+alias g=grep
+alias lg=lsgrep
+
+alias systemctl=sc
 
 # vim: ft=zsh
