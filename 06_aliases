@@ -170,6 +170,6 @@ alias cb=xclip
 alias g=grep
 alias lg=lsgrep
 
-alias systemctl=sc
+alias sc=systemctl
 
 # vim: ft=zsh
