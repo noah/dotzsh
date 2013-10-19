@@ -26,7 +26,9 @@ setopt PUSHD_IGNORE_DUPS
 setopt ALWAYS_TO_END
 
 # automatically list choices on ambiguous completion
-setopt AUTO_LIST
+setopt AUTO_LIST nolistambiguous
+# nolistambiguous means on first tab, complete as much as it can, and
+# list the choices.  this means you don't have to hit tab twice 
 
 # Automatically use menu completion after the second consecutive
 # request for completion.  Overridden by MENU_COMPLETE
