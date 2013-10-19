@@ -5,7 +5,9 @@ alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
 alias l=ll
 alias lc="ls -halt"
-alias less="ls -X"
+# less -X: do not run termcap de/initialization: 
+# i.e., don't clear the term after paging a file
+alias less="less -X" 
 alias lsl="ls|less"
 alias lcl="lc|less"
 alias lsgrep="ls -a|egrep -i"
