@@ -297,5 +297,11 @@ cb() {
   cat $1 | xclip
 }
 
+# stream file $1 on port $2
+stream()
+{
+        nc -l -p "$2" < "$1"
+}
+
 
 # vim: ft=zsh
