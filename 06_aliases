@@ -61,7 +61,7 @@ alias mns="mplayer -nosound"
 alias gmns="gmplayer -nosound"
 
 # riddim
-alias rq='riddim -q | less --pattern="\*"'
+alias rq='riddim -q | less --pattern="^\*"'
 alias re='riddim -e'
 alias rc='riddim -c'
 alias rn='riddim -n'
