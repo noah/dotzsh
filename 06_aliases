@@ -61,7 +61,7 @@ alias mns="mplayer -nosound"
 alias gmns="gmplayer -nosound"
 
 # riddim
-alias rq='riddim -q | less'
+alias rq='riddim -q | less --pattern="\*"'
 alias re='riddim -e'
 alias rc='riddim -c'
 alias rn='riddim -n'
@@ -126,6 +126,8 @@ alias esq="ssh esq"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim ~/.vimrc"
+alias vimrc.test="vim ~/.vimrc.test"
+alias vimtest="vim -u ~/.vimrc.test"
 alias vimup="vim +BundleInstall! && vim +BundleClean!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
 alias expl="nautilus ."
@@ -156,5 +158,10 @@ alias g=grep
 alias lg=lsgrep
 
 alias sc="sudo systemctl"
+alias sc="sudo systemctl status"
+
+alias httpd.conf="sudo vim -p /etc/httpd/conf/httpd.conf /etc/httpd/conf/extra/*.conf"
+
+alias vv="vim ~/.vim/vundles; vimup"
 
 # vim: ft=zsh

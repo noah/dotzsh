@@ -1,7 +1,7 @@
 zmodload -i zsh/complist
 
 zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
@@ -42,4 +42,4 @@ autoload -Uz compinit && compinit
 # complete only pdf for evince
 # compctl -g '*.pdf' evince
 
-# vim: set ft=zsh
+# vim:ft=zsh
