@@ -101,7 +101,7 @@ PROMPT='\
 %B${${thetty}}%b$SEP\
 %B${$(fstype)}%b$SEP
 %{${$(pwd|grep --color=always /)}%}
-%(!.☠.⚡) '
+%(!.☠.%%) '
 
 RPROMPT='%B${vcs_info_msg_0_}%b'
 
