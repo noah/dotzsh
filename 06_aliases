@@ -150,7 +150,6 @@ alias chrome=google-chrome
 
 alias termd="urxvtd -q -o -f"
 
-alias vw="vim ~/vimwiki/index.wiki"
 alias vv="vim ~/.vim/vundles; vimup"
 
 alias rexima="aoss rexima"
