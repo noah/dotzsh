@@ -13,21 +13,25 @@ export LC_MESSAGES="C"
 
 export G=/home/noah/gits
 export JAVA_HOME=/usr
-export CLASSPATH=./jars/xml-apis.jar:./jars/odfdom-java.jar:./jars/simple-odf.jar:./jars/xercesImpl.jar
+export CLASSPATH=".$(find . -name \*.jar -exec printf :{} ';')"
 
 # uc
 export UC=/home/noah/gits/checkouts/uchicago/cspp/2012/spring
 
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
 
-if [[ $(tput colors) == 256 ]]; then
-  export TERM="screen-256color"
-else
-  export TERM="linux"
-fi
+# if [[ $(tput colors) == 256 ]]; then
+#   export TERM="screen-256color"
+# else
+#   export TERM="linux"
+# fi
+
+export TERM="screen-256color"
 
 export LD_LIBRARY_PATH=.
 
-export PRINTER="HP_Officejet_6300_series"
+export PRINTER="Xerox_WorkCentre_4260"
+
+export DISPLAY=":0.0"
 
 # vim: ft=zsh
