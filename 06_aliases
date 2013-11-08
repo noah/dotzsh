@@ -5,6 +5,7 @@ alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
 alias l=ll
 alias lc="ls -halt"
+alias lcl="lc|less"
 alias lsl="ls|less"
 alias lsgrep="ls -a|egrep -i"
 alias hgrep="cat ~/.histfile| grep"
@@ -23,11 +24,6 @@ alias rmRf="rm -Rf"
 
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
 
-# ssh
-alias downbe="ssh -Y $(whoami)@downbe"
-alias downbe.at="ssh -Y $(whoami)@downbe.at"
-alias startsocks="ssh -c blowfish -C -D 8080 127.0.0.1"
-
 # cmus
 alias cr="cmus-remote -P"
 alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
@@ -35,6 +31,7 @@ alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/s
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
 # pacman
+alias pacman="sudo pacman"
 alias p="pacman"
 alias y="yaourt"
 
@@ -67,7 +64,6 @@ alias sS="screen -S"
 alias sls="screen -ls"
 
 # vim
-alias letter="cp /home/noah/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
 alias todo="pushd ~/gits/checkouts/todo; vim todo.otl && git commit -a -m '$(date)';git commit -a; git push; popd"
 alias vimo="vim -o"
 alias vimO="vim -O"
@@ -75,11 +71,11 @@ alias vimp="vim -p"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
-alias vimpass="pushd /home/noaht/wolfram; vim pw; popd"
+alias vimpass="pushd /home/noaht/wolfram; vim passwords.gpg; popd"
 
 # self-referential
 alias va="vimp ~/.zsh/{06_aliases,12_suffix_aliases}; source ~/.zsh/06_aliases; source ~/.zsh/12_suffix_aliases;"
-alias vf="vim /home/noah/.zsh/11_functions; source /home/noah/.zsh/11_functions"
+alias vf="vim ~/.zsh/11_functions; source ~/.zsh/11_functions"
 alias reread="xrdb -all ~/.Xdefaults"
 
 # user
@@ -95,18 +91,16 @@ alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
 alias lock="xscreensaver-command -activate"
-alias rotate='/usr/bin/perlbin/site/renrot --no-rename *.JPG'
+alias rotate='renrot --no-rename *.JPG'
 alias tree="tree -Csu"
 alias fstab="vim /etc/fstab"
 alias uzbl="XDG_DATA_HOME=~/.uzbl/data XDG_CONFIG_HOME=~/.uzbl/config /home/noah/.uzbl/data/uzbl/scripts/uzbl_tabbed.py"
 alias tmux="tmux -2"
 alias ta="tmux attach || tmux"
-alias tat='tmux attach -t'
 alias tls='tmux ls'
 alias tns='tmux new -s'
 
 alias pkill9="pkill -9"
-alias fun="vim ~/.zsh/functions && . ~/.zsh/functions"
 alias fontfamilies='otfinfo -a /usr/share/fonts/otf/*|less'
 
 # wine/windows
@@ -127,28 +121,45 @@ alias k1="kill %1"
 alias k2="kill %2"
 
 alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
+alias pulsemixer="exec pavucontrol&"
 
-alias awesomereset="kill -s SIGHUP $(pgrep awesome)"
+alias rc.lua="vim ~/.config/awesome/rc.lua; awesomereset"
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
-alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
 alias rid="bg; disown; exit"
 alias xboard="xboard -ics -icshost freechess.org"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
-alias vimrc="vim ~/.vimrc"
+alias vimrc="vim -p ~/.vimrc ~/.vim/vundles"
 alias vimup="vim +BundleInstall!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
-alias esq="ssh esq"
 alias expl="nautilus ."
 
-alias sheet="libreoffice ~/wolfram/patents/wri-patents.ods"
-alias gsi="gnome-screenshot -i"
-
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
+#
 alias mutt-wri="MUTT_ACCOUNT=wri mutt"
 alias mutt-wa="MUTT_ACCOUNT=wa mutt"
 
-alias scan-cartoon="pushd ~/wolfram/caption-contest; scan $(date +'%Y-%m-%d'); popd"
+alias pkill="pkill -fe"
+
+alias chrome=google-chrome
+
+alias termd="urxvtd -q -o -f"
+
+alias vw="vim ~/vimwiki/index.wiki"
+alias vv="vim ~/.vim/vundles; vimup"
+
+alias rexima="aoss rexima"
+
+# ssh
+alias startsocks="ssh -D 9999 -f -C -q -N noah@tilton.co"
+
+alias filters="z proc; vim config.py; popd"
+
+alias dmesg="dmesg -L -H --reltime"
+
+alias proxy="ssh -D 9999 -f -C -q -N noah@ark.tilton.co"
+
+alias free="free -h"
 
 # vim: ft=zsh

@@ -82,7 +82,7 @@ function fstype
 
 function pixels
 {
-  grep urxvt.font ~/.config/xresources/fonts | sed -r -e 's/.*pixelsize=([[:digit:]]+).*/\1/'
+  grep urxvt.font ~/.config/xresources/fonts | grep -v ^! | sed -r -e 's/.*pixelsize=([[:digit:]]+).*/\1/'
 }
 
 local histno="%{%{$fg[green]%}%}%!%{$reset_color%}"
@@ -105,9 +105,10 @@ PROMPT='\
 %B${$(pixels)}%bpx$SEP\
 %B${${thetty}}%b$SEP\
 %B${$(fontsz)}%b$SEP\
-%B${$(fstype)}%b$SEP
+%B${$(fstype)}%b$SEP\
+%B${DISPLAY}%b$SEP\
 %{${$(pwd|grep --color=always /)}%}
-%(!.☠.⚡) '
+%(!.☠.%%) '
 
 RPROMPT='%B${vcs_info_msg_0_}%b'
 
