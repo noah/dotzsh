@@ -9,7 +9,7 @@ export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
 
 export JAVA_HOME=/usr
-export CLASSPATH=".$(find . -name \*.jar -exec printf :{} ';')"
+export CLASSPATH=".$(find ./lib -name \*.jar -exec printf :{} ';')"
 
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
 # rxvt-unicode
