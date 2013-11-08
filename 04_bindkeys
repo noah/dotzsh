@@ -1,3 +1,16 @@
 bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
+
+bindkey "^[[A" up-line-or-history
+bindkey "^[[B" down-line-or-history
+bindkey ' ' magic-space
+
+# make C-P and C-P pushd and popd, respectively
+bindkey -s '^P' '^qpushd\n'
+bindkey -s '^O' '^qpopd\n'
+
+# make C-Space toggle between pwd and pwd last
+bindkey -s '^@' '^qcd -\n'
+
+# vim:ft=zsh

@@ -1,12 +1,40 @@
-# The following lines were added by compinstall
-
-
 zmodload -i zsh/complist
 
 zstyle ':completion:*' list-colors ''
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# fsck rehash
+_force_rehash() {
+  (( CURRENT == 1 )) && rehash
+    return 1
+}
+
+zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete 
+# show completion menu
+zstyle ':completion:*' menu select
+
+# complete process names
+zstyle ':completion:*:processes-names' command  'ps c -u ${USER} -o command | uniq'
+
+# complete killing
+zstyle ':completion:*:*:*:*:processes' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+
+# ignore line contents for some commands
+zstyle ':completion:*:(rm|kill|diff):*' ignore-line yes
+
+# highlight partial prefix match in completion menu, as ll in:
+#   % ll<TAB>
+# http://www.reddit.com/r/zsh/comments/msps0/color_partial_tab_completions_in_zsh/c367xqo
+zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==34=34}:${(s.:.)LS_COLORS}")';
+
+
+# only suggest mplayer protocol completions when inside an empty
+# directory: http://www.zsh.org/mla/users/2011/msg00692.html
+zstyle ':completion:*:mplayer:argument*' tag-order '! urls'
+
 zstyle :compinstall filename '/home/noah/.zshrc'
 
 autoload -Uz compinit && compinit
@@ -14,4 +42,4 @@ autoload -Uz compinit && compinit
 # complete only pdf for evince
 # compctl -g '*.pdf' evince
 
-# vim: set ft=zsh
+# vim:ft=zsh

@@ -3,27 +3,25 @@ export VISUAL="vim"
 export GPGKEY=0x7E489514
 export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
-export SCAN=/drum/misc/backup/ns_cache
 export IPOD_MOUNTPOINT=/mnt/ipod
-#export PYTHONSTARTUP=$HOME/.pythonrc
-export PRINT_QUEUE=/cygdrive/c/cygwin/home/noah/gits/github/print-watch.py/queue
 
 export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
 
-export G=/home/noah/gits
 export JAVA_HOME=/usr
 export CLASSPATH=".$(find . -name \*.jar -exec printf :{} ';')"
 
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
+# rxvt-unicode
+# ...
+if [[ $(tput colors) == 256 ]]; then
+  export TERM="screen-256color"
+else
+  export TERM="linux"
+fi
 
-# if [[ $(tput colors) == 256 ]]; then
-#   export TERM="screen-256color"
-# else
-#   export TERM="linux"
-# fi
-
-export TERM="screen-256color"
+# xfce4-terminal
+#export TERM="screen-256color"
 
 export LD_LIBRARY_PATH=.
 

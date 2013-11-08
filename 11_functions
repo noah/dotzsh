@@ -151,7 +151,7 @@ git-create-linked()
   #       cd to the directory
 
   remote_user="noah"
-  remote_host="0x7be.org"
+  remote_host="tilton.co"
   remote_bare_basepath="/home/noah/gits/bare"
   local_checkout_basepath="/home/noah/gits/checkouts"
 
@@ -184,6 +184,99 @@ tat ()
   tmux attach -t "$1" || tmux new -s "$1"
 }
 
+=======
+# queue paths for later deletion
+zap()
+{
+  local zapfile="$HOME/.zapfile"
+
+  if (( $# == 0 )); then
+    echo "usage: zap file ..."
+  fi
+
+  if [[ ! -f "$zapfile" ]]; then
+    touch "$zapfile" && echo "created $zapfile"
+  fi
+
+  for i; do
+    if [[ "$i" == "-c" ]]; then
+      : > "$zapfile"
+    elif [[ "$i" == "-d" ]]; then
+      while read zap; do 
+        rm -Rfv "$zap"
+      done < "$zapfile"
+      : > "$zapfile"
+    elif [[ "$i" == "-q" ]]; then
+      while read zap; do 
+        echo "$zap"
+      done < "$zapfile"
+    else
+      zapped="$(readlink -f "$i")"
+      if [[ -n "$zapped" ]]; then
+        if [[ -e "$zapped" ]]; then
+          echo "$zapped" >> "$zapfile"
+          echo "✗ \`$zapped'"
+        fi
+      fi
+    fi
+  done
+}
+
+
+# # queue paths for later keeping
+# keep()
+# {
+#   local keepfile="$HOME/.keepfile"
+# 
+#   if (( $# == 0 )); then
+#     echo "usage: keep file ..."
+#   fi
+# 
+#   if [[ ! -f "$keepfile" ]]; then
+#     touch "$keepfile" && echo "created $keepfile"
+#   fi
+# 
+#   for i; do
+#     if [[ "$i" == "-c" ]]; then
+#       : > "$keepfile"
+#     elif [[ "$i" == "-m" ]]; then
+#       if [[ -n "${argv[$i+1]}" ]]; then
+#         while read keep; do 
+#           mv -v "$keep" "$(readlink -f "${argv[$i+1}")"
+#         done < "$keepfile"
+#         : > "$keepfile"
+#       else
+#         echo "missing destination file operand"
+#         return 1
+#       fi
+#     elif [[ "$i" == "-q" ]]; then
+#       while read keep; do 
+#         echo "$keep"
+#       done < "$keepfile"
+#     else
+#       kept="$(readlink -f "$i")"
+#       if [[ -n "$kept" ]]; then
+#         if [[ -e "$kept" ]]; then
+#           echo "$kept" >> "$keepfile"
+#           echo "✓ \`$kept'"
+#         fi
+#       fi
+#     fi
+#   done
+# }
+
+tat ()
+{
+  # attach to tmux session, creating session if it doesn't exist
+  tmux attach -t "$1" || tmux new -s "$1"
+}
+
+tns ()
+{
+  # create tmux session, attaching to session if it exists
+  tmux new -s "$1" || tmux attach -t "$1"
+}
+
 awesomereset()
 {
   kill -s SIGHUP $(pgrep awesome)
@@ -193,5 +286,34 @@ awesome_session_bus_address()
 {
   grep -zi DBUS /proc/$(pgrep awesome)/environ | sed -r -e 's/^DBUS_SESSION_BUS_ADDRESS=//'
 }
+
+vw()
+{
+  local WIKIDIR=~/gits/checkouts/vimwiki
+  pushd $WIKIDIR || return -1
+  vim index.wiki
+  git add *.wiki
+  git commit -a && git push
+  popd
+}
+
+# colorized (vim) man pages
+man() {
+  /usr/bin/man $@ | \
+  col -b | \
+  vim -R -c 'set ft=man nomod nolist' -
+}
+
+
+cb() {
+  cat $1 | xclip
+}
+
+# stream file $1 on port $2
+stream()
+{
+        nc -l -p "$2" < "$1"
+}
+
 
 # vim: ft=zsh
