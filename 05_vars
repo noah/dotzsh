@@ -10,12 +10,6 @@ export LC_MESSAGES="C"
 
 export JAVA_HOME=/usr
 
-# dynamically set classpath; convention:  place jars into ./lib
-funtion precmd()
-{
-  export CLASSPATH=".$(find ./lib -name \*.jar -exec printf :{} ';' 2>/dev/null)"
-}
-
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
 # rxvt-unicode
 # ...

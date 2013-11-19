@@ -1,2 +1,2 @@
-export PATH=$PATH:/usr/local/bin:/home/noah/bin:$JAVA_HOME/bin:/usr/lib/git-core:.
+export PATH=$PATH:/usr/local/bin:~/bin:$JAVA_HOME/bin:/usr/lib/git-core:.
 # vim: ft=zsh

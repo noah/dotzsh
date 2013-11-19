@@ -28,6 +28,7 @@ alias su-="su -"
 alias s="sudo"
 alias rmrfv="rm -rfv"
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
+alias rmclass='find . -iname "*.class" |xargs rm -fv'
 
 # cmus
 alias cr="cmus-remote -P"
@@ -73,6 +74,8 @@ alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
 alias vimpass="pushd /home/noaht/wolfram; vim passwords.gpg; popd"
+alias vj="vimp *.java"
+alias vp="vimp *.py"
 
 # self-referential
 alias va="vimp ~/.zsh/{06_aliases,12_suffix_aliases}; source ~/.zsh/06_aliases; source ~/.zsh/12_suffix_aliases;"
@@ -193,5 +196,9 @@ alias lg=lsgrep
 alias sc="sudo systemctl"
 
 alias httpd.conf="sudo vim -p /etc/httpd/conf/httpd.conf /etc/httpd/conf/extra/*.conf"
+
+alias office=libreoffice
+
+alias cal='cal -3 | grep -E --color "\b`date +%e`\b|$"'
 
 # vim: ft=zsh
