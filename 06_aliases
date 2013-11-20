@@ -158,10 +158,11 @@ alias g=grep
 alias lg=lsgrep
 
 alias sc="sudo systemctl"
-alias sc="sudo systemctl status"
 
 alias httpd.conf="sudo vim -p /etc/httpd/conf/httpd.conf /etc/httpd/conf/extra/*.conf"
 
 alias vv="vim ~/.vim/vundles; vimup"
+
+alias office=libreoffice
 
 # vim: ft=zsh
