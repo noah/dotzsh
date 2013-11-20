@@ -297,12 +297,6 @@ vw()
 }
 
 # colorized (vim) man pages
-man() {
-  /usr/bin/man $@ | \
-  col -b | \
-  # vim -R -c 'set ft=man nomod nolist' -
-  vimpager -
-}
 
 
 cb() {
