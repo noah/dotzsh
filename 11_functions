@@ -178,6 +178,12 @@ git-create-linked()
   echo "Done"
 }
 
+
+tat ()
+{
+  tmux attach -t "$1" || tmux new -s "$1"
+}
+
 # queue paths for later deletion
 zap()
 {
@@ -273,6 +279,11 @@ tns ()
 awesomereset()
 {
   kill -s SIGHUP $(pgrep awesome)
+}
+
+awesome_session_bus_address() 
+{
+  grep -zi DBUS /proc/$(pgrep awesome)/environ | sed -r -e 's/^DBUS_SESSION_BUS_ADDRESS=//'
 }
 
 vw()

@@ -28,12 +28,7 @@ alias su-="su -"
 alias s="sudo"
 alias rmrfv="rm -rfv"
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
-
-
-# ssh
-alias ark="ssh -Y $(whoami)@ark"
-alias tilton.co="ssh -Y $(whoami)@tilton.co"
-alias startsocks="ssh -c blowfish -C -D 8080 127.0.0.1"
+alias rmclass='find . -iname "*.class" |xargs rm -fv'
 
 # cmus
 alias cr="cmus-remote -P"
@@ -78,6 +73,14 @@ alias vimx="vim -x"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
+alias vimpass="pushd /home/noaht/wolfram; vim passwords.gpg; popd"
+alias vj="vimp *.java"
+alias vp="vimp *.py"
+
+# self-referential
+alias va="vimp ~/.zsh/{06_aliases,12_suffix_aliases}; source ~/.zsh/06_aliases; source ~/.zsh/12_suffix_aliases;"
+alias vf="vim ~/.zsh/11_functions; source ~/.zsh/11_functions"
+alias reread="xrdb -all ~/.Xdefaults"
 alias vimpass="pushd ~/gits/checkouts/mpass; vim ~/gits/checkouts/mpass/mpass.gpg; git commit -a; popd"
 
 # self-referential
@@ -94,6 +97,7 @@ alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
 alias kX="killall X"
+alias lock="xscreensaver-command -activate"
 alias lclbt="cd /drum/bt && lcl"
 alias lock="vlock"
 alias rotate='renrot --no-rename *.JPG'
@@ -118,10 +122,14 @@ alias maket='make tests'
 
 alias lsofiP="lsof -i -P"
 
-alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
-alias gm="elinks 'http://mail.google.com/mail?nocheckbrowser'"
+alias rc.lua="vim ~/.config/awesome/rc.lua; awesomereset"
+alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
+alias pulsemixer="exec pavucontrol&"
 alias rid="bg; disown; exit"
 alias xboard="xboard -ics -icshost freechess.org"
+alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
+alias vimrc="vim -p ~/.vimrc ~/.vim/vundles"
+alias vimup="vim +BundleInstall!"
 alias esq="ssh esq"
 
 alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
@@ -131,6 +139,34 @@ alias vimtest="vim -u ~/.vimrc.test"
 alias vimup="vim +BundleInstall! && vim +BundleClean!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
 alias expl="nautilus ."
+
+alias expl="nautilus ."
+
+alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
+#
+alias mutt-wri="MUTT_ACCOUNT=wri mutt"
+alias mutt-wa="MUTT_ACCOUNT=wa mutt"
+
+alias pkill="pkill -fe"
+
+alias chrome=google-chrome
+
+alias termd="urxvtd -q -o -f"
+
+alias vv="vim ~/.vim/vundles; vimup"
+
+alias rexima="aoss rexima"
+
+# ssh
+alias startsocks="ssh -D 9999 -f -C -q -N noah@tilton.co"
+
+alias filters="z proc; vim config.py; popd"
+
+alias dmesg="dmesg -L -H --reltime"
+
+alias proxy="ssh -D 9999 -f -C -q -N noah@ark.tilton.co"
+
+alias free="free -h"
 
 alias jin="wmname LG3D; jin"
 alias zshrc="vimp ~/.zsh/*; . ~/.zshrc"
@@ -161,7 +197,9 @@ alias sc="sudo systemctl"
 
 alias httpd.conf="sudo vim -p /etc/httpd/conf/httpd.conf /etc/httpd/conf/extra/*.conf"
 
-alias vv="vim ~/.vim/vundles; vimup"
+alias office=libreoffice
+
+alias cal='cal -3 | grep -E --color "\b`date +%e`\b|$"'
 
 alias office=libreoffice
 

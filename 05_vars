@@ -1,6 +1,6 @@
 export EDITOR="vim"
 export VISUAL="vim"
-export GPGKEY=DAFA7071
+export GPGKEY=0x7E489514
 export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
 export IPOD_MOUNTPOINT=/mnt/ipod
@@ -9,23 +9,23 @@ export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
 
 export JAVA_HOME=/usr
-export CLASSPATH=
 
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
-
 # rxvt-unicode
 # ...
-# if [[ $(tput colors) == 256 ]]; then
-#   export TERM="screen-256color"
-# else
-#   export TERM="linux"
-# fi
+if [[ $(tput colors) == 256 ]]; then
+  export TERM="screen-256color"
+else
+  export TERM="linux"
+fi
 
 # xfce4-terminal
-export TERM="screen-256color"
+#export TERM="screen-256color"
 
 export LD_LIBRARY_PATH=.
 
 export PYTHONSTARTUP=~/.pystartup
+export PRINTER="Xerox_WorkCentre_4260"
+export DISPLAY=":0.0"
 
 # vim: ft=zsh
