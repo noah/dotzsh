@@ -12,6 +12,7 @@ alias less_color="less -R"
 alias lsl="ls --color=always | less_color"
 alias lcl="lc | less_color"
 alias lsgrep="ls -a --color=yes|egrep -i"
+alias llgrep="ls -a -l --color=yes|egrep -i"
 alias hgrep="cat ~/.histfile| egrep"
 alias dush="du -sh"
 alias free="free --human"
@@ -90,7 +91,7 @@ alias vf="vim ~/.zsh/??_functions; source ~/.zshrc"
 # user
 alias ev="evince"
 alias bhttpd="sudo systemctl restart httpd.service"
-alias bnginx="killall -s 9 nginx; /etc/rc.d/nginx start; /etc/rc.d/php-fpm restart"
+alias bhttpd="sudo systemctl restart nginx.service"
 alias brew="sleep 4m; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias h="history"
@@ -202,5 +203,9 @@ alias office=libreoffice
 alias cal='cal -3 | grep -E --color "\b`date +%e`\b|$"'
 
 alias office=libreoffice
+
+alias grepi="grep -i"
+
+alias vimpath="vim ~/.zsh/*_path; . ~/.zsh/*_path"
 
 # vim: ft=zsh
