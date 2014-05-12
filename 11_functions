@@ -318,3 +318,8 @@ fontedit()
 }
 
 # vim: ft=zsh
+#
+function streamvid()
+{
+ffmpeg -i "$1" -f matroska -s 640x480 -b:v 256k -vcodec libx264 -acodec copy - | nc -l -p 18944
+}
