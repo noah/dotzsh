@@ -145,7 +145,7 @@ alias expl="nautilus ."
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
 #
 alias mutt-wri="MUTT_ACCOUNT=wri mutt"
-alias mutt-wa="MUTT_ACCOUNT=wa mutt"
+alias mutt-wallc="MUTT_ACCOUNT=wallc mutt"
 
 alias pkill="pkill -fe"
 
@@ -200,5 +200,11 @@ alias httpd.conf="sudo vim -p /etc/httpd/conf/httpd.conf /etc/httpd/conf/extra/*
 alias office=libreoffice
 
 alias cal='cal -3 | grep -E --color "\b`date +%e`\b|$"'
+
+alias grepi="grep -i"
+
+alias vh="vim ~/.mutt/hooks.rc"
+
+alias emails="pushd ~/gits/github/procmail-py; vim config.py; popd"
 
 # vim: ft=zsh
