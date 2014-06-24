@@ -297,11 +297,6 @@ vw()
 }
 
 # colorized (vim) man pages
-man() {
-  /usr/bin/man $@ | \
-  col -b | \
-  vim -R -c 'set ft=man nomod nolist' -
-}
 
 
 cb() {
@@ -314,5 +309,17 @@ stream()
         nc -l -p "$2" < "$1"
 }
 
+fontedit()
+{
+        vim ~/.config/xresources/fonts
+        xrdb -all ~/.Xresources
+        exec urxvtc
+
+}
 
 # vim: ft=zsh
+#
+function streamvid()
+{
+ffmpeg -i "$1" -f matroska -s 640x480 -b:v 256k -vcodec libx264 -acodec copy - | nc -l -p 18944
+}

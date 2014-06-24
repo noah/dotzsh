@@ -1,2 +1,12 @@
-export PATH=$PATH:/usr/local/bin:~/bin:$JAVA_HOME/bin:/usr/lib/git-core:.
+PATH=$PATH
+PATH+=:/usr/local/bin
+PATH+=:~/bin
+PATH+=:$JAVA_HOME/bin
+PATH+=:/usr/lib/git-core
+PATH+=:~/.cabal/bin
+PATH+=:~/.gem/ruby/2.1.0/bin
+PATH+=:.
+
+export PATH
+
 # vim: ft=zsh
