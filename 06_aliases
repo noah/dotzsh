@@ -90,8 +90,6 @@ alias vf="vim ~/.zsh/??_functions; source ~/.zshrc"
 
 # user
 alias ev="evince"
-alias bhttpd="sudo systemctl restart httpd.service"
-alias bhttpd="sudo systemctl restart nginx.service"
 alias brew="sleep 4m; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
 alias egrep="egrep --colour=auto"
 alias h="history"
@@ -207,5 +205,9 @@ alias office=libreoffice
 alias grepi="grep -i"
 
 alias vimpath="vim ~/.zsh/*_path; . ~/.zsh/*_path"
+
+alias bhttpd="sudo systemctl restart httpd.service"
+alias bhttpd="sudo systemctl restart nginx.service"
+alias bnginx=bhttpd
 
 # vim: ft=zsh
