@@ -210,4 +210,7 @@ alias bhttpd="sudo systemctl restart httpd.service"
 alias bhttpd="sudo systemctl restart nginx.service"
 alias bnginx=bhttpd
 
+#alias wmclass="xprop|grep WM_CLASS"
+
+
 # vim: ft=zsh

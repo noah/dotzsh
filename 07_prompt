@@ -24,6 +24,8 @@ zstyle ':vcs_info:*' actionformats \
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 
 function precmd() {
+    # window title
+    # formats: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
     print -Pn "\e]2;%n@%m:%~ (%j)\a"
 }
 
