@@ -32,7 +32,6 @@ alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
 alias rmclass='find . -iname "*.class" |xargs rm -fv'
 
 # cmus
-alias cr="cmus-remote -P"
 alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d '\r' |xargs cmus-remote"
 alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
@@ -58,7 +57,6 @@ alias gmns="gmplayer -nosound"
 
 # riddim
 alias rq='riddim -q | less --pattern="^\*"'
-alias re='riddim -e'
 alias rc='riddim -c'
 alias rn='riddim -n'
 alias rN='riddim -N'
