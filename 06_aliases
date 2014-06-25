@@ -72,7 +72,6 @@ alias vimx="vim -x"
 alias gvimo="gvim -o"
 alias gvimO="gvim -O"
 alias vless="vim -u /usr/share/vim/macros/less.vim"
-alias vimpass="pushd /home/noaht/wolfram; vim passwords.gpg; popd"
 alias vj="vimp *.java"
 alias vp="vimp *.py"
 
@@ -142,7 +141,7 @@ alias expl="nautilus ."
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
 #
 alias mutt-wri="MUTT_ACCOUNT=wri mutt"
-alias mutt-wa="MUTT_ACCOUNT=wa mutt"
+alias mutt-wallc="MUTT_ACCOUNT=wallc mutt"
 
 alias pkill="pkill -fe"
 
@@ -198,12 +197,13 @@ alias office=libreoffice
 
 alias cal='cal -3 | grep -E --color "\b`date +%e`\b|$"'
 
-alias office=libreoffice
-
 alias grepi="grep -i"
 
-alias vimpath="vim ~/.zsh/*_path; . ~/.zsh/*_path"
+alias vh="vim ~/.mutt/hooks.rc"
 
+alias emails="pushd ~/gits/github/procmail-py; vim config.py; popd"
+alias office=libreoffice
+alias vimpath="vim ~/.zsh/*_path; . ~/.zsh/*_path"
 alias bhttpd="sudo systemctl restart httpd.service"
 alias bhttpd="sudo systemctl restart nginx.service"
 alias bnginx=bhttpd
