@@ -164,7 +164,7 @@ alias proxy="ssh -D 9999 -f -C -q -N noah@ark.tilton.co"
 
 alias free="free -h"
 
-alias jin="wmname LG3D; jin"
+alias jin="JAVA_HOME=; wmname LG3D; jin"
 alias zshrc="vimp ~/.zsh/*; . ~/.zshrc"
 alias rc.lua="vim ~/.config/awesome/rc.lua"
 
