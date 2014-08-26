@@ -8,8 +8,6 @@ export IPOD_MOUNTPOINT=/mnt/ipod
 export LANG=en_US.UTF-8
 export LC_MESSAGES="C"
 
-export JAVA_HOME=/usr
-
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
 # rxvt-unicode
 # ...
@@ -25,7 +23,6 @@ fi
 export LD_LIBRARY_PATH=.
 
 export PYTHONSTARTUP=~/.pystartup
-export PRINTER="Xerox_WorkCentre_4260"
 export DISPLAY=":0.0"
 
 # vim: ft=zsh
