@@ -346,4 +346,15 @@ function nq()
         fi
 }
 
+function rid()
+{
+        if [[ $? -ne 0 ]]; then
+                bg $1
+                disown $1
+        else
+                bg $1
+                disown $1
+        fi
+}
+
 # vim: ft=zsh
