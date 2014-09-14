@@ -343,6 +343,8 @@ function nq()
 
         if [[ $? -ne 0 ]]; then
                 riddim -e $@
+        else
+                echo "$@ enqueued to cmus"
         fi
 }
 
