@@ -211,5 +211,7 @@ alias ack=ag
 
 alias nt="nosetests -v"
 
+alias less="less -b512000 -S"
+
 
 # vim: ft=zsh
