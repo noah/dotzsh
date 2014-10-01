@@ -8,9 +8,7 @@ alias lc="ls -halt --color=always"
 # less -X: do not run termcap de/initialization: 
 # i.e., don't clear the term after paging a file
 alias less="less -X" 
-alias less_color="less -R"
-alias lsl="ls --color=always | less_color"
-alias lcl="lc | less_color"
+alias less_color="less -R" alias lsl="ls --color=always | less_color" alias lcl="lc | less_color"
 alias lsgrep="ls -a --color=yes|egrep -i"
 alias llgrep="ls -a -l --color=yes|egrep -i"
 alias hgrep="cat ~/.histfile| egrep"
@@ -207,11 +205,15 @@ alias bhttpd="sudo systemctl restart httpd.service"
 alias bhttpd="sudo systemctl restart nginx.service"
 alias bnginx=bhttpd
 
-alias ack=ag
-
 alias nt="nosetests -v"
 
-alias less="less -b512000 -S"
+local _less="less -b512000 -S -R -F"
+
+alias less="$_less"
+
+alias ag="ag --pager=\"$_less\""
+alias ack=ag
+
 
 
 # vim: ft=zsh
