@@ -214,6 +214,10 @@ alias less="$_less"
 alias ag="ag --pager=\"$_less\""
 alias ack=ag
 
+alias blah="git commit -a -m'blah'"
+alias push="git push"
+alias pull="git pull"
+
 
 
 # vim: ft=zsh
