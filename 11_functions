@@ -352,8 +352,9 @@ function rid()
                 bg $1
                 disown $1
         else
-                bg $1
-                disown $1
+                # wtf
+                #
+                ;
         fi
 }
 
