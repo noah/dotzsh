@@ -207,5 +207,7 @@ alias bhttpd="sudo systemctl restart httpd.service"
 alias bhttpd="sudo systemctl restart nginx.service"
 alias bnginx=bhttpd
 
+alias ark="ssh ark"
+
 
 # vim: ft=zsh
