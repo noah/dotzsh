@@ -222,6 +222,6 @@ alias blah="git commit -a -m'blah'"
 alias push="git push"
 alias pull="git pull"
 
-
+alias ark="ssh ark"
 
 # vim: ft=zsh
