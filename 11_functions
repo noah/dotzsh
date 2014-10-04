@@ -288,7 +288,7 @@ tns ()
   tmux new -s "$1" || tmux attach -t "$1"
 }
 
-awesomereset()
+bawesome()
 {
   kill -s SIGHUP $(pgrep awesome)
 }
@@ -358,6 +358,35 @@ function rid()
                 #
                 ;
         fi
+}
+
+function modedit()
+{
+        # TODO support multiple arguments ($*)
+        # If there is a difference in modification times, then the file
+        # was modified.
+        local t1=$(stat --dereference --format="%Y" "$1")
+        vim "$1"
+        local t2=$(stat --dereference --format="%Y" "$1")
+        return $((t1-t2)) # 'within double parentheses, parameter dereferncing is optional'
+}
+
+function tags()
+{
+        modedit "$HOME/.config/awesome/tags.txt"
+        if [ $? -ne 0 ]; then bawesome; fi
+}
+
+function rc.lua()
+{
+        modedit "$HOME/.config/awesome/rc.lua"
+        if [ $? -ne 0 ]; then bawesome; fi
+}
+
+function theme.lua()
+{
+        modedit "$HOME/.config/awesome/themes/theme.lua"
+        if [ $? -ne 0 ]; then bawesome; fi
 }
 
 # vim: ft=zsh

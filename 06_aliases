@@ -116,22 +116,17 @@ alias maket='make tests'
 
 alias lsofiP="lsof -i -P"
 
-alias rc.lua="vim ~/.config/awesome/rc.lua; awesomereset"
 alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 alias pulsemixer="exec pavucontrol&"
 alias xboard="xboard -ics -icshost freechess.org"
-alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
 alias vimrc="vim -p ~/.vimrc ~/.vim/vundles"
 alias vimup="vim +BundleInstall!"
 alias esq="ssh esq"
 
-alias tags="vim ~/.config/awesome/tags.txt; awesomereset"
-alias vimrc="vim ~/.vimrc"
 alias vimrc.test="vim ~/.vimrc.test"
 alias vimtest="vim -u ~/.vimrc.test"
 alias vimup="vim +BundleInstall! && vim +BundleClean!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
-alias expl="nautilus ."
 
 alias expl="nautilus ."
 
@@ -163,7 +158,6 @@ alias free="free -h"
 
 alias jin="JAVA_HOME=; wmname LG3D; jin"
 alias zshrc="vimp ~/.zsh/*; . ~/.zshrc"
-alias rc.lua="vim ~/.config/awesome/rc.lua"
 
 alias pkill="pkill -fe"
 
