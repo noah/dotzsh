@@ -201,7 +201,11 @@ alias bnginx=bhttpd
 
 alias nt="nosetests -v"
 
-local _less="less -b512000 -S -R -F"
+local _less="less   --buffers=512000\
+                    --chop-long-lines\
+                    --RAW-CONTROL-CHARS\
+                    --quit-if-one-screen\
+                    --no-init"
 
 alias less="$_less"
 
