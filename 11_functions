@@ -360,7 +360,7 @@ function rid()
         fi
 }
 
-function modedit()
+modedit()
 {
         # TODO support multiple arguments ($*)
         # If there is a difference in modification times, then the file
@@ -371,19 +371,19 @@ function modedit()
         return $((t1-t2)) # 'within double parentheses, parameter dereferncing is optional'
 }
 
-function tags()
+tags()
 {
         modedit "$HOME/.config/awesome/tags.txt"
         if [ $? -ne 0 ]; then bawesome; fi
 }
 
-function rc.lua()
+rc.lua()
 {
         modedit "$HOME/.config/awesome/rc.lua"
         if [ $? -ne 0 ]; then bawesome; fi
 }
 
-function theme.lua()
+theme.lua()
 {
         modedit "$HOME/.config/awesome/themes/theme.lua"
         if [ $? -ne 0 ]; then bawesome; fi
