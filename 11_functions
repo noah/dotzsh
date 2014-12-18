@@ -348,6 +348,16 @@ function nq()
         fi
 }
 
+function nqm()
+{
+    nq $@ -x mp3
+}
+
+function nqf()
+{
+    nq $@ -x flac
+}
+
 function rid()
 {
         if [[ $? -ne 0 ]]; then
