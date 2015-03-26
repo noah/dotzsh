@@ -216,7 +216,10 @@ alias push="git push"
 alias pull="git pull"
 
 alias ark="ssh ark"
+alias mail="ssh mail"
 
 alias ms="musicsum ."
+
+alias mkdirdate="mkdir -v '$(date +%Y-%m-%d)'"
 
 # vim: ft=zsh
