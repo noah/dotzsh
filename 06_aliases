@@ -166,7 +166,6 @@ alias pkill="pkill -fe"
 
 alias termd="urxvtd -q -o -f"
 alias bterm="killall urxvtd && termd" # FIXME
-alias t="todo.sh"
 
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
 alias burxvtd="killall urxvtd; termd;"
