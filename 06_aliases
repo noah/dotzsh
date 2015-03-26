@@ -226,4 +226,7 @@ alias ms="musicsum ."
 alias mkdirdate="mkdir -v '$(date +%Y-%m-%d)'"
 alias k9='killall -s 9'
 
+alias rmf="rm -f"
+alias rmfv="rm -fv"
+
 # vim: ft=zsh
