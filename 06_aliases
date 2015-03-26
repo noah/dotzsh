@@ -4,11 +4,14 @@ alias ls="ls --color=auto"
 alias la="ls -alhF --classify"
 alias ll="ls -lhF --classify"
 alias l=ll
-alias lc="ls -halt --color=always"
+alias lc="ls -hlt --color=always"
 # less -X: do not run termcap de/initialization: 
 # i.e., don't clear the term after paging a file
 alias less="less -X" 
-alias less_color="less -R" alias lsl="ls --color=always | less_color" alias lcl="lc | less_color"
+alias less_color="less -R"
+alias lsl="ls --color=always | less_color"
+alias lcl="lc | less_color"
+alias lcla="lc -a | less_color"
 alias lsgrep="ls -a --color=yes|egrep -i"
 alias llgrep="ls -a -l --color=yes|egrep -i"
 alias hgrep="cat ~/.histfile| egrep"
@@ -221,5 +224,6 @@ alias mail="ssh mail"
 alias ms="musicsum ."
 
 alias mkdirdate="mkdir -v '$(date +%Y-%m-%d)'"
+alias k9='killall -s 9'
 
 # vim: ft=zsh
