@@ -399,4 +399,10 @@ theme.lua()
         if [ $? -ne 0 ]; then bawesome; fi
 }
 
+_()
+{
+        rtomv "$@" _done
+}
+
+
 # vim: ft=zsh
