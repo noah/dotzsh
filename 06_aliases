@@ -229,4 +229,9 @@ alias k9='killall -s 9'
 alias rmf="rm -f"
 alias rmfv="rm -fv"
 
+alias gsa='git submodule add'
+
+
+alias vimnorc='vim -u NONE'
+
 # vim: ft=zsh
