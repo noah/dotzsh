@@ -93,7 +93,7 @@ alias egrep="egrep --colour=auto"
 alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
-alias kX="killall Xorg.bin"
+alias kX="killall Xorg"
 alias lock="xscreensaver-command -activate"
 alias lclbt="cd /drum/bt && lcl"
 alias lock="vlock"
@@ -221,7 +221,7 @@ alias pull="git pull"
 alias ark="ssh ark"
 alias mail="ssh mail"
 
-alias ms="musicsum ."
+alias ms="musicsum"
 
 alias mkdirdate="mkdir -v '$(date +%Y-%m-%d)'"
 alias k9='killall -s 9'
