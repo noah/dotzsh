@@ -219,9 +219,19 @@ alias push="git push"
 alias pull="git pull"
 
 alias ark="ssh ark"
+alias mail="ssh mail"
 
 alias ms="musicsum ."
 
+alias mkdirdate="mkdir -v '$(date +%Y-%m-%d)'"
 alias k9='killall -s 9'
+
+alias rmf="rm -f"
+alias rmfv="rm -fv"
+
+alias gsa='git submodule add'
+
+
+alias vimnorc='vim -u NONE'
 
 # vim: ft=zsh
