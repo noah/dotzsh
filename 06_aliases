@@ -62,7 +62,6 @@ alias rc='riddim -c'
 alias rn='riddim -n'
 alias rN='riddim -N'
 alias rA='riddim -A'
-alias rs='watch -n 3 riddim -q'
 
 # vim
 alias letter="cp ~/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"

@@ -3,7 +3,7 @@ export VISUAL="vim"
 export GPGKEY=0x7E489514
 export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
-export IPOD_MOUNTPOINT=/mnt/ipod
+export IPOD_MOUNTPOINT=/media/ipod
 
 export LANG=en_US.UTF-8
 export LC_MESSAGES="C"

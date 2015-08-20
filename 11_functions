@@ -329,13 +329,13 @@ fontedit()
 
 }
 
-function streamvid()
+streamvid()
 {
   ffmpeg -i "$1" -f matroska -s 640x480 -b:v 256k -vcodec libx264 -acodec copy - | nc -l -p 18944
 }
 
 
-function nq()
+nq()
 {
         # cond. enqueue
         #
@@ -348,17 +348,17 @@ function nq()
         fi
 }
 
-function nqm()
+nqm()
 {
     nq $@ -x mp3
 }
 
-function nqf()
+nqf()
 {
     nq $@ -x flac
 }
 
-function rid()
+rid()
 {
         if [[ $? -ne 0 ]]; then
                 bg $1
@@ -368,6 +368,14 @@ function rid()
                 #
                 ;
         fi
+}
+
+rs()
+{
+        while true; do
+                riddim -q | less --pattern="^\*" 
+                sleep 5
+        done
 }
 
 modedit()
