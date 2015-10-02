@@ -230,7 +230,6 @@ alias rmfv="rm -fv"
 
 alias gsa='git submodule add'
 
-
 alias vimnorc='vim -u NONE'
 
 # vim: ft=zsh
