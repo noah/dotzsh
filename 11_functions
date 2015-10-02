@@ -412,5 +412,10 @@ _()
         rtomv "$@" _done
 }
 
+awstotp()
+{
+        local secret="$(cat ~/.secret/awstotp.txt)"
+        oathtool --totp --base32 "$secret"
+}
 
 # vim: ft=zsh
