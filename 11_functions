@@ -418,4 +418,29 @@ awstotp()
         oathtool --totp --base32 "$secret"
 }
 
+has()
+{
+        setopt extendedglob
+        autoload -U zargs
+        local root=$1
+        shift
+        local joined=${(j:*/**/*:)@}
+        search_path=$root/*$joined*/**
+        zargs -- (#i)$~search_path(N) -- realpath 2> /dev/null
+}
+
+has-music()
+{
+        while read dir; do
+                has $dir $@
+        done < ~/.secret/music.txt
+}
+
+has-film()
+{
+        while read dir; do
+                has $dir $@
+        done < ~/.secret/film.txt
+}
+
 # vim: ft=zsh
