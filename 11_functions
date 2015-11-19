@@ -446,6 +446,7 @@ has-film()
 pls2cmus()
 {
         for pls_href in "$@"; do
+                echo "$pls_href"
                 curl --silent "$pls_href" | grep -o http.\* | xargs cmus-remote -P
         done
 }
