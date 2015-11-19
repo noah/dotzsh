@@ -443,4 +443,11 @@ has-film()
         done < ~/.secret/film.txt
 }
 
+pls2cmus()
+{
+        for pls_href in "$@"; do
+                curl --silent "$pls_href" | grep -o http.\* | xargs cmus-remote -P
+        done
+}
+
 # vim: ft=zsh
