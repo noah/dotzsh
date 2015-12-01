@@ -443,4 +443,16 @@ has-film()
         done < ~/.secret/film.txt
 }
 
+pls2cmus()
+{
+        for pls in "$@"; do
+                echo "searching $pls"
+                curl --silent "$pls" | grep -o http.\* \
+                | while read href; do
+                        echo "discovered url: $href"
+                        cmus-remote -P "$href"
+                done 
+        done
+}
+
 # vim: ft=zsh
