@@ -16,3 +16,5 @@ PERL_MB_OPT="--install_base \"/home/noah/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/noah/perl5"; export PERL_MM_OPT;
 
 export MAIL=/home/noah/mail
+export NO_AT_BRIDGE=1
+export MAILCHECK=0

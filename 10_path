@@ -7,6 +7,8 @@ PATH+=:~/.cabal/bin
 PATH+=:~/.gem/ruby/2.1.0/bin
 PATH+=:.
 
+PATH+=:/home/noah/WOLFRAM/mathematica/10.3/bin
+
 export PATH
 
 # vim: ft=zsh

@@ -121,6 +121,7 @@ alias lsofiP="lsof -i -P"
 alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 alias pulsemixer="exec pavucontrol&"
 alias xboard="xboard -ics -icshost freechess.org"
+alias chess='~/src/raptor-chess/Raptor_v98u3f5/raptor'
 alias vimrc="vim -p ~/.vimrc ~/.vim/vundles"
 alias vimup="vim +BundleInstall!"
 alias esq="ssh esq"
@@ -234,5 +235,8 @@ alias vimnorc='vim -u NONE'
 
 alias hm=has-music
 alias hf=has-film
+
+alias xev-keys='xev -event keyboard'
+
 
 # vim: ft=zsh

@@ -2,12 +2,19 @@ function wmclass() {
     # get WM_CLASS information
     # http://awesome.naquadah.org/wiki/FAQ#How_to_find_window.27s_class_and_other_identifiers.3F
     echo '\u2192 Click a window.'
-    xi="$(xprop | grep --color=none WM_CLASS)"
-    sp1=("${(s#, #)xi}")
-    sp2=("${(s# = #)${sp1[1]}}")
+    local xi="$(xprop | grep --color=none WM_CLASS)"
+    local sp1=("${(s#, #)xi}")
+    local sp2=("${(s# = #)${sp1[1]}}")
 
     echo "Class ${sp1[2]}"
     echo "Instance ${sp2[2]}"
+}
+
+function wmname() {
+    # TODO
+    echo '\u2192 Click a window.'
+    local xi="$(xprop | grep --color=none ^WM_NAME)"
+    local sp1=("${(s#, #)xi}")
 }
 
 function mandelbrot {
