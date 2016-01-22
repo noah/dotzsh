@@ -238,4 +238,6 @@ alias hf=has-film
 
 alias last="last -F"
 
+alias tm='tat music'
+
 # vim: ft=zsh

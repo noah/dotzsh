@@ -455,4 +455,20 @@ pls2cmus()
         done
 }
 
+mm()
+{
+        if [ "$#" -lt 2 ]; then
+                echo 'usage: destination [dir, ...]'
+                return
+        fi
+        local pre="$(head -1 ~/.secret/music.txt)"
+        local post="$1"
+        shift
+        local dest="$pre/$post"
+        if [ ! -d "$dest" ]; then
+                mkdir -v "$dest"
+        fi
+        rtomv "$@" "$dest"
+}
+
 # vim: ft=zsh
