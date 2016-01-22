@@ -238,5 +238,8 @@ alias hf=has-film
 
 alias xev-keys='xev -event keyboard'
 
+alias last="last -F"
+
+alias tm='tat music'
 
 # vim: ft=zsh
