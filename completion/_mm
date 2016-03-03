@@ -1,0 +1,24 @@
+#compdef mm
+
+_mm() {
+        local curcontext="$curcontext" state
+        typeset -A opt_args
+
+        local mdir="$(head -1 ~/.secret/music.txt)"
+
+        _arguments -C \
+                '1: :->m'\
+                '*: :->w'
+
+        case "$state" in
+            m) _files -W "$mdir" ;;
+            *) _files
+        esac
+}
+
+# complete the first argument of the mm function by looking for
+# directories in mdir.  complete the second by default (files in pwd).
+
+_mm "$@"
+
+# vim: ft=zsh

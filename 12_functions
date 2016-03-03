@@ -462,8 +462,16 @@ pls2cmus()
         done
 }
 
-mm()
+motion-loop()
 {
+        while true; do
+                motion
+                sleep 10
+        done
+}
+
+
+mm(){
         if [ "$#" -lt 2 ]; then
                 echo 'usage: destination [dir, ...]'
                 return
@@ -477,5 +485,7 @@ mm()
         fi
         rtomv "$@" "$dest"
 }
+compdef mm _mm
+
 
 # vim: ft=zsh

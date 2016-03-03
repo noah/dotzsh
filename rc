@@ -1,11 +1,16 @@
 #!/bin/zsh 
 
-# 		FIXME
+
+fpath=(~/.zsh/completion $fpath)
+
+
 for file in ~/.zsh/??_*; do
   source $file
 done
 
+
 source ~/src/z/z.sh
+
 
 # vim: set ft=zsh
 
