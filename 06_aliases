@@ -28,7 +28,6 @@ alias mvv="mv -v"
 alias rm="rm -i"
 alias su-="su -"
 alias s="sudo"
-alias rmrfv="rm -rfv"
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
 alias rmclass='find . -iname "*.class" |xargs rm -fv'
 
@@ -240,5 +239,7 @@ alias xev-keys='xev -event keyboard'
 alias last="last -F"
 
 alias tm='tat music'
+
+alias lswcl='ls |wc -l'
 
 # vim: ft=zsh
