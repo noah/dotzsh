@@ -1,6 +1,6 @@
 #compdef _mm
 
-function wmclass() {
+wmclass() {
     # get WM_CLASS information
     # http://awesome.naquadah.org/wiki/FAQ#How_to_find_window.27s_class_and_other_identifiers.3F
     echo '\u2192 Click a window.'
@@ -12,7 +12,7 @@ function wmclass() {
     echo "Instance ${sp2[2]}"
 }
 
-function wmname() {
+wmname() {
     # TODO
     echo '\u2192 Click a window.'
     local xi="$(xprop | grep --color=none ^WM_NAME)"
