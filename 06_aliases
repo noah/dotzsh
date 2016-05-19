@@ -241,5 +241,6 @@ alias last="last -F"
 alias tm='tat music'
 
 alias lswcl='ls |wc -l'
+alias fbreader=FBReader
 
 # vim: ft=zsh
