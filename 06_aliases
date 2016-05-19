@@ -28,7 +28,6 @@ alias mvv="mv -v"
 alias rm="rm -i"
 alias su-="su -"
 alias s="sudo"
-alias rmrfv="rm -rfv"
 alias rmpyc='find . -iname "*.pyc" |xargs rm -fv'
 alias rmclass='find . -iname "*.class" |xargs rm -fv'
 
@@ -77,7 +76,6 @@ alias vp="vimp *.py"
 
 # self-referential
 alias va="vimp ~/.zsh/{06_aliases,12_suffix_aliases}; source ~/.zsh/06_aliases; source ~/.zsh/12_suffix_aliases;"
-alias vf="vim ~/.zsh/11_functions; source ~/.zsh/11_functions"
 alias reread="xrdb -all ~/.Xdefaults"
 alias vimpass="pushd ~/gits/checkouts/mpass; vim ~/gits/checkouts/mpass/mpass.gpg; git commit -a; popd"
 
@@ -240,5 +238,7 @@ alias xev-keys='xev -event keyboard'
 alias last="last -F"
 
 alias tm='tat music'
+
+alias lswcl='ls |wc -l'
 
 # vim: ft=zsh

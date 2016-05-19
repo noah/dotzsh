@@ -464,8 +464,16 @@ pls2cmus()
         done
 }
 
-_mm()
+motion-loop()
 {
+        while true; do
+                motion
+                sleep 10
+        done
+}
+
+
+mm(){
         if [ "$#" -lt 2 ]; then
                 echo 'usage: destination [dir, ...]'
                 return
@@ -479,6 +487,8 @@ _mm()
         fi
         rtomv "$@" "$dest"
 }
+compdef mm _mm
+
 
 mm()
 {
