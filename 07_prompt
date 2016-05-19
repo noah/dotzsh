@@ -1,6 +1,6 @@
 # Git state in prompt
 #
-function git-need-to-push() {
+git-need-to-push() {
   if pushtime=$(echo $(git status 2> /dev/null) | grep 'Your branch is ahead' 2> /dev/null); then
     echo "↑ " # ^K !-
   fi
@@ -23,7 +23,7 @@ zstyle ':vcs_info:*' actionformats \
 #    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 
-function precmd() {
+precmd() {
     # window title
     # formats: http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
     print -Pn "\e]2;%n@%m:%~ (%j)\a"
@@ -87,6 +87,20 @@ function pixels
   fi
 }
 
+virtualenv_prompt_info() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        if [ -f "$VIRTUAL_ENV/__name__" ]; then
+            local name=`cat $VIRTUAL_ENV/__name__`
+        elif [ `basename $VIRTUAL_ENV` = "__" ]; then
+            local name=$(basename $(dirname $VIRTUAL_ENV))
+        else
+            local name=$(basename $VIRTUAL_ENV)
+        fi
+        echo -n "%{%{%F{154}%}%}$ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX$name$ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX%f"
+    fi
+}
+
+
 local histno="%{%{$fg[green]%}%}%!%{$reset_color%}"
 local jobnos="%{%{$fg[magenta]%}%}%j%{$reset_color%}"
 local usernm="%{%{$fg[blue]%}%}%n%{$reset_color%}"
@@ -106,7 +120,8 @@ PROMPT='\
 ?%B${jobret}%b$SEP\
 %B${$(pixels)}%b$SEP\
 %B${${thetty}}%b$SEP\
-%B${$(fstype)}%b$SEP
+%B${$(fstype)}%b$SEP\
+%B${$(virtualenv_prompt_info)}%b$SEP
 %{${$(pwd|grep --color=always /)}%}
 %(!.#.λ) '
 
