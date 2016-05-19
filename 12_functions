@@ -1,3 +1,5 @@
+#compdef _mm
+
 function wmclass() {
     # get WM_CLASS information
     # http://awesome.naquadah.org/wiki/FAQ#How_to_find_window.27s_class_and_other_identifiers.3F
@@ -487,5 +489,20 @@ mm(){
 }
 compdef mm _mm
 
+
+mm()
+{
+        _mm "$@"
+}
+
+
+chess()
+{
+        echo 'sshing'
+        ssh -f -o ExitOnForwardFailure=yes\
+                -L 6969:freechess.org:5000 "$(cat ~/.myhost)" sleep 5
+        pushd ~/src/raptor
+        ./raptor&
+}
 
 # vim: ft=zsh
