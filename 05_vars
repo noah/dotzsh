@@ -22,7 +22,6 @@ fi
 
 export LD_LIBRARY_PATH=.
 
-export PYTHONSTARTUP=~/.pystartup
 export DISPLAY=":0.0"
 
 

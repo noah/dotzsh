@@ -121,7 +121,6 @@ alias lsofiP="lsof -i -P"
 alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 alias pulsemixer="exec pavucontrol&"
 alias xboard="xboard -ics -icshost freechess.org"
-alias chess='~/src/raptor-chess/Raptor_v98u3f5/raptor'
 alias vimrc="vim -p ~/.vimrc ~/.vim/vundles"
 alias vimup="vim +BundleInstall!"
 alias esq="ssh esq"
@@ -170,7 +169,7 @@ alias bterm="killall urxvtd && termd" # FIXME
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
 alias burxvtd="killall urxvtd; termd;"
 
-alias open="xdg-open"
+alias open="gvfs-open"
 alias chrome="google-chrome"
 
 alias ka="killall"
