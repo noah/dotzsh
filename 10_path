@@ -4,10 +4,25 @@ PATH+=:~/bin
 PATH+=:$JAVA_HOME/bin
 PATH+=:/usr/lib/git-core
 PATH+=:~/.cabal/bin
-PATH+=:~/.gem/ruby/2.1.0/bin
+
+
+unsetopt nomatch # suppress "no match found" error
+add_bin_path()
+{
+    local bp=$1
+    local latest=$(ls $1 2>/dev/null| sort -r | head -1)
+    if [ -n "$latest" ]; then
+            PATH+=:$bp/$latest/bin
+    fi
+}
+add_bin_path ~/.gem/ruby
+add_bin_path /opt/wolfram/mathematica
+add_bin_path ~/WOLFRAM/mathematica
+
+
 PATH+=:.
 
-PATH+=:/home/noah/WOLFRAM/mathematica/10.3/bin
+
 
 export PATH
 
