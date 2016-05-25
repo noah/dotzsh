@@ -40,8 +40,6 @@ alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 alias pacman="sudo pacman"
 alias p="pacman"
 alias y="yaourt"
-alias pip2="sudo pip2"
-alias pip3="sudo pip3"
 
 # ipod
 alias mountpod="mount -o check=relaxed /mnt/ipod"
