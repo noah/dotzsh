@@ -92,7 +92,7 @@ alias kX="killall Xorg"
 alias lock="xscreensaver-command -activate"
 alias lclbt="cd /drum/bt && lcl"
 alias lock="vlock"
-alias rotate='renrot --no-rename *.JPG'
+alias rotate=' jhead -autorot *.JPG'
 alias tree="tree -Csu"
 alias tmux="tmux -2"
 alias ta="tmux attach || tmux"
@@ -239,5 +239,9 @@ alias tm='tat music'
 
 alias lswcl='ls |wc -l'
 alias fbreader=FBReader
+
+alias prename=perl-rename
+
+alias vim="vim -p"
 
 # vim: ft=zsh
