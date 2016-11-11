@@ -244,4 +244,6 @@ alias prename=perl-rename
 
 alias vim="vim -p"
 
+alias ice="(sleep 20m; zenity --info 'ICE!')&"
+
 # vim: ft=zsh

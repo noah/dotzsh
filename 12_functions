@@ -505,4 +505,9 @@ showcolors()
             done)|less
 }
 
+pw()
+{
+        grep "$@" "$(cat ~/.secret/pw)"
+}
+
 # vim: ft=zsh
