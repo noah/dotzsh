@@ -1,6 +1,7 @@
 PATH=$PATH
 PATH+=:/usr/local/bin
 PATH+=:~/bin
+PATH+=:~/opt/bin
 PATH+=:$JAVA_HOME/bin
 PATH+=:/usr/lib/git-core
 PATH+=:~/.cabal/bin
