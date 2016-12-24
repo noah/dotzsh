@@ -95,7 +95,7 @@ alias kX="killall Xorg"
 alias lock="xscreensaver-command -activate"
 alias lclbt="cd /drum/bt && lcl"
 alias lock="vlock"
-alias rotate='renrot --no-rename *.JPG'
+alias rotate=' jhead -autorot *.JPG'
 alias tree="tree -Csu"
 alias tmux="tmux -2"
 alias ta="tmux attach || tmux"
@@ -245,7 +245,9 @@ alias fbreader=FBReader
 
 alias mc='make clean'
 alias yd='youtube-dl'
-
 alias vimpw='vim ~/sync/pw.txt'
+alias prename=perl-rename
+alias vim="vim -p"
+alias ice="(sleep 20m; zenity --info 'ICE!')&"
 
 # vim: ft=zsh
