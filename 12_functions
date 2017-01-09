@@ -505,9 +505,22 @@ showcolors()
             done)|less
 }
 
-pw()
+renumber_mp3()
 {
-        grep "$@" "$(cat ~/.secret/pw)"
+
+        # renumber mp3 files based on id3 info
+        for x in *.mp3; 
+                do mv "$x" "$(mp3info -p "%a - %02n. %t.mp3" "$x")";
+        done
+
+}
+
+pw() {
+        egrep -i --color "$@" "$(cat ~/.secret/pw)"
+}
+
+psgrep() {
+        ps up $(pgrep -f $@) 2>&-;
 }
 
 # vim: ft=zsh

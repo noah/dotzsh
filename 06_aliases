@@ -17,6 +17,7 @@ alias llgrep="ls -a -l --color=yes|egrep -i"
 alias hgrep="cat ~/.histfile| egrep"
 alias dush="du -sh"
 alias free="free --human"
+alias lsr="ls |sort -R | tail -1"
 #
 alias ..="cd .."
 alias cp="cp -i"
@@ -59,6 +60,8 @@ alias rc='riddim -c'
 alias rn='riddim -n'
 alias rN='riddim -N'
 alias rA='riddim -A'
+alias rcmp3='riddim -c . -x mp3'
+alias rcflac='riddim -c . -x flac'
 
 # vim
 alias letter="cp ~/gits/checkouts/business/letters/_business_letter_template.tex ./$(date +%Y%m%d)_letter.tex; vim $(date +%Y%m%d)_letter.tex"
@@ -239,10 +242,11 @@ alias tm='tat music'
 alias lswcl='ls |wc -l'
 alias fbreader=FBReader
 
+alias mc='make clean'
+alias yd='youtube-dl'
+alias vimpw='vim ~/sync/pw.txt'
 alias prename=perl-rename
-
 alias vim="vim -p"
-
 alias ice="(sleep 20m; zenity --info 'ICE!')&"
 
 # vim: ft=zsh
