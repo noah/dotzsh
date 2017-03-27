@@ -30,6 +30,9 @@ export GOPATH=$HOME/src/go
 # virtualenv: don't fuck with my prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+# Note: set Subpixel hinting mode in 
+#   /etc/profile.d/freetype2.sh
+
 export ABSROOT=~/src/abs
 
 export PRINTER=Brother

@@ -121,12 +121,11 @@ alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 alias pulsemixer="exec pavucontrol&"
 alias xboard="xboard -ics -icshost freechess.org"
 alias vimrc="vim -p ~/.vimrc ~/.vim/vundles"
-alias vimup="vim +BundleInstall!"
+alias vimup="vim +NeoBundleInstall!"
 alias esq="ssh esq"
 
 alias vimrc.test="vim ~/.vimrc.test"
 alias vimtest="vim -u ~/.vimrc.test"
-alias vimup="vim +BundleInstall! && vim +BundleClean!"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
 alias expl="nautilus ."
@@ -249,5 +248,7 @@ alias vimpw='vim ~/sync/pw.txt'
 alias prename=perl-rename
 alias vim="vim -p"
 alias ice="(sleep 20m; zenity --info 'ICE!')&"
+
+alias gzcat=zcat
 
 # vim: ft=zsh
