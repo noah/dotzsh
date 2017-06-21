@@ -5,9 +5,9 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   exec startx > ~/logs/startx.log 2>&1
 else
   # don't start keychain if logging in from tty
-  [[ -f ~/.ssh/id_dsa ]]            && /usr/bin/keychain --quiet --nogui ~/.ssh/id_dsa
+  #[[ -f ~/.ssh/id_dsa ]]            && /usr/bin/keychain --quiet --nogui ~/.ssh/id_dsa
   [[ -f ~/.ssh/id_rsa ]]            && /usr/bin/keychain --quiet --nogui ~/.ssh/id_rsa
-  # [[ -f ~/.ssh/id_ed25519 ]]        && /usr/bin/keychain --quiet --nogui ~/.ssh/id_ed25519
+  #[[ -f ~/.ssh/id_ed25519 ]]        && /usr/bin/keychain --quiet --nogui ~/.ssh/id_ed25519
   [[ -f ~/.keychain/$HOST-sh ]]     && . ~/.keychain/$HOST-sh
   [[ -f ~/.keychain/$HOST-sh-gpg ]] && . ~/.keychain/$HOST-sh-gpg
   

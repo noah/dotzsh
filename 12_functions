@@ -516,11 +516,32 @@ renumber_mp3()
 }
 
 pw() {
-        egrep -i --color "$@" "$(cat ~/.secret/pw)"
+        egrep -i --color "$@" "$HOME/.secret/pw"
 }
 
 psgrep() {
         ps up $(pgrep -f $@) 2>&-;
 }
 
+scptors(){
+    pushd 
+    host="$(cat ~/.secret/h)"
+    mapfile -t D < ~/.secret/d
+    for d in "${D[@]}"; do
+        gp="$(cat ~/secret/gp)"
+        echo scp "$gp" $host:$d && rm -fv "$gp"
+    done
+    popd
+}
+
+
+setscroll(){
+		# set natural scroll.  get id-only param from $ xinput list
+		_mid=$(xinput list --id-only "pointer:Logitech USB Receiver") 
+		xinput set-prop --type=int $_mid "libinput Natural Scrolling Enabled" 1
+		# see http://forums.fedoraforum.org/showthread.php?t=298702
+}
+
+
 # vim: ft=zsh
+# cukk
