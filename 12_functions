@@ -324,11 +324,12 @@ cb() {
   cat $1 | xclip
 }
 
-# stream file $1 on port $2
-stream()
+stream() # stream file $1 on port $2
 {
-        nc -l -p "$2" < "$1"
+        #nc -l -p "$2" < "$1"
+        cvlc "$1" --sout "#standard{access=http,mux=ps,dst=:$2}"
 }
+
 
 fontedit()
 {
