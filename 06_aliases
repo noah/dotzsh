@@ -253,9 +253,11 @@ alias gzcat=zcat
 alias apt-get="sudo apt-get"
 alias acs="apt-cache search"
 alias agi="apt-get install"
-alias agr="apt-get remove search"
+alias agr="apt-get remove"
 alias agu="apt-get update"
 alias agU="apt-get update"
 alias agdu="apt-get dist-upgrade"
+
+alias gqview=geeqie
 
 # vim: ft=zsh

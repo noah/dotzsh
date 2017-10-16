@@ -543,6 +543,25 @@ setscroll(){
 		# see http://forums.fedoraforum.org/showthread.php?t=298702
 }
 
+stracee() {
+        #   -e expr     A qualifying expression which modifies which events to trace or how to trace them.  The format of the expression is:
+        # 
+        #                              [qualifier=][!]value1[,value2]...
+        # 
+        #                    where  qualifier  is one of trace, abbrev, verbose, raw, signal, read, or write and value is a qualifier-dependent symbol or number.  The default qualifier is trace.  Using an exclamation
+        #                    mark negates the set of values.  For example, -e open means literally -e trace=open which in turn means trace only the open system call.  By contrast, -e trace=!open means to trace  every
+        #                    system call except open.  In addition, the special values all and none have the obvious meanings.
+        # 
+        #                    Note that some shells use the exclamation point for history expansion even inside quoted arguments.  If so, you must escape the exclamation point with a backslash.
+        #
+        strace -e file "$@"
+}
+
+fixscroll(){
+        xinput set-prop "Cypress APA Trackpad (cyapa)"  --type=int "libinput Natural Scrolling Enabled" 0
+}
+
+
 
 # vim: ft=zsh
 # cukk
