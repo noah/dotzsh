@@ -321,13 +321,17 @@ vw()
 
 
 cb() {
-  cat $1 | xclip
+  cat "$1" | xclip
 }
 
 stream() # stream file $1 on port $2
 {
-        #nc -l -p "$2" < "$1"
-        cvlc "$1" --sout "#standard{access=http,mux=ps,dst=:$2}"
+        nc -l -p "$2" < "$1"
+        # mux="ps"
+        # #cvlc -vvv "$1" --sout\
+        # #"#standard{access=http,mux=$mux,dst=:$2}"
+        # cvlc -vvv "$1" --sout "#standard{access=http,mux=$mux,dst=:$2}" --sout-keep
+        # #"http{mux=ffmpeg{mux=flv},dst=:$2}"
 }
 
 
@@ -420,12 +424,6 @@ theme.lua()
 _()
 {
         rtomv "$@" _done
-}
-
-awstotp()
-{
-        local secret="$(cat ~/.secret/awstotp.txt)"
-        oathtool --totp --base32 "$secret"
 }
 
 has()

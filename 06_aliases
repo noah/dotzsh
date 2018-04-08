@@ -167,14 +167,12 @@ alias bterm="killall urxvtd && termd" # FIXME
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
 alias burxvtd="killall urxvtd; termd;"
 
-alias open="gvfs-open"
+alias open="gio open"
 alias chrome="google-chrome"
 
 alias ka="killall"
 
 alias rexima="aoss rexima"
-
-alias cb=xclip
 
 alias g=grep
 alias lg=lsgrep
@@ -250,5 +248,6 @@ alias vim="vim -p"
 alias ice="(sleep 20m; zenity --info 'ICE!')&"
 
 alias gzcat=zcat
+
 
 # vim: ft=zsh
