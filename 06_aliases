@@ -87,7 +87,6 @@ alias vf="vim ~/.zsh/??_functions; source ~/.zshrc"
 # user
 alias ev="evince"
 alias brew="sleep 4m; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Stir!\"; sleep 30s; notify-send -i ~/icons/coffee.png -u critical -t 0 \"Coffee's done!\""
-alias egrep="egrep --colour=auto"
 alias h="history"
 alias info="pinfo"
 alias irssi="irssi -n print -c irc.freenode.net"
@@ -248,6 +247,13 @@ alias vim="vim -p"
 alias ice="(sleep 20m; zenity --info 'ICE!')&"
 
 alias gzcat=zcat
-
+alias apt-get="sudo apt-get"
+alias acs="apt-cache search"
+alias agi="apt-get install"
+alias agr="apt-get remove"
+alias agu="apt-get update"
+alias agU="apt-get update"
+alias agdu="apt-get dist-upgrade"
+alias gqview=geeqie
 
 # vim: ft=zsh
