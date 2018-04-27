@@ -372,6 +372,16 @@ nqf()
     nq $@ -x flac
 }
 
+nqr()
+{
+        if [ "$#" -lt 1 ]; then
+                echo 'usage: nqr [dir, ...]'
+                return
+        fi
+        rand() REPLY=$RANDOM
+        nq $(print -rl -- $1/*(o+rand[1,1]))/**/*.flac
+}
+
 rid()
 {
         if [[ $? -ne 0 ]]; then
@@ -515,7 +525,7 @@ renumber_mp3()
 }
 
 pw() {
-        egrep -i --color "$@" "$HOME/.secret/pw"
+        egrep -i --color "$@" "$(cat "$HOME/.secret/pw")"
 }
 
 psgrep() {
