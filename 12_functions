@@ -372,15 +372,17 @@ nq()
         fi
 }
 
-nqm()
-{
-    nq $@ -x mp3
-}
-
-nqf()
-{
-    nq $@ -x flac
-}
+# 
+#   TODO these do not work f
+# nqm()
+# {
+#     nq $@ -x mp3
+# }
+# 
+# nqf()
+# {
+#     nq $@ -x flac
+# }
 
 
 nqr()
