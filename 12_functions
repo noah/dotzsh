@@ -348,17 +348,27 @@ streamvid()
   ffmpeg -i "$1" -f matroska -s 640x480 -b:v 256k -vcodec libx264 -acodec copy - | nc -l -p 18944
 }
 
-
-nq()
+conditional_enqueue()
 {
-        # cond. enqueue
-        #
         cmus-remote -P $@
 
         if [[ $? -ne 0 ]]; then
                 riddim -e $@
         else
-                echo "$@ enqueued to cmus"
+                echo "$@ enqueued to cmus."
+        fi
+}
+
+nq()
+{ 
+        if [ $# -lt 1 ]; then
+                # process stdin
+                while read l
+                do
+                        conditional_enqueue $l
+                done
+        else
+                conditional_enqueue $@
         fi
 }
 
@@ -372,14 +382,15 @@ nqf()
     nq $@ -x flac
 }
 
+
 nqr()
 {
+        # random enqueue
         if [ "$#" -lt 1 ]; then
                 echo 'usage: nqr [dir, ...]'
                 return
         fi
-        rand() REPLY=$RANDOM
-        nq $(print -rl -- $1/*(o+rand[1,1]))/**/*.flac
+        find $1 -maxdepth 2 -type d 2>&1|grep -vi "permission denied" | shuf | tail -1 | nq
 }
 
 rid()
