@@ -256,4 +256,6 @@ alias agU="apt-get update"
 alias agdu="apt-get dist-upgrade"
 alias gqview=geeqie
 
+alias baobab-cli='ncdu'
+
 # vim: ft=zsh
