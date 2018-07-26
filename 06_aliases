@@ -258,4 +258,6 @@ alias gqview=geeqie
 
 alias baobab-cli='ncdu'
 
+alias ccze="ccze -A"
+
 # vim: ft=zsh
