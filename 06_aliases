@@ -260,4 +260,8 @@ alias baobab-cli='ncdu'
 
 alias ccze="ccze -A"
 
+# ( Rarely does an alias flag group acronymize a 70s supergroup;
+#   and a power of two, to boot. )
+alias pwgen="pwgen -csny1 32"
+
 # vim: ft=zsh

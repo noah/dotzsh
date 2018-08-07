@@ -582,6 +582,10 @@ fixscroll(){
         xinput set-prop "Cypress APA Trackpad (cyapa)"  --type=int "libinput Natural Scrolling Enabled" 0
 }
 
+psg() {
+        ps faux | grep --color "$@"
+}
+
 
 
 # vim: ft=zsh
