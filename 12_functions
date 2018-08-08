@@ -384,6 +384,21 @@ nq()
 #     nq $@ -x flac
 # }
 
+_nqft()
+{
+        # enqueue by filetype
+        find "$1" -maxdepth 8 -iname "$2" 2>&1|grep -vi "permission denied" | nq
+}
+
+nqf()
+{
+        _nqft "$1" "*.flac"
+}
+
+nqm()
+{
+        _nqft "$1" "*.mp3"
+}
 
 nqr()
 {
