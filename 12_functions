@@ -372,18 +372,6 @@ nq()
         fi
 }
 
-# 
-#   TODO these do not work f
-# nqm()
-# {
-#     nq $@ -x mp3
-# }
-# 
-# nqf()
-# {
-#     nq $@ -x flac
-# }
-
 _nqft()
 {
         # enqueue by filetype
