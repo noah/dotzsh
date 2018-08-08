@@ -388,7 +388,7 @@ nq()
 nqr()
 {
         # random enqueue
-        if [ "$#" -lt 1 ]; then
+        if [ "$#" -lt 1 ] || [ ! -d "$1" ]; then
                 echo 'usage: nqr [dir, ...]'
                 return
         fi
