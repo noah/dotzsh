@@ -122,7 +122,7 @@ PROMPT='\
 %B${${thetty}}%b$SEP\
 %B${$(fstype)}%b$SEP\
 %B${$(virtualenv_prompt_info)}%b$SEP
-%{${$(pwd|grep --color=always /)}%}
+%{${$(pwd|grep /)}%}
 %(!.#.ツ) '
 
 RPROMPT='%B${vcs_info_msg_0_}%b'

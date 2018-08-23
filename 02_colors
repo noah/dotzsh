@@ -1,5 +1,9 @@
 autoload colors
 colors
 
-export GREP_COLOR='1;31'
+#export GREP_COLOR='1;31'
+export GREP_COLOR='0;30;43'
+# See http://bluesock.org/~willkg/dev/ansi.html :
+# "there can be multiple text formatting sequence numbers separated by a
+# ; and ending with an m where the # is of the following values"
 #export GREP_OPTIONS='--color=auto'
