@@ -589,6 +589,11 @@ psg() {
         ps faux | grep --color "$@"
 }
 
+pager(){
+
+        "$@" | less
+}
+
 
 
 # vim: ft=zsh
