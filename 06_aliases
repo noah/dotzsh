@@ -37,10 +37,7 @@ alias rp="wget -q -O - http://www.radioparadise.com/musiclinks/rp_192.m3u|tr -d 
 alias wfmt="wget -P/tmp -q -nd --no-check-certificate https://www.wfmt.com/res/streaming/live/wfmtstream.pls && cmus-remote -l /tmp/wfmtstream.pls"
 alias soma="cmus-remote -l ~/somafm.pls && cmus-remote -p"
 
-# pacman
-alias pacman="sudo pacman"
-alias p="pacman"
-alias y="yaourt"
+alias p="pass"
 
 # ipod
 alias mountpod="mount -o check=relaxed /mnt/ipod"
@@ -263,5 +260,8 @@ alias ccze="ccze -A"
 # ( Rarely does an alias flag group acronymize a 70s supergroup;
 #   and a power of two, to boot. )
 alias pwgen="pwgen -csny1 32"
+
+alias mds='make devserver'
+alias pse='pass search'
 
 # vim: ft=zsh

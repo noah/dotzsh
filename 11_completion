@@ -1,11 +1,5 @@
 zmodload -i zsh/complist
 
-zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-
 # fsck rehash
 _force_rehash() {
   (( CURRENT == 1 )) && rehash
@@ -13,6 +7,12 @@ _force_rehash() {
 }
 
 zstyle ':completion:*' completer _oldlist _expand _force_rehash _complete 
+zstyle ':completion:*' list-colors ''
+#zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
 # show completion menu
 zstyle ':completion:*' menu select
 
