@@ -128,9 +128,6 @@ alias expl="nautilus ."
 
 alias muttrc="vim -p ~/.mutt/*.rc ~/.muttrc"
 #
-alias mutt-wri="MUTT_ACCOUNT=wri mutt"
-alias mutt-wallc="MUTT_ACCOUNT=wallc mutt"
-
 alias pkill="pkill -fe"
 
 alias chrome=google-chrome
@@ -210,7 +207,6 @@ alias push="git push"
 alias pull="git pull"
 
 alias ark="ssh ark"
-alias mail="ssh mail"
 
 alias ms="musicsum"
 
@@ -234,6 +230,7 @@ alias last="last -F"
 alias tm='tat music'
 
 alias lswcl='ls |wc -l'
+alias wcl='wc -l'
 alias fbreader=FBReader
 
 alias mc='make clean'
@@ -263,5 +260,7 @@ alias pwgen="pwgen -csny1 32"
 
 alias mds='make devserver'
 alias pse='pass search'
+
+alias markdown="markdown_py -x footnotes"
 
 # vim: ft=zsh

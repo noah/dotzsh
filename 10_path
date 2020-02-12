@@ -5,6 +5,9 @@ PATH+=:~/opt/bin
 PATH+=:$JAVA_HOME/bin
 PATH+=:/usr/lib/git-core
 PATH+=:~/.local/bin
+PATH+=:~/src/go/bin
+PATH+=:/usr/lib/gnome-settings-daemon
+PATH+=:/snap/bin
 
 #PATH+=:~/.cabal/bin
 
