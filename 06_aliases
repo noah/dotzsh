@@ -261,6 +261,10 @@ alias pwgen="pwgen -csny1 32"
 alias mds='make devserver'
 alias pse='pass search'
 
-alias markdown="markdown_py -x footnotes"
+alias markdown="markdown_py -x footnotes -x tables"
+
+alias rmrfv="rm -Rfv"
+
+alias hn="head -n"
 
 # vim: ft=zsh
