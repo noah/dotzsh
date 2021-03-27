@@ -267,4 +267,6 @@ alias rmrfv="rm -Rfv"
 
 alias hn="head -n"
 
+alias pacman="sudo pacman"
+
 # vim: ft=zsh
