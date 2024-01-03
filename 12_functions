@@ -622,7 +622,8 @@ vimcompare(){
 }
 
 htpasswd() {
-        openssl passwd -apr1 $1
+        echo -n "$1:"
+        openssl passwd -apr1 $2
 }
 
 
