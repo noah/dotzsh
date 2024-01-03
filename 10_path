@@ -1,5 +1,6 @@
-PATH=$PATH
-PATH+=:/usr/local/bin
+#PATH=$PATH
+PATH=
+PATH+=/usr/local/bin
 PATH+=:~/bin
 PATH+=:~/opt/bin
 PATH+=:$JAVA_HOME/bin
@@ -28,7 +29,7 @@ unsetopt nomatch # suppress "no match found" error
 # add_bin_path ~/.local/bin
 
 
-PATH+=:.
+#PATH+=:.
 
 
 

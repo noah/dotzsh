@@ -12,7 +12,8 @@ alias less_color="less -R"
 alias lsl="ls --color=always | less_color"
 alias lcl="lc | less_color"
 alias lcla="lc -a | less_color"
-alias lsgrep="ls -a --color=yes|egrep -i"
+alias lsg="ls -a --color=yes|egrep -i"
+alias lsgt="tree|egrep -i"
 alias llgrep="ls -a -l --color=yes|egrep -i"
 alias hgrep="cat ~/.histfile| egrep"
 alias dush="du -sh"
@@ -116,12 +117,10 @@ alias lsofiP="lsof -i -P"
 alias alsamixer="TERM=xterm alsamixer -c 0 -D pulse"
 alias pulsemixer="exec pavucontrol&"
 alias xboard="xboard -ics -icshost freechess.org"
-alias vimrc="vim -p ~/.vimrc ~/.vim/vundles"
+alias vimrc="vim -p ~/.vim/vimrc ~/.vim/myplugins"
 alias vimup="vim +NeoBundleInstall!"
 alias esq="ssh esq"
 
-alias vimrc.test="vim ~/.vimrc.test"
-alias vimtest="vim -u ~/.vimrc.test"
 alias mimetypes="vim ~/.local/share/applications/defaults.list"
 
 alias expl="nautilus ."
@@ -268,5 +267,7 @@ alias rmrfv="rm -Rfv"
 alias hn="head -n"
 
 alias pacman="sudo pacman"
+
+alias pdfjoin='pdfjam --fitpaper true --rotateoversize false --suffix joined'
 
 # vim: ft=zsh

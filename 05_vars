@@ -4,6 +4,7 @@ export GPGKEY=0x7E489514
 export GPG_TTY=`tty`
 export OOO_FORCE_DESKTOP=gnome
 export IPOD_MOUNTPOINT=/media/ipod
+export PRINTER=Brother_HL-L2360D_series
 
 export LANG=en_US.UTF-8
 #export LC_MESSAGES="C"
@@ -11,11 +12,11 @@ export LANG=en_US.UTF-8
 #[[ $TERM == "screen" ]] && export TERM="screen-256color"
 # rxvt-unicode
 # ...
-if [[ $(tput colors) == 256 ]]; then
-  export TERM="rxvt-unicode-256color"
-else
-  export TERM="linux"
-fi
+# if [[ $(tput colors) == 256 ]]; then
+#   export TERM="rxvt-unicode-256color"
+# else
+#   export TERM="linux"
+# fi
 
 # xfce4-terminal
 #export TERM="screen-256color"
@@ -34,8 +35,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 #   /etc/profile.d/freetype2.sh
 
 export ABSROOT=~/src/abs
-
-export PRINTER=Brother
 
 
 # keychain is overkill, doens't work (?)

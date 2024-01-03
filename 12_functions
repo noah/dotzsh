@@ -617,6 +617,14 @@ x(){
     fi
 }
 
+vimcompare(){
+        vimdiff $1/$2 $2
+}
+
+htpasswd() {
+        openssl passwd -apr1 $1
+}
+
 
 
 # vim: ft=zsh
